@@ -1,6 +1,6 @@
 {
   "short_name": "Hackerstellar",
-  "description": "The Ultimate Space Hacking Experience",
+  "name": "The Ultimate Space Hacking Experience",
   "icons": [
     {
       "src": "assets/favicon.png",
