@@ -1,0 +1,25 @@
+{
+  "short_name": "Hackerstellar",
+  "name": "The Ultimate Space Hacking Experience",
+  "icons": [
+    {
+      "src": "assets/favicon.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "assets/icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "assets/icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#101010",
+  "background_color": "#101010"
+}
