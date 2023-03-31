@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 * {
   margin: 0;
@@ -9,7 +9,11 @@
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #101010;
-  overflow: hidden;
+  height: 100vh;
+  overflow-y: auto;
+  overscroll-behavior-y: none;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  viewport-fit: cover;
 }
 
 .home-bg {

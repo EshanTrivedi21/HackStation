@@ -13,7 +13,6 @@ const CenteredGrid = ({ classname, style, children }) => {
         className={classname}
         display="flex"
         minHeight="100vh"
-        overflow="hidden"
         style={style}
       >
         {children}
@@ -73,7 +72,7 @@ const BackIcon = ({ onclick }) => {
 };
 
 const Container = ({ classname, children }) => {
-    return <div className="w-screen h-screen bg-[#efefef] absolute -bottom-[25%] rounded-3xl">{children}</div>;
+    return <div className="w-screen h-screen bg-[#efefef] absolute -bottom-[20%] rounded-3xl">{children}</div>;
 };
 
 export { CenteredGrid, CenteredDiv, PrimaryButton, SecondaryButton, BackIcon, Container };

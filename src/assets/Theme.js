@@ -30,13 +30,11 @@ const theme = createTheme({
     h2: {
       fontSize: "1.75rem",
       fontWeight: "bold",
-      textShadow: "0px 2.5px 2.5px rgba(0, 0, 0, 0.25)",
       fontFamily: "Poppins, sans-serif",
       letterSpacing: "0.1rem",
     },
     h3: {
       fontSize: "1.1rem",
-      textShadow: "0px 2.5px 2px rgba(0, 0, 0, 0.25)",
       fontFamily: "Poppins, sans-serif",
       letterSpacing: "0.1rem",
     },
