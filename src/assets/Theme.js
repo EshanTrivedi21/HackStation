@@ -27,8 +27,8 @@ const theme = createTheme({
       fontFamily: "Poppins, sans-serif",
       letterSpacing: "0.25rem",
     },
-    h3: {
-      fontSize: "1.1rem",
+    h4: {
+      fontSize: "1rem",
       textShadow: "0px 5px 4px rgba(0, 0, 0, 0.36)",
       fontFamily: "Poppins, sans-serif",
       letterSpacing: "0.1rem",
@@ -39,7 +39,6 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          backgroundColor: "#cfcfcf",
           width: "70%",
           borderRadius: "10px",
           textTransform: "none",
@@ -47,8 +46,13 @@ const theme = createTheme({
           letterSpacing: "0.1rem",
           fontSize: "1.25rem",
           fontFamily: "Poppins, sans-serif",
-          color: "#001220",
+          color: "#efefef",
           padding: "5px 25px",
+          boxShadow: "0px 5px 4px rgba(0, 0, 0, 0.36)",
+          backgroundImage: "linear-gradient(91.47deg, #404040 0.58%, #101010 95.65%);",
+          "&:hover": {
+            backgroundImage: "linear-gradient(91.47deg, #404040 0.58%, #101010 95.65%);",
+          },
         },
       },
     },

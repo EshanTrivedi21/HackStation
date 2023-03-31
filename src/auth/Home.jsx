@@ -1,50 +1,28 @@
 import React from "react";
-import { Theme } from "../assets/Theme";
-import { Typography, Grid, Button } from "@mui/material";
-
-const CenteredGrid = ({ children }) => {
-  return (
-    <Theme>
-      <Grid
-        container
-        spacing={0}
-        direction="column"
-        alignItems="center"
-        justifyContent="center"
-        style={{ minHeight: "100vh" }}
-        className="home-bg"
-        display="flex"
-        paddingTop={10}
-        gap={15}
-      >
-        {children}
-      </Grid>
-    </Theme>
-  );
-};
-
-const CenteredDiv = ({ children }) => {
-  return (
-    <div className="flex flex-col justify-center items-center w-screen">{children}</div>
-  );
-};
+import { useNavigate } from "react-router-dom";
+import { Typography } from "@mui/material";
+import { CenteredGrid, CenteredDiv, SecondaryButton } from "../assets/Utilities";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const handleLogin = () => {
+    navigate("/login");
+  };
   return (
     <>
-      <CenteredGrid>
-        <CenteredDiv>
+      <CenteredGrid style={{ paddingTop: "2.5rem", gap: "10rem" }} classname="home-bg">
+        <CenteredDiv classname="gap-4">
           <Typography variant="h1" color="primary.contrastText">
             Hackerstellar
           </Typography>
-          <Typography variant="h3" color="primary.contrastText">
-            by CSI-KJSCE
+          <Typography variant="h4" color="primary.contrastText">
+            Ultimate Space Hacking Experience
           </Typography>
         </CenteredDiv>
         <CenteredDiv>
-          <Button variant="contained" color="primary" href="/auth/login">
+          <SecondaryButton variant="contained" onclick={handleLogin}>
             Launch
-          </Button>
+          </SecondaryButton>
         </CenteredDiv>
       </CenteredGrid>
     </>
