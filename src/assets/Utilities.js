@@ -12,6 +12,8 @@ const CenteredGrid = ({ classname, style, children }) => {
         justifyContent="center"
         className={classname}
         display="flex"
+        minHeight="100vh"
+        overflow="hidden"
         style={style}
       >
         {children}
@@ -21,30 +23,30 @@ const CenteredGrid = ({ classname, style, children }) => {
 };
 
 const CenteredDiv = ({ classname, children }) => {
-  const classes = "flex flex-col justify-center items-center w-screen " + classname;
+  const classes =
+    "flex flex-col justify-center items-center w-screen " + classname;
   return <div className={classes}>{children}</div>;
 };
 
 const PrimaryButton = ({ onclick, children }) => {
-    return (
-      <Button
-        variant="contained"
-        onClick={onclick}
-      >
-        {children}
-      </Button>
-    );
-  };
+  return (
+    <Button variant="contained" onClick={onclick}>
+      {children}
+    </Button>
+  );
+};
 
 const SecondaryButton = ({ onclick, children }) => {
   return (
     <Button
       variant="contained"
       sx={{
-        backgroundImage: "linear-gradient(0deg, #efefef 0.58%, #efefef 95.65%);",
+        backgroundImage:
+          "linear-gradient(0deg, #efefef 0.58%, #efefef 95.65%);",
         color: "#101010",
         "&:hover": {
-            backgroundImage: "linear-gradient(0deg, #efefef 0.58%, #efefef 95.65%);",
+          backgroundImage:
+            "linear-gradient(0deg, #efefef 0.58%, #efefef 95.65%);",
         },
       }}
       onClick={onclick}
@@ -54,4 +56,24 @@ const SecondaryButton = ({ onclick, children }) => {
   );
 };
 
-export { CenteredGrid, CenteredDiv, PrimaryButton, SecondaryButton };
+const BackIcon = ({ onclick }) => {
+  return (
+    <i
+      className="fa-solid fa-arrow-left"
+      style={{
+        fontSize: "2rem",
+        color: "#efefef",
+        position: "absolute",
+        top: "1.5rem",
+        left: "1.5rem",
+      }}
+      onClick={onclick}
+    ></i>
+  );
+};
+
+const Container = ({ classname, children }) => {
+    return <div className="w-screen h-screen bg-[#efefef] absolute -bottom-[25%] rounded-3xl">{children}</div>;
+};
+
+export { CenteredGrid, CenteredDiv, PrimaryButton, SecondaryButton, BackIcon, Container };

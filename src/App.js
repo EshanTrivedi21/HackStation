@@ -1,3 +1,5 @@
+import React from "react";
+import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home, Login } from "./auth/exports";
 

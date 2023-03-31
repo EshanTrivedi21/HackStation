@@ -9,6 +9,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #101010;
+  overflow: hidden;
 }
 
 .home-bg {
@@ -19,7 +20,6 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  overflow: hidden;
 }
 
 @tailwind base;
