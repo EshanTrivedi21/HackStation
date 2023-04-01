@@ -48,6 +48,33 @@ const theme = createTheme({
       fontFamily: "Poppins, sans-serif",
       color: "#cfcfcf",
     },
+    greetings_title: {
+      fontSize: "1.2rem",
+      fontWeight: "500",
+      fontFamily: "Poppins, sans-serif",
+      color: "#efefef",
+      letterSpacing: "0.1rem",
+    },
+    greetings_subtitle: {
+      fontSize: "0.8rem",
+      fontWeight: "300",
+      fontFamily: "Poppins, sans-serif",
+      color: "#cfcfcf",
+    },
+    timer: {
+      fontSize: "35px",
+      lineHeight: "1.4",
+      fontWeight: "500",
+      fontFamily: "Poppins, sans-serif",
+      color: "#d5d5d5",
+      letterSpacing: "0.1rem",
+    },
+    timer_title: {
+      fontSize: "15px",
+      fontWeight: "300",
+      fontFamily: "Poppins, sans-serif",
+      color: "#d5d5d5",
+    },
   },
   components: {
     MuiButton: {

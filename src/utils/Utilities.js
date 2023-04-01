@@ -47,10 +47,30 @@ const Modal = ({ title, subtitle }) => {
   );
 };
 
+const Box = ({ children }) => {
+  return (
+    <CenteredGrid>
+      <div className="flex rounded-lg w-[85vw]" style={{background: "radial-gradient(132.5% 132.5% at 48.94% 50%, #303030 0%, #202020 99.25%)"}}>
+        {children}
+      </div>
+    </CenteredGrid>
+  );
+};
+
+const Icon = ({ src, alt, size }) => {
+  return (
+    <img src={src} alt={alt} style={{
+      width: size + "px",
+      height: size + "px"
+    }}/>
+  );
+};
 
 export {
   CenteredGrid,
   CenteredDiv,
   PrimaryButton,
   Modal,
+  Icon,
+  Box
 };

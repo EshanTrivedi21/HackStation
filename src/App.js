@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
-import { Login } from "./auth/exports";
-import AuthCheck from "./component/AuthCheck";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Home } from "./screens/exports";
+import { Login } from "./auth/exports";
 import { Modal } from "./utils/Utilities";
+import { AuthCheck } from "./components/exports";
 
 function App() {
     const [isMobile, setIsMobile] = useState(false);
@@ -28,7 +29,7 @@ function App() {
             path: "/",
             element: (
                 <AuthCheck>
-                    <Modal title="Hi" subtitle="Welcome to the jungle bitch"/>
+                    <Home />
                 </AuthCheck>
             ),
         },
@@ -40,7 +41,10 @@ function App() {
 
     if (!isMobile) {
         return (
-            <Modal title="Mobile App Required" subtitle="Please use a mobile device and install the app to continue."/>
+            <Modal
+                title="Mobile App Required"
+                subtitle="Please use a mobile device and install the app to continue."
+            />
         );
     }
 
