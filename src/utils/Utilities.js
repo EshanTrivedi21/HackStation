@@ -26,10 +26,10 @@ const CenteredDiv = ({ className, children }) => {
   return <div className={classes}>{children}</div>;
 };
 
-const PrimaryButton = ({ onclick, children }) => {
+const PrimaryButton = ({ onClick, children }) => {
   return (
     <div className="rounded-[10px] p-[0.75px] bg-[linear-gradient(166.2deg,#FF7A00_-6.36%,#AC2900_124.84%)] w-[75%] h-14">
-      <Button variant="contained" onClick={onclick}>
+      <Button variant="contained" onClick={onClick}>
         {children}
       </Button>
     </div>
