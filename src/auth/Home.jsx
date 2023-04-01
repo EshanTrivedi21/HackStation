@@ -23,7 +23,7 @@ const Home = () => {
           </Typography>
         </CenteredDiv>
         <CenteredDiv>
-          <SecondaryButton variant="contained" onclick={handleLogin}>
+          <SecondaryButton variant="contained" onClick={handleLogin}>
             Launch
           </SecondaryButton>
         </CenteredDiv>

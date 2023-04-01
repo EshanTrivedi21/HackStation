@@ -25,7 +25,7 @@ const Login = () => {
 
   return (
     <CenteredGrid className="bg-[linear-gradient(180deg,#202020_0%,#101010_100%)] gap-10">
-      {/* <BackIcon onclick={handleHome} /> */}
+      {/* <BackIcon onClick={handleHome} /> */}
       <CenteredDiv className="gap-2">
         <Typography variant="h2" color="primary.contrastText">
           Welcome
@@ -35,8 +35,18 @@ const Login = () => {
         </Typography>
       </CenteredDiv>
       <CenteredDiv className="gap-10">
-        <TextField id="outlined-basic" label="Username" variant="outlined" onChange={e=>setUsername(e.target.value)}/>
-        <TextField id="outlined-basic" label="Password" variant="outlined" onChange={e=>setPassword(e.target.value)}/>
+        <TextField
+          id="outlined-basic"
+          label="Username"
+          variant="outlined"
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <TextField
+          id="outlined-basic"
+          label="Password"
+          variant="outlined"
+          onChange={(e) => setPassword(e.target.value)}
+        />
       </CenteredDiv>
       <CenteredDiv className="mb-16">
         <PrimaryButton variant="contained">Login</PrimaryButton>

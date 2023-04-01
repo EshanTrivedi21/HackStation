@@ -27,12 +27,12 @@ const CenteredDiv = ({ className, children }) => {
   return <div className={classes}>{children}</div>;
 };
 
-const PrimaryButton = ({ onclick, children }) => {
+const PrimaryButton = ({ onClick, children }) => {
   return (
     <div className="rounded-[10px] p-[1.5px] bg-[linear-gradient(166.2deg,#FF7A00_-6.36%,#AC2900_124.84%)] w-[80%] h-14">
       <Button
         variant="contained"
-        onClick={onclick}
+        onClick={onClick}
         style={{
           height: "100%",
           width: "100%",
@@ -47,7 +47,7 @@ const PrimaryButton = ({ onclick, children }) => {
   );
 };
 
-const SecondaryButton = ({ onclick, children }) => {
+const SecondaryButton = ({ onClick, children }) => {
   return (
     <Button
       variant="contained"
@@ -60,14 +60,14 @@ const SecondaryButton = ({ onclick, children }) => {
             "linear-gradient(0deg, #efefef 0.58%, #efefef 95.65%);",
         },
       }}
-      onClick={onclick}
+      onClick={onClick}
     >
       {children}
     </Button>
   );
 };
 
-const BackIcon = ({ onclick }) => {
+const BackIcon = ({ onClick }) => {
   return (
     <i
       className="fa-solid fa-arrow-left"
@@ -78,7 +78,7 @@ const BackIcon = ({ onclick }) => {
         top: "1.5rem",
         left: "1.5rem",
       }}
-      onClick={onclick}
+      onClick={onClick}
     ></i>
   );
 };
