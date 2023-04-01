@@ -20,22 +20,16 @@ const theme = createTheme({
     },
   },
   typography: {
-    h2: {
+    login_title: {
       fontSize: "1.8rem",
-      fontWeight: "bold",
+      fontWeight: "600",
       fontFamily: "Poppins, sans-serif",
     },
-    h3: {
+    login_subtitle: {
       fontSize: "1.1rem",
+      fontWeight: "300",
       fontFamily: "Poppins, sans-serif",
       letterSpacing: "0.1rem",
-    },
-    h4: {
-      fontSize: "1rem",
-      textShadow: "0px 5px 4px rgba(0, 0, 0, 0.36)",
-      fontFamily: "Poppins, sans-serif",
-      letterSpacing: "0.1rem",
-      fontStyle: "italic",
     },
     modal_title: {
       fontSize: "1.5rem",
