@@ -1,7 +1,7 @@
-import { Theme } from "../assets/Theme";
+import { Theme } from "./Theme";
 import { Grid, Button } from "@mui/material";
 
-const CenteredGrid = ({ classname, style, children }) => {
+const CenteredGrid = ({ className, style, children }) => {
   return (
     <Theme>
       <Grid
@@ -10,7 +10,7 @@ const CenteredGrid = ({ classname, style, children }) => {
         direction="column"
         alignItems="center"
         justifyContent="center"
-        className={classname}
+        className={className}
         display="flex"
         minHeight="100vh"
         style={style}
@@ -21,17 +21,29 @@ const CenteredGrid = ({ classname, style, children }) => {
   );
 };
 
-const CenteredDiv = ({ classname, children }) => {
+const CenteredDiv = ({ className, children }) => {
   const classes =
-    "flex flex-col justify-center items-center w-screen " + classname;
+    "flex flex-col justify-center items-center w-screen " + className;
   return <div className={classes}>{children}</div>;
 };
 
 const PrimaryButton = ({ onclick, children }) => {
   return (
-    <Button variant="contained" onClick={onclick}>
-      {children}
-    </Button>
+    <div className="rounded-[10px] p-[1.5px] bg-[linear-gradient(166.2deg,#FF7A00_-6.36%,#AC2900_124.84%)] w-[80%] h-14">
+      <Button
+        variant="contained"
+        onClick={onclick}
+        style={{
+          height: "100%",
+          width: "100%",
+          padding: 0,
+          backgroundImage: "linear-gradient(180deg, #202020 0%, #101010 100%)",
+          color: "#E38124",
+        }}
+      >
+        {children}
+      </Button>
+    </div>
   );
 };
 
@@ -71,8 +83,19 @@ const BackIcon = ({ onclick }) => {
   );
 };
 
-const Container = ({ classname, children }) => {
-    return <div className="w-screen h-screen bg-[#efefef] absolute -bottom-[20%] rounded-3xl">{children}</div>;
+const Container = ({ className, children }) => {
+  return (
+    <div className="w-screen h-screen bg-[#efefef] absolute -bottom-[20%] rounded-3xl">
+      {children}
+    </div>
+  );
 };
 
-export { CenteredGrid, CenteredDiv, PrimaryButton, SecondaryButton, BackIcon, Container };
+export {
+  CenteredGrid,
+  CenteredDiv,
+  PrimaryButton,
+  SecondaryButton,
+  BackIcon,
+  Container,
+};

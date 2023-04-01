@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Typography } from "@mui/material";
-import { CenteredGrid, CenteredDiv, SecondaryButton } from "../assets/Utilities";
+import { CenteredGrid, CenteredDiv, SecondaryButton } from "../utils/Utilities";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -10,8 +10,11 @@ const Home = () => {
   };
   return (
     <>
-      <CenteredGrid style={{ paddingTop: "2.5rem", gap: "10rem" }} classname="home-bg">
-        <CenteredDiv classname="gap-4">
+      <CenteredGrid
+        style={{ paddingTop: "2.5rem", gap: "10rem" }}
+        className="home-bg"
+      >
+        <CenteredDiv className="gap-4">
           <Typography variant="h1" color="primary.contrastText">
             Hackerstellar
           </Typography>
