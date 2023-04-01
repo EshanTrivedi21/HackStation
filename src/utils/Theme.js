@@ -57,8 +57,6 @@ const theme = createTheme({
           fontSize: "1.25rem",
           fontFamily: "Poppins, sans-serif",
           boxShadow: "0px 5px 4px rgba(0, 0, 0, 0.36)",
-          height: "100%",
-          width: "100%",
           padding: 0,
           backgroundColor: "#151515 !important",
           color: "#F48037",
