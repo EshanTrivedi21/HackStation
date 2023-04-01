@@ -21,25 +21,33 @@ const Countdown = ({ start }) => {
 
     useEffect(() => {
         let intervalId;
+        let storedEndTime = localStorage.getItem("endTime");
 
-        if (start) {
+        if (start && storedEndTime) {
+            const endTime = new Date(storedEndTime);
+            intervalId = startTimer(endTime);
+        } else if (start) {
             const endTime = new Date();
             endTime.setHours(endTime.getHours() + 24);
-
-            intervalId = setInterval(() => {
-                const diff = endTime - new Date();
-                const hours = Math.floor(diff / (1000 * 60 * 60));
-                const minutes = Math.floor((diff / (1000 * 60)) % 60);
-                const seconds = Math.floor((diff / 1000) % 60);
-
-                setRemainingTime({ hours, minutes, seconds });
-            }, 1000);
+            localStorage.setItem("endTime", endTime);
+            intervalId = startTimer(endTime);
         } else {
             setRemainingTime({ hours: 24, minutes: 0, seconds: 0 });
         }
 
         return () => clearInterval(intervalId);
     }, [start]);
+
+    const startTimer = (endTime) => {
+        return setInterval(() => {
+            const diff = endTime - new Date();
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            setRemainingTime({ hours, minutes, seconds });
+        }, 1000);
+    };
 
     const formatTime = (time) => {
         return `${time.toString().padStart(2, "0")}`;

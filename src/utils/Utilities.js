@@ -70,7 +70,7 @@ const ContainerID = ({ children }) => {
   return (
     <CenteredGrid className="relative">
       <div
-        className="rounded-lg w-[85vw] h-[124px] p-[0.75px]"
+        className="rounded-lg w-[84vw] h-[124px] p-[0.5px]"
         style={{
           background: "linear-gradient(166.2deg, #FF7A00 -6.36%, #AC2900 124.84%)"
         }}
