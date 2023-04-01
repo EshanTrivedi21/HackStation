@@ -2,6 +2,20 @@ import { useState, useEffect } from "react";
 import { Box, CenteredDiv } from "../utils/Utilities";
 import { Typography } from "@mui/material";
 
+const Span = ({ children }) => {
+    return (
+        <span
+            style={{
+                fontSize: "1.5rem",
+                fontWeight: "300",
+                color: "#D7D4D3",
+            }}
+        >
+            {children}
+        </span>
+    );
+};
+
 const Countdown = ({ start }) => {
     const [remainingTime, setRemainingTime] = useState(null);
 
@@ -42,48 +56,35 @@ const Countdown = ({ start }) => {
                         <div className="flex gap-2">
                             <Typography variant="timer">
                                 {formatTime(remainingTime.hours)}
-                                <span
-                                    style={{
-                                        fontSize: "1.5rem",
-                                        fontWeight: "300",
-                                        color: "#D7D4D3",
-                                    }}
-                                >
-                                    H
-                                </span>
+                                <Span>H</Span>
                             </Typography>
                             <Typography variant="timer"> : </Typography>
                             <Typography variant="timer">
                                 {formatTime(remainingTime.minutes)}
-                                <span
-                                    style={{
-                                        fontSize: "1.5rem",
-                                        fontWeight: "300",
-                                        color: "#D7D4D3",
-                                    }}
-                                >
-                                    M
-                                </span>
+                                <Span>M</Span>
                             </Typography>
                             <Typography variant="timer"> : </Typography>
                             <Typography variant="timer">
                                 {formatTime(remainingTime.seconds)}
-                                <span
-                                    style={{
-                                        fontSize: "1.5rem",
-                                        fontWeight: "300",
-                                        color: "#D7D4D3",
-                                    }}
-                                >
-                                    S
-                                </span>
+                                <Span>S</Span>
                             </Typography>
                         </div>
                     ) : (
-                        <div className="flex">
-                            <div>Hours: 24</div>
-                            <div>Minutes: 00</div>
-                            <div>Seconds: 00</div>
+                        <div className="flex gap-2">
+                            <Typography variant="timer">
+                                {formatTime(remainingTime.hours)}
+                                <Span>H</Span>
+                            </Typography>
+                            <Typography variant="timer"> : </Typography>
+                            <Typography variant="timer">
+                                {formatTime(remainingTime.minutes)}
+                                <Span>M</Span>
+                            </Typography>
+                            <Typography variant="timer"> : </Typography>
+                            <Typography variant="timer">
+                                {formatTime(remainingTime.seconds)}
+                                <Span>S</Span>
+                            </Typography>
                         </div>
                     )}
                 </div>
