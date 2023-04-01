@@ -1,5 +1,5 @@
 import { Theme } from "./Theme";
-import { Grid, Button } from "@mui/material";
+import { Grid, Button, Typography } from "@mui/material";
 
 const CenteredGrid = ({ className, style, children }) => {
   return (
@@ -36,8 +36,21 @@ const PrimaryButton = ({ onClick, children }) => {
   );
 };
 
+const Modal = ({ title, subtitle }) => {
+  return (
+    <CenteredGrid style={{minHeight: "100vh"}}>
+      <div className="flex flex-col rounded-lg p-10 gap-2" style={{background: "radial-gradient(132.5% 132.5% at 48.94% 50%, #303030 0%, #202020 99.25%)"}}>
+        <Typography variant="modal_title">{title}</Typography>
+        <Typography variant="modal_subtitle">{subtitle}</Typography>
+      </div>
+    </CenteredGrid>
+  );
+};
+
+
 export {
   CenteredGrid,
   CenteredDiv,
   PrimaryButton,
+  Modal,
 };

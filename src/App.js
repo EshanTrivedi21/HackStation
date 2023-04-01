@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Login } from "./auth/exports";
 import AuthCheck from "./component/AuthCheck";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Modal } from "./utils/Utilities";
 
 function App() {
     const [isMobile, setIsMobile] = useState(false);
@@ -27,7 +28,7 @@ function App() {
             path: "/",
             element: (
                 <AuthCheck>
-                    <div>Home</div>,
+                    <Modal title="Hi" subtitle="Welcome to the jungle bitch"/>
                 </AuthCheck>
             ),
         },
@@ -39,9 +40,7 @@ function App() {
 
     if (!isMobile) {
         return (
-            <div className="mobile">
-                <h1>Not Mobile</h1>
-            </div>
+            <Modal title="Mobile App Required" subtitle="Please use a mobile device and install the app to continue."/>
         );
     }
 

@@ -20,13 +20,6 @@ const theme = createTheme({
     },
   },
   typography: {
-    h1: {
-      fontSize: "2.25rem",
-      fontWeight: "bold",
-      textShadow: "0px 5px 4px rgba(0, 0, 0, 0.36)",
-      fontFamily: "Poppins, sans-serif",
-      letterSpacing: "0.2rem",
-    },
     h2: {
       fontSize: "1.8rem",
       fontWeight: "bold",
@@ -43,6 +36,17 @@ const theme = createTheme({
       fontFamily: "Poppins, sans-serif",
       letterSpacing: "0.1rem",
       fontStyle: "italic",
+    },
+    modal_title: {
+      fontSize: "1.5rem",
+      fontWeight: "bold",
+      fontFamily: "Poppins, sans-serif",
+      color: "#efefef",
+    },
+    modal_subtitle: {
+      fontSize: "1rem",
+      fontFamily: "Poppins, sans-serif",
+      color: "#cfcfcf",
     },
   },
   components: {
