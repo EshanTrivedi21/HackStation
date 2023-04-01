@@ -72,18 +72,15 @@ const Countdown = ({ start }) => {
                     ) : (
                         <div className="flex gap-2">
                             <Typography variant="timer">
-                                {formatTime(remainingTime.hours)}
-                                <Span>H</Span>
+                                24 <Span>H</Span>
                             </Typography>
                             <Typography variant="timer"> : </Typography>
                             <Typography variant="timer">
-                                {formatTime(remainingTime.minutes)}
-                                <Span>M</Span>
+                                00 <Span>M</Span>
                             </Typography>
                             <Typography variant="timer"> : </Typography>
                             <Typography variant="timer">
-                                {formatTime(remainingTime.seconds)}
-                                <Span>S</Span>
+                                00 <Span>S</Span>
                             </Typography>
                         </div>
                     )}
