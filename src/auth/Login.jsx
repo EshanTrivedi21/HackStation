@@ -1,19 +1,12 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { Typography, TextField } from "@mui/material";
 import {
   CenteredGrid,
   CenteredDiv,
-  BackIcon,
-  Container,
   PrimaryButton,
 } from "../utils/Utilities";
 
 const Login = () => {
-  const navigate = useNavigate();
-  const handleHome = () => {
-    navigate("/");
-  };
 
   let [username, setUsername] = React.useState("");
   let [password, setPassword] = React.useState("");
@@ -24,8 +17,7 @@ const Login = () => {
   let [loading, setLoading] = React.useState(false);
 
   return (
-    <CenteredGrid className="bg-[linear-gradient(180deg,#202020_0%,#101010_100%)] gap-10">
-      {/* <BackIcon onclick={handleHome} /> */}
+    <CenteredGrid className="gap-20" style={{minHeight: "85vh"}}>
       <CenteredDiv className="gap-2">
         <Typography variant="h2" color="primary.contrastText">
           Welcome
@@ -35,12 +27,12 @@ const Login = () => {
         </Typography>
       </CenteredDiv>
       <CenteredDiv className="gap-10">
-        <TextField id="outlined-basic" label="Username" variant="outlined" onChange={e=>setUsername(e.target.value)}/>
-        <TextField id="outlined-basic" label="Password" variant="outlined" onChange={e=>setPassword(e.target.value)}/>
+        <TextField label="Username" variant="outlined" onChange={e=>setUsername(e.target.value)}/>
+        <TextField label="Password" variant="outlined" onChange={e=>setPassword(e.target.value)} type="password"/>
       </CenteredDiv>
-      <CenteredDiv className="mb-16">
+      <CenteredDiv>
         <PrimaryButton variant="contained">Login</PrimaryButton>
-      </CenteredDiv>
+      </CenteredDiv>  
     </CenteredGrid>
   );
 };

@@ -8,19 +8,9 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #101010;
   height: 100vh;
   overflow: hidden;
-}
-
-.home-bg {
-  height: 100vh;
-  width: 100%;
-  background-image: url("/public/assets/home-bg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-image: linear-gradient(180deg, #202020 0%, #101010 100%);  
 }
 
 @tailwind base;

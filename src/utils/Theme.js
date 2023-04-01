@@ -28,10 +28,9 @@ const theme = createTheme({
       letterSpacing: "0.2rem",
     },
     h2: {
-      fontSize: "1.75rem",
+      fontSize: "1.8rem",
       fontWeight: "bold",
       fontFamily: "Poppins, sans-serif",
-      letterSpacing: "0.1rem",
     },
     h3: {
       fontSize: "1.1rem",
@@ -50,23 +49,21 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
+          height: "100%",
           width: "100%",
           borderRadius: "10px",
           textTransform: "none",
-          fontWeight: "bold",
           letterSpacing: "0.1rem",
           fontSize: "1.25rem",
           fontFamily: "Poppins, sans-serif",
-          color: "#efefef",
           boxShadow: "0px 5px 4px rgba(0, 0, 0, 0.36)",
           height: "100%",
           width: "100%",
           padding: 0,
-          backgroundImage: "linear-gradient(180deg, #202020 0%, #101010 100%)",
-          color: "#E38124",
+          backgroundColor: "#151515 !important",
+          color: "#F48037",
           "&:hover": {
-            backgroundImage:
-              "linear-gradient(91.47deg, #404040 0.58%, #101010 95.65%);",
+            backgroundColor: "#151515 !important",
           },
         },
       },
@@ -74,30 +71,27 @@ const theme = createTheme({
     MuiTextField: {
       styleOverrides: {
         root: {
-          width: "80%",
+          width: "75%",
           "& .MuiInputBase-input": {
-            color: "#E38124"
+            color: "#cfcfcf"
           },
           "& .MuiOutlinedInput-root": {
             "& fieldset": {
               borderRadius: "10px",
-              borderColor: "#353535",
+              borderColor: "#505050",
             },
             "&:hover fieldset": {
-              borderColor: "#E381248A",
+              borderColor: "#F48037",
             },
             "&.Mui-focused fieldset": {
-              borderColor: "#E38124",
+              borderColor: "#F48037",
             },
           },
           "& .MuiFormLabel-root": {
-            color: "#353535",
+            color: "#505050",
           },
           "& .MuiFormLabel-root.Mui-focused": {
-            color: "#E38124",
-          },
-          "& .MuiFormHelperText-root": {
-            color: "#E38124",
+            color: "#F48037",
           },
         },
       },
