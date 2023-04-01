@@ -66,11 +66,32 @@ const Icon = ({ src, alt, size }) => {
   );
 };
 
+const ContainerID = ({ children }) => {
+  return (
+    <CenteredGrid className="relative">
+      <div
+        className="rounded-lg w-[85vw] h-[124px] p-[0.75px]"
+        style={{
+          background: "linear-gradient(166.2deg, #FF7A00 -6.36%, #AC2900 124.84%)"
+        }}
+      >
+        <div
+          className="flex rounded-lg w-full h-full"
+          style={{background: "radial-gradient(104.64% 443.14% at 0% 3.59%, #303030 0%, #171717 26.18%)"}}>
+          {children}
+        </div>
+      </div>
+    </CenteredGrid>
+  );
+};
+
+
 export {
   CenteredGrid,
   CenteredDiv,
   PrimaryButton,
   Modal,
   Icon,
-  Box
+  Box,
+  ContainerID
 };

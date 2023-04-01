@@ -55,6 +55,19 @@ const theme = createTheme({
       fontFamily: "Poppins, sans-serif",
       color: "#cfcfcf",
     },
+    card_title: {
+      fontSize: "0.88rem",
+      fontWeight: "500",
+      fontFamily: "Poppins, sans-serif",
+      color: "#efefef",
+      letterSpacing: "0.1rem",
+    },
+    card_sub: {
+      fontSize: "0.65rem",
+      fontWeight: "300",
+      fontFamily: "Poppins, sans-serif",
+      color: "#cfcfcf",
+    },
     timer: {
       fontSize: "35px",
       lineHeight: "1.4",
@@ -70,6 +83,7 @@ const theme = createTheme({
       color: "#d5d5d5",
     },
   },
+
   components: {
     MuiButton: {
       styleOverrides: {
