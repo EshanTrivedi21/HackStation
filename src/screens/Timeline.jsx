@@ -4,13 +4,13 @@ import { Typography } from "@mui/material";
 import { Theme } from "../utils/Theme";
 import data from "../data/timeline.json";
 
-const Timeline = () => {
+const Timeline = () => {  
     return (
         <>
             <Theme>
                 <div className="flex flex-col gap-10 py-10">
                     <FlexDiv className="!justify-start ml-6 gap-6">
-                        <BackIcon />
+                        <BackIcon to=""/>
                         <Typography variant="modal_title">Timeline</Typography>
                     </FlexDiv>
                     <div className="flex flex-col gap-5 justify-center items-center">
@@ -22,6 +22,7 @@ const Timeline = () => {
                                 subtitle={item.subtitle}
                                 icon={item.icon}
                                 importance={item.importance}
+                                button={false}
                             />
                         ))}
                     </div>

@@ -113,7 +113,7 @@ const ContainerID = ({ children }) => {
     );
 };
 
-const Card = ({ size, icon, title, subtitle, importance }) => {
+const Card = ({ size, icon, title, subtitle, importance, button }) => {
   return (
       <>  
           {
@@ -125,7 +125,7 @@ const Card = ({ size, icon, title, subtitle, importance }) => {
                             "linear-gradient(166.2deg, #FF7A00 -6.36%, #AC2900 124.84%)",
                     }}
                 >
-                    <Box className="!w-[84.5vw] h-20 pl-6" component={ButtonBase}>
+                    <Box className="!w-[84.5vw] h-20 pl-6" component={button ? ButtonBase : "div"}>
                         <FlexDiv className="!justify-start gap-5">
                             <Icon src={icon} size={size} />
                             <div className='flex flex-col justify-center items-start'>
@@ -136,22 +136,24 @@ const Card = ({ size, icon, title, subtitle, importance }) => {
                     </Box>
                 </div>
             ) : (
-                <Box className="h-20 pl-6" component={ButtonBase}>
-                    <FlexDiv className="!justify-start gap-5">
-                        <Icon src={icon} size={size} />
-                        <div className='flex flex-col justify-center items-start'>
-                            <Typography variant="card_title">{title}</Typography>
-                            <Typography variant="card_subtitle">{subtitle}</Typography>
-                        </div>
-                    </FlexDiv>
-                </Box>
+                <div>
+                    <Box className="h-20 pl-6" component={button ? ButtonBase : "div"}>
+                        <FlexDiv className="!justify-start gap-5">
+                            <Icon src={icon} size={size} />
+                            <div className='flex flex-col justify-center items-start'>
+                                <Typography variant="card_title">{title}</Typography>
+                                <Typography variant="card_subtitle">{subtitle}</Typography>
+                            </div>
+                        </FlexDiv>
+                    </Box>
+                </div>
             )
           }
       </>
   );
 };
 
-const BackIcon = () => {
+const BackIcon = ({ to }) => {
     return (
         <img
             src={"/icons/back.svg"}

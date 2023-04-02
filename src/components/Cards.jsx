@@ -13,6 +13,7 @@ const Cards = () => {
                         icon={item.icon}
                         title={item.title}
                         subtitle={item.subtitle}
+                        button={true}
                     />
                 ))}
             </div>
