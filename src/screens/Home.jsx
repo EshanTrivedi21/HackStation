@@ -1,13 +1,14 @@
 import React from "react";
 import { CenteredGrid } from "../utils/Utilities";
-import { Greetings, Countdown, Identity } from "../components/exports";
+import { Greetings, Countdown, Identity, Cards } from "../components/exports";
 
 const Home = () => {
     return (
-        <CenteredGrid className="gap-10 pt-14">
+        <CenteredGrid className="gap-6 pt-10">
             <Greetings />
-            <Countdown start={true} />
+            <Countdown start={false} />
             <Identity name="Eshan Trivedi" team="Inspect Elements"/>
+            <Cards />
         </CenteredGrid>
     );
 };

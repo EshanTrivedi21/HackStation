@@ -20,6 +20,11 @@ const CenteredGrid = ({ className, style, children }) => {
   );
 };
 
+const FlexDiv = ({ className, children }) => {
+  const classes = "flex justify-center items-center w-screen " + className;
+  return <div className={classes}>{children}</div>;
+};
+
 const CenteredDiv = ({ className, children }) => {
   const classes =
     "flex flex-col justify-center items-center w-screen " + className;
@@ -47,10 +52,11 @@ const Modal = ({ title, subtitle }) => {
   );
 };
 
-const Box = ({ children }) => {
+const Box = ({ children, className }) => {
+  const classes = "flex rounded-lg w-[85vw] " + className;
   return (
     <CenteredGrid>
-      <div className="flex rounded-lg w-[85vw]" style={{background: "radial-gradient(132.5% 132.5% at 48.94% 50%, #303030 0%, #202020 99.25%)"}}>
+      <div className={classes} style={{background: "radial-gradient(132.5% 132.5% at 48.94% 50%, #303030 0%, #202020 99.25%)"}}>
         {children}
       </div>
     </CenteredGrid>
@@ -88,6 +94,7 @@ const ContainerID = ({ children }) => {
 
 export {
   CenteredGrid,
+  FlexDiv,
   CenteredDiv,
   PrimaryButton,
   Modal,

@@ -55,14 +55,14 @@ const theme = createTheme({
       fontFamily: "Poppins, sans-serif",
       color: "#cfcfcf",
     },
-    card_title: {
+    id_title: {
       fontSize: "0.88rem",
       fontWeight: "500",
       fontFamily: "Poppins, sans-serif",
       color: "#efefef",
       letterSpacing: "0.1rem",
     },
-    card_sub: {
+    id_sub: {
       fontSize: "0.65rem",
       fontWeight: "300",
       fontFamily: "Poppins, sans-serif",
@@ -81,6 +81,18 @@ const theme = createTheme({
       fontWeight: "300",
       fontFamily: "Poppins, sans-serif",
       color: "#d5d5d5",
+    },
+    card_title: {
+      fontSize: "20px",
+      fontWeight: "500",
+      fontFamily: "Poppins, sans-serif",
+      color: "#efefef",
+    },
+    card_subtitle: {
+      fontSize: "11px",
+      fontWeight: "300",
+      fontFamily: "Poppins, sans-serif",
+      color: "#cfcfcf",
     },
   },
 
