@@ -4,10 +4,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home } from "./screens/exports";
 import { Login } from "./auth/exports";
 import { Modal } from "./utils/Utilities";
-import { AuthCheck } from "./components/exports";
+import { AuthCheck, Loader } from "./components/exports";
 
 function App() {
-    const [isMobile, setIsMobile] = useState(false);
+    const [isMobile, setIsMobile] = useState(null);
 
     useEffect(() => {
         const handleResize = () => {
@@ -39,7 +39,9 @@ function App() {
         },
     ]);
 
-    if (!isMobile) {
+    if (isMobile === null) {
+        <Loader />;
+    } else if (!isMobile) {
         return (
             <Modal
                 title="Mobile App Required"

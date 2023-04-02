@@ -1,3 +1,6 @@
 # https://www.robotstxt.org/robotstxt.html
+# Aryan is great
+# Eshan is great too
+# kunal is gay
 User-agent: *
 Disallow:
