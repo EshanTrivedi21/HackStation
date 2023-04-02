@@ -1,36 +1,22 @@
-import React from 'react';
-import { Box, FlexDiv, Icon } from "../utils/Utilities";
-import { ButtonBase, Typography } from '@mui/material';
+import React from "react";
+import { Card } from "../utils/Utilities";
 import data from "../data/cards.json";
 
-const Card = ({ icon, title, subtitle }) => {
+const Cards = () => {
     return (
         <>
-            <Box className="h-20 pl-6" component={ButtonBase}>
-                <FlexDiv className="!justify-start gap-6">
-                    <Icon src={icon} size="35" />
-                    <div className='flex flex-col justify-center items-start'>
-                        <Typography variant="card_title">{title}</Typography>
-                        <Typography variant="card_subtitle">{subtitle}</Typography>
-                    </div>
-                </FlexDiv>
-            </Box>
+            <div className="flex flex-col gap-5">
+                {data.map((item, index) => (
+                    <Card
+                        key={index}
+                        icon={item.icon}
+                        title={item.title}
+                        subtitle={item.subtitle}
+                    />
+                ))}
+            </div>
         </>
-    )
-}
+    );
+};
 
-const Cards = () => {
-  return (
-    <>
-        <div className='flex flex-col gap-4'>
-            {
-                data.map((item, index) => (
-                    <Card key={index} icon={item.icon} title={item.title} subtitle={item.subtitle} />
-                ))  
-            }
-        </div>
-    </>
-  )
-}
-
-export default Cards
+export default Cards;

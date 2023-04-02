@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home } from "./screens/exports";
+import { Home, Timeline } from "./screens/exports";
 import { Login } from "./auth/exports";
 import { Modal } from "./utils/Utilities";
 import { AuthCheck, Loader } from "./components/exports";
@@ -36,6 +36,10 @@ function App() {
         {
             path: "/login",
             element: <Login />,
+        },
+        {
+            path: "/timeline",
+            element: <Timeline />,
         },
     ]);
 

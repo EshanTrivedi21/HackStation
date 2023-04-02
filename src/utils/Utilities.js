@@ -1,5 +1,5 @@
 import { Theme } from "./Theme";
-import { Grid, Button, Typography } from "@mui/material";
+import { Grid, Button, Typography, ButtonBase } from "@mui/material";
 
 const CenteredGrid = ({ className, style, children, component }) => {
     return (
@@ -113,6 +113,22 @@ const ContainerID = ({ children }) => {
     );
 };
 
+const Card = ({ icon, title, subtitle }) => {
+  return (
+      <>  
+          <Box className="h-20 pl-6" component={ButtonBase}>
+              <FlexDiv className="!justify-start gap-6">
+                  <Icon src={icon} size="35" />
+                  <div className='flex flex-col justify-center items-start'>
+                      <Typography variant="card_title">{title}</Typography>
+                      <Typography variant="card_subtitle">{subtitle}</Typography>
+                  </div>
+              </FlexDiv>
+          </Box>
+      </>
+  );
+};
+
 export {
     CenteredGrid,
     FlexDiv,
@@ -122,4 +138,5 @@ export {
     Icon,
     Box,
     ContainerID,
+    Card,
 };
