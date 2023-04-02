@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home, Timeline, Food } from "./screens/exports";
+import { Home, Timeline, Food, QR } from "./screens/exports";
 import { Login } from "./auth/exports";
 import { Modal } from "./utils/Utilities";
 import { AuthCheck, Loader } from "./components/exports";
@@ -45,6 +45,10 @@ function App() {
             path: "/food",
             element: <Food />,
         },
+        {
+            path: "qr",
+            element: <QR />,
+        }
     ]);
 
     if (isMobile === null) {
