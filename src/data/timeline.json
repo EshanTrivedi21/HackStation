@@ -1,0 +1,116 @@
+[
+    {
+        "title" : "8:00 Am - 9:00 Am",
+        "subtitle" : "Problem Statement Release",
+        "icon" : "/icons/15th.svg",
+        "importance" : false
+    },
+    {
+        "title" : "9:00 Am - 9:30 Am",
+        "subtitle" : "Inauguration Ceremony",
+        "icon" : "/icons/15th.svg",
+        "importance" : false
+    },
+    {
+        "title" : "9:30 Am - 9:45 Am",
+        "subtitle" : "Domain Selection Form Submission",
+        "icon" : "/icons/15th.svg",
+        "importance" : true
+    },
+    {
+        "title" : "10:00 Am - 11:15 Am",
+        "subtitle" : "Tech Talk by StoneX-INTL FC Stone",
+        "icon" : "/icons/15th.svg",
+        "importance" : false
+    },
+    {
+        "title" : "11:15 Am - 11:30 Am",
+        "subtitle" : "FCFS Form Result Declaration",
+        "icon" : "/icons/15th.svg",
+        "importance" : false
+    },
+    {
+        "title" : "11:15 AM",
+        "subtitle" : "Hacking Period Begins",
+        "icon" : "/icons/15th.svg",
+        "importance" : true
+    },
+    {
+        "title" : "1:00 PM - 2:00 PM",
+        "subtitle" : "Lunch time",
+        "icon" : "/icons/15th.svg",
+        "importance" : false
+    },
+    {
+        "title" : "5:00 PM - 6:00 PM",
+        "subtitle" : "Snack Time!",
+        "icon" : "/icons/15th.svg",
+        "importance" : false
+    },
+    {
+        "title" : "6:00 PM - 7:00 PM",
+        "subtitle" : "Memberships Round",
+        "icon" : "/icons/15th.svg",
+        "importance" : true
+    },
+    {
+        "title" : "9:00 PM - 10:00 PM",
+        "subtitle" : "Dinner Time!",
+        "icon" : "/icons/15th.svg",
+        "importance" : false
+    },
+    {
+        "title" : "1:00 AM - 2:00 AM",
+        "subtitle" : "Midnight Snacks!",
+        "icon" : "/icons/16th.svg",
+        "importance" : false
+    },
+    {
+        "title" : "7:30 AM - 8:30 AM",
+        "subtitle" : "Breakfast Time!",
+        "icon" : "/icons/16th.svg",
+        "importance" : false
+    },
+    {
+        "title" : "9:00 AM",
+        "subtitle" : "Coding time ends",
+        "icon" : "/icons/16th.svg",
+        "importance" : true
+    },
+    {
+        "title" : "9:00 AM - 11:30 AM",
+        "subtitle" : "Judging Round 1",
+        "icon" : "/icons/16th.svg",
+        "importance" : true
+    },
+    {
+        "title" : "11:30 AM",
+        "subtitle" : "Round 1 - Result Declaration & Elimination",
+        "icon" : "/icons/16th.svg",
+        "importance" : true
+    },
+    {
+        "title" : "12:30 PM - 1:30 PM",
+        "subtitle" : "Lunch Time!",
+        "icon" : "/icons/16th.svg",
+        "importance" : false
+    },
+    {
+        "title" : "2:00 PM - 5:00 PM",
+        "subtitle" : "Judging Round 2",
+        "icon" : "/icons/16th.svg",
+        "importance" : true
+    },
+    {
+        "title" : "5:00 PM - 6:00 PM",
+        "subtitle" : "Snacks Time!",
+        "icon" : "/icons/16th.svg",
+        "importance" : false
+    },
+    {
+        "title" : "6:00 PM",
+        "subtitle" : "WINNER ANNOUNCEMENT!",
+        "icon" : "/icons/16th.svg",
+        "importance" : true
+    }
+]

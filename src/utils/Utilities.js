@@ -113,21 +113,56 @@ const ContainerID = ({ children }) => {
     );
 };
 
-const Card = ({ icon, title, subtitle }) => {
+const Card = ({ size, icon, title, subtitle, importance }) => {
   return (
       <>  
-          <Box className="h-20 pl-6" component={ButtonBase}>
-              <FlexDiv className="!justify-start gap-6">
-                  <Icon src={icon} size="35" />
-                  <div className='flex flex-col justify-center items-start'>
-                      <Typography variant="card_title">{title}</Typography>
-                      <Typography variant="card_subtitle">{subtitle}</Typography>
-                  </div>
-              </FlexDiv>
-          </Box>
+          {
+            importance ? (
+                <div
+                    className="rounded-lg w-[85vw] h-26 p-[0.75px]"
+                    style={{
+                        background:
+                            "linear-gradient(166.2deg, #FF7A00 -6.36%, #AC2900 124.84%)",
+                    }}
+                >
+                    <Box className="!w-[84.5vw] h-20 pl-6" component={ButtonBase}>
+                        <FlexDiv className="!justify-start gap-5">
+                            <Icon src={icon} size={size} />
+                            <div className='flex flex-col justify-center items-start'>
+                                <Typography variant="card_title">{title}</Typography>
+                                <Typography variant="card_subtitle">{subtitle}</Typography>
+                            </div>
+                        </FlexDiv>
+                    </Box>
+                </div>
+            ) : (
+                <Box className="h-20 pl-6" component={ButtonBase}>
+                    <FlexDiv className="!justify-start gap-5">
+                        <Icon src={icon} size={size} />
+                        <div className='flex flex-col justify-center items-start'>
+                            <Typography variant="card_title">{title}</Typography>
+                            <Typography variant="card_subtitle">{subtitle}</Typography>
+                        </div>
+                    </FlexDiv>
+                </Box>
+            )
+          }
       </>
   );
 };
+
+const BackIcon = () => {
+    return (
+        <img
+            src={"/icons/back.svg"}
+            alt={"back"}
+            style={{
+                width: "30px",
+                height: "30px",
+            }}
+        />
+    );
+};  
 
 export {
     CenteredGrid,
@@ -139,4 +174,5 @@ export {
     Box,
     ContainerID,
     Card,
+    BackIcon,
 };

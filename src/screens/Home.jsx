@@ -26,7 +26,7 @@ const Home = () => {
     return (
         <>
             <Loader open={loading} />
-            <CenteredGrid className="gap-6 pt-10">
+            <CenteredGrid className="gap-6 py-10">
                 <Greetings />
                 <Countdown start={false} />
                 <Identity name={user} team={team} />

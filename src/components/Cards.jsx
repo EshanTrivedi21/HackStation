@@ -9,6 +9,7 @@ const Cards = () => {
                 {data.map((item, index) => (
                     <Card
                         key={index}
+                        size="30"
                         icon={item.icon}
                         title={item.title}
                         subtitle={item.subtitle}

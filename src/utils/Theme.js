@@ -33,7 +33,7 @@ const theme = createTheme({
     },
     modal_title: {
       fontSize: "1.5rem",
-      fontWeight: "bold",
+      fontWeight: "500",
       fontFamily: "Poppins, sans-serif",
       color: "#efefef",
     },
