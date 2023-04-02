@@ -1,12 +1,12 @@
 import React from 'react';
 import { Box, FlexDiv, Icon } from "../utils/Utilities";
-import { Typography } from '@mui/material';
+import { ButtonBase, Typography } from '@mui/material';
 import data from "../data/cards.json";
 
 const Card = ({ icon, title, subtitle }) => {
     return (
         <>
-            <Box className="h-20 pl-6">
+            <Box className="h-20 pl-6" component={ButtonBase}>
                 <FlexDiv className="!justify-start gap-6">
                     <Icon src={icon} size="35" />
                     <div className='flex flex-col justify-center items-start'>

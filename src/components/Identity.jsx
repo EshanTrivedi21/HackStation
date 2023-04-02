@@ -16,7 +16,7 @@ const Identity = ({ name, team }) => {
                 <div className="flex flex-col items-start justify-center gap-4">
                     <div className="flex flex-col">
                         <Typography variant="id_sub">Name :</Typography>
-                        <Typography variant="id_title">{name}</Typography>
+                        <Typography variant="id_title" className="capitalize">{name}</Typography>
                     </div>
                     <div className="flex flex-col">
                         <Typography variant="id_sub">Team :</Typography>
