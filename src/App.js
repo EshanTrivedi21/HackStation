@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home, Timeline } from "./screens/exports";
+import { Home, Timeline, Food } from "./screens/exports";
 import { Login } from "./auth/exports";
 import { Modal } from "./utils/Utilities";
 import { AuthCheck, Loader } from "./components/exports";
@@ -40,6 +40,10 @@ function App() {
         {
             path: "/timeline",
             element: <Timeline />,
+        },
+        {
+            path: "/food",
+            element: <Food />,
         },
     ]);
 
