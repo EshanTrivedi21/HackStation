@@ -1,29 +1,7 @@
 import React from 'react';
 import { Box, FlexDiv, Icon } from "../utils/Utilities";
 import { Typography } from '@mui/material';
-
-const data = [
-    {
-        icon: "/icons/check-in.svg",
-        title: "Check In",
-        subtitle: "Register to start exploring this new world!"
-    },
-    {
-        icon: "/icons/timeline.svg",
-        title: "Timeline",
-        subtitle: "Know how you will spend your day!"
-    },
-    {
-        icon: "/icons/food.svg",
-        title: "Food",
-        subtitle: "Refuel your brainy engines!"
-    },
-    {
-        icon: "/icons/get-help.svg",
-        title: "Get Help",
-        subtitle: "Feeling Stuck? Call the agents!"
-    },
-]
+import data from "../data/cards.json";
 
 const Card = ({ icon, title, subtitle }) => {
     return (
