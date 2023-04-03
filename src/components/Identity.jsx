@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { CenteredDiv, ContainerID } from "../utils/Utilities";
+import { ContainerID } from "../utils/Utilities";
 import { Typography } from "@mui/material";
 
 const Identity = memo(({ name, team }) => {

@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { FlexDiv, BackIcon, Card } from "../utils/Utilities";
+import { FlexDiv, BackIcon } from "../utils/Utilities";
 import { Typography } from "@mui/material";
 import { Theme } from "../utils/Theme";
 
