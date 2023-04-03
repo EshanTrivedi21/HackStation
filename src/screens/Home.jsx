@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CenteredGrid } from "../utils/Utilities";
 import {
     Greetings,
@@ -14,15 +14,21 @@ const Home = () => {
     let [user, setUser] = useState();
     let [team, setTeam] = useState();
     let [loading, setLoading] = useState(true);
-    onAuthStateChanged(auth, (user) => {
+    useEffect(() => {
         setLoading(true);
-        if (user) {
-            let name = user.displayName.split("@");
-            setUser(name[0].replace("_", " "));
-            setTeam(name[1].replace("_", " "));
-        }
-        setLoading(false);
-    });
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                setLoading(false);
+                window.location.href = "/login";
+            }
+            if (user) {
+                let name = user.displayName.split("@");
+                setUser(name[0].replace("_", " "));
+                setTeam(name[1].replace("_", " "));
+                setLoading(false);
+            }
+        });
+    }, []);
     return (
         <>
             <Loader open={loading} />

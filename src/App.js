@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home, Timeline, Food, QR } from "./screens/exports";
 import { Login } from "./auth/exports";
 import { Modal } from "./utils/Utilities";
-import { AuthCheck, Loader } from "./components/exports";
+import { Loader } from "./components/exports";
 
 function App() {
     const [isMobile, setIsMobile] = useState(null);
@@ -27,11 +27,7 @@ function App() {
     const router = createBrowserRouter([
         {
             path: "/",
-            element: (
-                <AuthCheck>
-                    <Home />
-                </AuthCheck>
-            ),
+            element: <Home />,
         },
         {
             path: "/login",
@@ -48,7 +44,7 @@ function App() {
         {
             path: "qr",
             element: <QR />,
-        }
+        },
     ]);
 
     if (isMobile === null) {
@@ -61,7 +57,6 @@ function App() {
             />
         );
     }
-
     return (
         <>
             <RouterProvider router={router} />

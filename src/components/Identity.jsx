@@ -1,5 +1,5 @@
 import React from "react";
-import { CenteredDiv, ContainerID } from "../utils/Utilities";
+import { ContainerID } from "../utils/Utilities";
 import { Typography } from "@mui/material";
 
 const Identity = ({ name, team }) => {

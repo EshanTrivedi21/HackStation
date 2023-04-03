@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Typography, TextField } from "@mui/material";
 import { CenteredGrid, CenteredDiv, PrimaryButton } from "../utils/Utilities";
 import { auth } from "../utils/firebase";
@@ -7,20 +7,20 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     let navigate = useNavigate();
-    let [email, setEmail] = React.useState("");
-    let [password, setPassword] = React.useState("");
+    let [email, setEmail] = useState("");
+    let [password, setPassword] = useState("");
 
-    let [emailError, setEmailError] = React.useState(false);
-    let [passwordError, setPasswordError] = React.useState(false);
+    let [emailError, setEmailError] = useState(false);
+    let [passwordError, setPasswordError] = useState(false);
 
-    let [loading, setLoading] = React.useState(false);
+    let [loading, setLoading] = useState(false);
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                navigate("/");
+                window.location.href = "/";
             }
         });
-    }, [auth.currentUser, navigate]);
+    }, []);
     const submit = async () => {
         setLoading(true);
         signInWithEmailAndPassword(auth, email, password)
@@ -47,7 +47,10 @@ const Login = () => {
                 <Typography variant="login_title" color="primary.contrastText">
                     Welcome
                 </Typography>
-                <Typography variant="login_subtitle" color="primary.contrastText">
+                <Typography
+                    variant="login_subtitle"
+                    color="primary.contrastText"
+                >
                     Log into your account
                 </Typography>
             </CenteredDiv>

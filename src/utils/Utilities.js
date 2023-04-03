@@ -34,7 +34,7 @@ const CenteredDiv = ({ className, children }) => {
 
 const PrimaryButton = ({ onClick, children }) => {
     return (
-        <div className="rounded-[10px] p-[0.75px] bg-[linear-gradient(166.2deg,#FF7A00_-6.36%,#AC2900_124.84%)] w-[75%] h-14">
+        <div className="rounded-[10px] p-[1px] bg-[linear-gradient(166.2deg,#FF7A00_-6.36%,#AC2900_124.84%)] w-[75%] h-14">
             <Button variant="contained" onClick={onClick}>
                 {children}
             </Button>
@@ -62,7 +62,7 @@ const Modal = ({ title, subtitle }) => {
 const Box = ({ children, className, component }) => {
     const classes = "flex rounded-lg w-[85vw] " + className;
     return (
-        <CenteredGrid component={component}>
+        <CenteredGrid component={component} className={"h-full"}>
             <div
                 className={classes}
                 style={{
@@ -113,44 +113,36 @@ const ContainerID = ({ children }) => {
     );
 };
 
-const Card = ({ size, icon, title, subtitle, importance, button }) => {
-  return (
-      <>  
-          {
-            importance ? (
-                <div
-                    className="rounded-lg w-[85vw] h-26 p-[0.75px]"
-                    style={{
-                        background:
-                            "linear-gradient(166.2deg, #FF7A00 -6.36%, #AC2900 124.84%)",
-                    }}
+const Card = ({ size, icon, title, subtitle, importance, button, onClick }) => {
+    return (
+        <>
+            <div
+                className={`rounded-lg w-[85vw] h-20 ${
+                    importance
+                        ? " p-[0.75px] bg-[linear-gradient(166.2deg,#FF7A00_-6.36%,#AC2900_124.84%)]"
+                        : ""
+                }`}
+                onClick={onClick}
+            >
+                <Box
+                    className={`flex rounded-lg w-full h-full pl-6`}
+                    component={button ? ButtonBase : "div"}
                 >
-                    <Box className="!w-[84.5vw] h-20 pl-6" component={button ? ButtonBase : "div"}>
-                        <FlexDiv className="!justify-start gap-5">
-                            <Icon src={icon} size={size} />
-                            <div className='flex flex-col justify-center items-start'>
-                                <Typography variant="card_title">{title}</Typography>
-                                <Typography variant="card_subtitle">{subtitle}</Typography>
-                            </div>
-                        </FlexDiv>
-                    </Box>
-                </div>
-            ) : (
-                <div>
-                    <Box className="h-20 pl-6" component={button ? ButtonBase : "div"}>
-                        <FlexDiv className="!justify-start gap-5">
-                            <Icon src={icon} size={size} />
-                            <div className='flex flex-col justify-center items-start'>
-                                <Typography variant="card_title">{title}</Typography>
-                                <Typography variant="card_subtitle">{subtitle}</Typography>
-                            </div>
-                        </FlexDiv>
-                    </Box>
-                </div>
-            )
-          }
-      </>
-  );
+                    <FlexDiv className="!justify-start gap-5">
+                        <Icon src={icon} size={size} />
+                        <div className="flex flex-col justify-center items-start">
+                            <Typography variant="card_title">
+                                {title}
+                            </Typography>
+                            <Typography variant="card_subtitle">
+                                {subtitle}
+                            </Typography>
+                        </div>
+                    </FlexDiv>
+                </Box>
+            </div>
+        </>
+    );
 };
 
 const BackIcon = ({ to }) => {
@@ -162,9 +154,12 @@ const BackIcon = ({ to }) => {
                 width: "30px",
                 height: "30px",
             }}
+            onClick={() => {
+                window.history.back();
+            }}
         />
     );
-};  
+};
 
 export {
     CenteredGrid,

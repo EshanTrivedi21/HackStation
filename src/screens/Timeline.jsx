@@ -10,7 +10,7 @@ const Timeline = () => {
             <Theme>
                 <div className="flex flex-col gap-10 py-10">
                     <FlexDiv className="!justify-start ml-6 gap-6">
-                        <BackIcon to=""/>
+                        <BackIcon to="/"/>
                         <Typography variant="modal_title">Timeline</Typography>
                     </FlexDiv>
                     <div className="flex flex-col gap-5 justify-center items-center">

@@ -1,5 +1,5 @@
 import React from "react";
-import { FlexDiv, BackIcon, Card } from "../utils/Utilities";
+import { FlexDiv, BackIcon } from "../utils/Utilities";
 import { Typography } from "@mui/material";
 import { Theme } from "../utils/Theme";
 
@@ -13,7 +13,7 @@ const QR = ({ title }) => {
                         <Typography variant="modal_title">QR Code</Typography>
                     </FlexDiv>
                     <div className="flex justify-center items-center">
-                        <img src="/assets/qr-test.svg" />
+                        <img src="/assets/qr-test.svg" alt="qr"/>
                     </div>
                     <div className="flex flex-col justify-center items-center">
                         <Typography variant="modal_title">
