@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Theme } from "./Theme";
 import { Grid, Button, Typography, ButtonBase } from "@mui/material";
 
@@ -76,18 +77,19 @@ const Box = ({ children, className, component }) => {
     );
 };
 
-const Icon = ({ src, alt, size }) => {
+const Icon = memo(({ src, alt, size }) => {
     return (
         <img
             src={src}
             alt={alt}
+            loading="lazy"
             style={{
                 width: size + "px",
                 height: size + "px",
             }}
         />
     );
-};
+});
 
 const ContainerID = ({ children }) => {
     return (
@@ -145,11 +147,12 @@ const Card = ({ size, icon, title, subtitle, importance, button, onClick }) => {
     );
 };
 
-const BackIcon = ({ to }) => {
+const BackIcon = memo(({ to }) => {
     return (
         <img
             src={"/icons/back.svg"}
             alt={"back"}
+            loading="lazy"
             style={{
                 width: "30px",
                 height: "30px",
@@ -159,7 +162,7 @@ const BackIcon = ({ to }) => {
             }}
         />
     );
-};
+})
 
 export {
     CenteredGrid,

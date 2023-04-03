@@ -1,14 +1,15 @@
-import React from "react";
-import { ContainerID } from "../utils/Utilities";
+import React, { memo } from "react";
+import { CenteredDiv, ContainerID } from "../utils/Utilities";
 import { Typography } from "@mui/material";
 
-const Identity = ({ name, team }) => {
+const Identity = memo(({ name, team }) => {
     return (
         <ContainerID>
             <div className="flex justify-start items-center w-full ">
                 <img
                     src="/assets/id_asset.svg"
                     alt="asset"
+                    loading="lazy"
                     style={{
                         transform: "translateY(-5px) translateX(-5px)",
                     }}
@@ -26,6 +27,6 @@ const Identity = ({ name, team }) => {
             </div>
         </ContainerID>
     );
-};
+});
 
 export default Identity;
