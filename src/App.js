@@ -42,6 +42,10 @@ function App() {
             element: <Food />,
         },
         {
+            path: "/check-in",
+            element: <QR />,
+        },
+        {
             path: "qr",
             element: <QR />,
         },

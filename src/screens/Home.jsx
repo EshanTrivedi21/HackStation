@@ -36,7 +36,7 @@ const Home = () => {
                 <Greetings />
                 <Countdown start={false} />
                 <Identity name={user} team={team} />
-                <Cards />
+                <Cards user={user}/>
             </CenteredGrid>
         </>
     );

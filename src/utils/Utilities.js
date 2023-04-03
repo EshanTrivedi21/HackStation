@@ -154,8 +154,8 @@ const BackIcon = memo(({ to }) => {
             alt={"back"}
             loading="lazy"
             style={{
-                width: "30px",
-                height: "30px",
+                width: "25px",
+                height: "25px",
             }}
             onClick={() => {
                 window.history.back();
