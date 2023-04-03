@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Theme } from "./Theme";
 import { Grid, Button, Typography, ButtonBase } from "@mui/material";
 
@@ -76,18 +77,19 @@ const Box = ({ children, className, component }) => {
     );
 };
 
-const Icon = ({ src, alt, size }) => {
+const Icon = memo(({ src, alt, size }) => {
     return (
         <img
             src={src}
             alt={alt}
+            loading="lazy"
             style={{
                 width: size + "px",
                 height: size + "px",
             }}
         />
     );
-};
+});
 
 const ContainerID = ({ children }) => {
     return (
@@ -114,10 +116,9 @@ const ContainerID = ({ children }) => {
 };
 
 const Card = ({ size, icon, title, subtitle, importance, button }) => {
-  return (
-      <>  
-          {
-            importance ? (
+    return (
+        <>
+            {importance ? (
                 <div
                     className="rounded-lg w-[85vw] h-26 p-[0.75px]"
                     style={{
@@ -125,46 +126,60 @@ const Card = ({ size, icon, title, subtitle, importance, button }) => {
                             "linear-gradient(166.2deg, #FF7A00 -6.36%, #AC2900 124.84%)",
                     }}
                 >
-                    <Box className="!w-[84.5vw] h-20 pl-6" component={button ? ButtonBase : "div"}>
+                    <Box
+                        className="!w-[84.5vw] h-20 pl-6"
+                        component={button ? ButtonBase : "div"}
+                    >
                         <FlexDiv className="!justify-start gap-5">
                             <Icon src={icon} size={size} />
-                            <div className='flex flex-col justify-center items-start'>
-                                <Typography variant="card_title">{title}</Typography>
-                                <Typography variant="card_subtitle">{subtitle}</Typography>
+                            <div className="flex flex-col justify-center items-start">
+                                <Typography variant="card_title">
+                                    {title}
+                                </Typography>
+                                <Typography variant="card_subtitle">
+                                    {subtitle}
+                                </Typography>
                             </div>
                         </FlexDiv>
                     </Box>
                 </div>
             ) : (
                 <div>
-                    <Box className="h-20 pl-6" component={button ? ButtonBase : "div"}>
+                    <Box
+                        className="h-20 pl-6"
+                        component={button ? ButtonBase : "div"}
+                    >
                         <FlexDiv className="!justify-start gap-5">
                             <Icon src={icon} size={size} />
-                            <div className='flex flex-col justify-center items-start'>
-                                <Typography variant="card_title">{title}</Typography>
-                                <Typography variant="card_subtitle">{subtitle}</Typography>
+                            <div className="flex flex-col justify-center items-start">
+                                <Typography variant="card_title">
+                                    {title}
+                                </Typography>
+                                <Typography variant="card_subtitle">
+                                    {subtitle}
+                                </Typography>
                             </div>
                         </FlexDiv>
                     </Box>
                 </div>
-            )
-          }
-      </>
-  );
+            )}
+        </>
+    );
 };
 
-const BackIcon = ({ to }) => {
+const BackIcon = memo(({ to }) => {
     return (
         <img
             src={"/icons/back.svg"}
             alt={"back"}
+            loading="lazy"
             style={{
                 width: "30px",
                 height: "30px",
             }}
         />
     );
-};  
+});  
 
 export {
     CenteredGrid,

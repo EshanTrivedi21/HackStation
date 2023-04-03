@@ -1,9 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 import { FlexDiv, BackIcon, Card } from "../utils/Utilities";
 import { Typography } from "@mui/material";
 import { Theme } from "../utils/Theme";
 
-const QR = ({ title }) => {  
+const QR = memo(({ title }) => {  
     return (
         <>
             <Theme>
@@ -13,7 +13,7 @@ const QR = ({ title }) => {
                         <Typography variant="modal_title">QR Code</Typography>
                     </FlexDiv>
                     <div className="flex justify-center items-center">
-                        <img src="/assets/qr-test.svg" />
+                        <img src="/assets/qr-test.svg" loading="lazy"/>
                     </div>
                     <div className="flex flex-col justify-center items-center">
                         <Typography variant="modal_title">
@@ -24,12 +24,12 @@ const QR = ({ title }) => {
                         </Typography>
                     </div>
                     <div className="flex justify-center items-center pt-28">
-                        <img src="/assets/sponsors.svg" alt="sponsors" className="w-[85vw]"/>
+                        <img src="/assets/sponsors.svg" alt="sponsors" className="w-[85vw]" loading="lazy"/>
                     </div>
                 </div>
             </Theme>
         </>
     );
-};
+});
 
 export default QR;
