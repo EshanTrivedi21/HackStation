@@ -3,7 +3,7 @@ import { Card } from "../utils/Utilities";
 import data from "../data/cards.json";
 import { useNavigate } from "react-router-dom";
 
-const Cards = () => {
+const Cards = ({admindata}) => {
     const navigate = useNavigate();
     return (
         <>
@@ -16,9 +16,12 @@ const Cards = () => {
                         title={item.title}
                         subtitle={item.subtitle}
                         button={true}
+                        adminName={item.adminName}
                         onClick={() => {
-                            navigate(item.link);
+                            if (item.link) navigate(item.link);
+                            else window.open(item.contact);
                         }}
+                        admindata={admindata}
                     />
                 ))}
             </div>

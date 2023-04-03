@@ -115,7 +115,17 @@ const ContainerID = ({ children }) => {
     );
 };
 
-const Card = ({ size, icon, title, subtitle, importance, button, onClick }) => {
+const Card = ({
+    size,
+    icon,
+    title,
+    subtitle,
+    importance,
+    button,
+    onClick,
+    adminName = null,
+    admindata = null,
+}) => {
     return (
         <>
             <div
@@ -124,7 +134,8 @@ const Card = ({ size, icon, title, subtitle, importance, button, onClick }) => {
                         ? " p-[0.75px] bg-[linear-gradient(166.2deg,#FF7A00_-6.36%,#AC2900_124.84%)]"
                         : ""
                 }`}
-                onClick={onClick}
+                onClick={adminName && admindata[adminName] ? onClick : null}
+                // aria-disabled={admindata[adminName] ? false : true}
             >
                 <Box
                     className={`flex rounded-lg w-full h-full pl-6`}
@@ -162,7 +173,7 @@ const BackIcon = memo(({ to }) => {
             }}
         />
     );
-})
+});
 
 export {
     CenteredGrid,

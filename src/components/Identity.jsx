@@ -7,9 +7,8 @@ const Identity = memo(({ name, team }) => {
         <ContainerID>
             <div className="flex justify-start items-center w-full ">
                 <img
-                    src="/assets/id_asset.svg"
+                    src="/assets/id_asset.png"
                     alt="asset"
-                    loading="lazy"
                     style={{
                         transform: "translateY(-5px) translateX(-5px)",
                     }}

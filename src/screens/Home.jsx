@@ -9,14 +9,18 @@ import {
 } from "../components/exports";
 import { auth } from "../utils/firebase";
 import { onAuthStateChanged } from "firebase/auth";
+import { db } from "../utils/firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 const Home = () => {
     let [user, setUser] = useState();
     let [team, setTeam] = useState();
+    let [data, setData] = useState();
     let [loading, setLoading] = useState(true);
+
     useEffect(() => {
         setLoading(true);
-        onAuthStateChanged(auth, (user) => {
+        onAuthStateChanged(auth, async (user) => {
             if (!user) {
                 setLoading(false);
                 window.location.href = "/login";
@@ -25,6 +29,9 @@ const Home = () => {
                 let name = user.displayName.split("@");
                 setUser(name[0].replace("_", " "));
                 setTeam(name[1].replace("_", " "));
+                let d = await getDocs(collection(db, "admin-controls"));
+                // console.log(d.docs[0].data());
+                setData(d.docs[0].data());
                 setLoading(false);
             }
         });
@@ -32,12 +39,14 @@ const Home = () => {
     return (
         <>
             <Loader open={loading} />
-            <CenteredGrid className="gap-6 py-10">
-                <Greetings />
-                <Countdown start={false} />
-                <Identity name={user} team={team} />
-                <Cards user={user}/>
-            </CenteredGrid>
+            {data && (
+                <CenteredGrid className="gap-6 py-10">
+                    <Greetings />
+                    <Countdown start={false} />
+                    <Identity name={user} team={team} />
+                    <Cards user={user} admindata={data}/>
+                </CenteredGrid>
+            )}
         </>
     );
 };

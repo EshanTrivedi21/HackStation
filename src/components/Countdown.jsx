@@ -7,7 +7,7 @@ const Span = ({ children }) => {
         <span
             style={{
                 fontSize: "1.5rem",
-                fontWeight: "300",
+                fontWeight: "700",
                 color: "#D7D4D3",
             }}
         >
@@ -62,17 +62,26 @@ const Countdown = ({ start }) => {
                     </Typography>
                     {remainingTime ? (
                         <div className="flex gap-2">
-                            <Typography variant="timer">
+                            <Typography
+                                variant="timer"
+                                className="gradient-text"
+                            >
                                 {formatTime(remainingTime.hours)}
                                 <Span>H</Span>
                             </Typography>
                             <Typography variant="timer"> : </Typography>
-                            <Typography variant="timer">
+                            <Typography
+                                variant="timer"
+                                className="gradient-text"
+                            >
                                 {formatTime(remainingTime.minutes)}
                                 <Span>M</Span>
                             </Typography>
                             <Typography variant="timer"> : </Typography>
-                            <Typography variant="timer">
+                            <Typography
+                                variant="timer"
+                                className="gradient-text"
+                            >
                                 {formatTime(remainingTime.seconds)}
                                 <Span>S</Span>
                             </Typography>
