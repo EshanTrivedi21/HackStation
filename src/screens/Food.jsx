@@ -3,8 +3,10 @@ import { FlexDiv, BackIcon, Card } from "../utils/Utilities";
 import { Typography } from "@mui/material";
 import { Theme } from "../utils/Theme";
 import data from "../data/food.json";
+import { useNavigate } from "react-router-dom";
 
-const Food = () => {  
+const Food = () => {
+    const navigate = useNavigate();
     return (
         <>
             <Theme>
@@ -17,11 +19,14 @@ const Food = () => {
                         {data.map((item, index) => (
                             <Card
                                 key={index}
-                                size="30"
+                                width="30" height="30"
                                 title={item.title}
                                 subtitle={item.subtitle}
                                 icon={item.icon}
                                 button={true}
+                                onClick = {() => {
+                                    navigate("/qr");
+                                }}
                             />
                         ))}
                     </div>

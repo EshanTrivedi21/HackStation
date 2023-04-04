@@ -17,7 +17,7 @@ const Timeline = () => {
                         {data.map((item, index) => (
                             <Card
                                 key={index}
-                                size="45"
+                                width="42" height="20"
                                 title={item.title}
                                 subtitle={item.subtitle}
                                 icon={item.icon}

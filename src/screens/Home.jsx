@@ -30,7 +30,6 @@ const Home = () => {
                 setUser(name[0].replace("_", " "));
                 setTeam(name[1].replace("_", " "));
                 let d = await getDocs(collection(db, "admin-controls"));
-                // console.log(d.docs[0].data());
                 setData(d.docs[0].data());
                 setLoading(false);
             }

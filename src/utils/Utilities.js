@@ -77,15 +77,15 @@ const Box = ({ children, className, component }) => {
     );
 };
 
-const Icon = memo(({ src, alt, size }) => {
+const Icon = memo(({ src, alt, width, height }) => {
     return (
         <img
             src={src}
             alt={alt}
             loading="lazy"
             style={{
-                width: size + "px",
-                height: size + "px",
+                width: width + "px",
+                height: height + "px",
             }}
         />
     );
@@ -116,7 +116,7 @@ const ContainerID = ({ children }) => {
 };
 
 const Card = ({
-    size,
+    width, height,
     icon,
     title,
     subtitle,
@@ -134,15 +134,15 @@ const Card = ({
                         ? " p-[0.75px] bg-[linear-gradient(166.2deg,#FF7A00_-6.36%,#AC2900_124.84%)]"
                         : ""
                 }`}
-                onClick={adminName && admindata[adminName] ? onClick : null}
-                // aria-disabled={admindata[adminName] ? false : true}
+                onClick = {onClick}
+                // onClick={adminName && admindata[adminName] ? onClick : null}
             >
                 <Box
                     className={`flex rounded-lg w-full h-full pl-6`}
                     component={button ? ButtonBase : "div"}
                 >
                     <FlexDiv className="!justify-start gap-5">
-                        <Icon src={icon} size={size} />
+                        <Icon src={icon} width={width} height={height} />
                         <div className="flex flex-col justify-center items-start">
                             <Typography variant="card_title">
                                 {title}
@@ -161,7 +161,7 @@ const Card = ({
 const BackIcon = memo(({ to }) => {
     return (
         <img
-            src={"/icons/back.svg"}
+            src={"/icons/back.png"}
             alt={"back"}
             loading="lazy"
             style={{

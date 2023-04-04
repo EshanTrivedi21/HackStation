@@ -11,7 +11,7 @@ const Cards = ({admindata}) => {
                 {data.map((item, index) => (
                     <Card
                         key={index}
-                        size="30"
+                        width="30" height="30"
                         icon={item.icon}
                         title={item.title}
                         subtitle={item.subtitle}

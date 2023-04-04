@@ -7,7 +7,7 @@ const Greetings = () => {
     <>
       <CenteredDiv>
         <div className='flex gap-3'>
-          <Icon src="/icons/hacktronaut.svg" alt="hacktronaut" size="44"/>
+          <Icon src="/icons/hacktronaut.png" alt="hacktronaut" width="36" height="42"/>
           <div className='flex flex-col gap-[0.5px]'>
             <Typography variant="greetings_subtitle"> 
               Greetings ,
