@@ -7,7 +7,7 @@ const Cards = ({admindata}) => {
     const navigate = useNavigate();
     return (
         <>
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-6">
                 {data.map((item, index) => (
                     <Card
                         key={index}

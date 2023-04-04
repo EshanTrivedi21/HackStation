@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Typography, TextField } from "@mui/material";
-import { CenteredGrid, CenteredDiv, PrimaryButton } from "../utils/Utilities";
+import { Container, CenteredDiv, PrimaryButton } from "../utils/Utilities";
 import { auth } from "../utils/firebase";
 import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
@@ -42,7 +42,7 @@ const Login = () => {
             });
     };
     return (
-        <CenteredGrid className="gap-20" style={{ minHeight: "85vh" }}>
+        <Container gap="5rem" minHeight="auto" padding="10rem">
             <CenteredDiv className="gap-2">
                 <Typography variant="login_title" color="primary.contrastText">
                     Welcome
@@ -81,7 +81,7 @@ const Login = () => {
                     Login
                 </PrimaryButton>
             </CenteredDiv>
-        </CenteredGrid>
+        </Container>
     );
 };
 
