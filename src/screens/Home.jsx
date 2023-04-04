@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CenteredGrid } from "../utils/Utilities";
+import { Container } from "../utils/Utilities";
 import {
     Greetings,
     Countdown,
@@ -39,12 +39,12 @@ const Home = () => {
         <>
             <Loader open={loading} />
             {data && (
-                <CenteredGrid className="gap-6 py-10">
+                <Container className="gap-6 py-10">
                     <Greetings />
                     <Countdown start={false} />
                     <Identity name={user} team={team} />
                     <Cards user={user} admindata={data}/>
-                </CenteredGrid>
+                </Container>
             )}
         </>
     );

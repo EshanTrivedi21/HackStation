@@ -1,11 +1,26 @@
 import { memo, useState, useEffect } from "react";
-import { FlexDiv, BackIcon } from "../utils/Utilities";
+import { Container, ScreenTitle, CenteredDiv } from "../utils/Utilities";
 import { Typography } from "@mui/material";
-import { Theme } from "../utils/Theme";
 import { QRCode } from "react-qrcode-logo";
 import { auth } from "../utils/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import Loader from "../components/Loader";
+
+const Code = ({value}) => {
+    return (
+        <>
+            <QRCode
+                value={value}
+                size={200}
+                ecLevel="L"
+                fgColor="#DDDDDD"
+                bgColor="transparent"
+                removeQrCodeBehindLogo={true}
+                eyeRadius={5}
+            />
+        </>
+    )
+};
 
 const QR = memo(() => {
     let [user, setUser] = useState();
@@ -26,43 +41,20 @@ const QR = memo(() => {
     return (
         <>
         <Loader open={loading} />
-            <Theme>
-                <div className="flex flex-col gap-20 py-10 overflow-hidden">
-                    <FlexDiv className="!justify-start ml-6 gap-6">
-                        <BackIcon to="" />
-                        <Typography variant="modal_title">QR Code</Typography>
-                    </FlexDiv>
-                    <div className="flex justify-center items-center">
-                        {user && (
-                            <QRCode
-                                value={user}
-                                size={200}
-                                ecLevel="L"
-                                fgColor="#DDDDDD"
-                                bgColor="transparent"
-                                removeQrCodeBehindLogo={true}
-                                eyeRadius={5}
-                            />
-                        )}
-                    </div>
-                    <div className="flex flex-col justify-center items-center">
+            <Container className="gap-20 py-10 overflow-hidden" minHeight="auto">
+                    <ScreenTitle title="QR Code" />
+                    <CenteredDiv>
+                        {user && ( <Code value={user} /> )}
+                    </CenteredDiv>
+                    <CenteredDiv>
                         <Typography variant="modal_title">
                             Identity Card
                         </Typography>
                         <Typography variant="modal_subtitle">
                             Get the QR scanned to continue
                         </Typography>
-                    </div>
-                    {/* <div className="flex justify-center items-center pt-28">
-                        <img
-                            src="/assets/sponsors.png"
-                            alt="sponsors"
-                            className="w-[85vw]"
-                            loading="lazy"
-                        />
-                    </div> */}
-                </div>
-            </Theme>
+                    </CenteredDiv>
+                </Container>
         </>
     );
 });

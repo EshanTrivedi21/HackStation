@@ -2,6 +2,29 @@ import { memo } from "react";
 import { Theme } from "./Theme";
 import { Grid, Button, Typography, ButtonBase } from "@mui/material";
 
+const Container = ({ className, style, children, minHeight }) => {
+    return (
+        <Theme>
+            <div
+                className={className}
+                style={{
+                    minHeight: minHeight || "100vh",
+                    overflowX: "hidden",
+                    overflowY: "auto",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    width: "100vw",
+                    ...style,
+                }}
+            >
+                {children}
+            </div>
+        </Theme>
+    );
+};
+
 const CenteredGrid = ({ className, style, children, component }) => {
     return (
         <Theme>
@@ -27,6 +50,15 @@ const FlexDiv = ({ className, children }) => {
     return <div className={classes}>{children}</div>;
 };
 
+const ScreenTitle = ({ title }) => {
+    return (
+        <div className="flex justify-start items-center w-screen gap-6 ml-14">
+            <BackIcon to=""/>
+            <Typography variant="modal_title">{ title }</Typography>
+        </div>
+    );
+};
+
 const CenteredDiv = ({ className, children }) => {
     const classes =
         "flex flex-col justify-center items-center w-screen " + className;
@@ -45,18 +77,18 @@ const PrimaryButton = ({ onClick, children }) => {
 
 const Modal = ({ title, subtitle }) => {
     return (
-        <CenteredGrid style={{ minHeight: "100vh" }}>
-            <div
-                className="flex flex-col rounded-lg p-10 gap-2"
-                style={{
-                    background:
-                        "radial-gradient(132.5% 132.5% at 48.94% 50%, #303030 0%, #202020 99.25%)",
-                }}
-            >
-                <Typography variant="modal_title">{title}</Typography>
-                <Typography variant="modal_subtitle">{subtitle}</Typography>
-            </div>
-        </CenteredGrid>
+        <Container>
+        <div
+            className="flex flex-col rounded-lg p-10 gap-2"
+            style={{
+                background:
+                    "radial-gradient(132.5% 132.5% at 48.94% 50%, #303030 0%, #202020 99.25%)",
+            }}
+        >
+            <Typography variant="modal_title">{title}</Typography>
+            <Typography variant="modal_subtitle">{subtitle}</Typography>
+        </div>
+        </Container>
     );
 };
 
@@ -116,7 +148,8 @@ const ContainerID = ({ children }) => {
 };
 
 const Card = ({
-    width, height,
+    width,
+    height,
     icon,
     title,
     subtitle,
@@ -134,7 +167,7 @@ const Card = ({
                         ? " p-[0.75px] bg-[linear-gradient(166.2deg,#FF7A00_-6.36%,#AC2900_124.84%)]"
                         : ""
                 }`}
-                onClick = {onClick}
+                onClick={onClick}
                 // onClick={adminName && admindata[adminName] ? onClick : null}
             >
                 <Box
@@ -176,8 +209,9 @@ const BackIcon = memo(({ to }) => {
 });
 
 export {
+    Container,
     CenteredGrid,
-    FlexDiv,
+    ScreenTitle,
     CenteredDiv,
     PrimaryButton,
     Modal,

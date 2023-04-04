@@ -1,6 +1,5 @@
 import React from "react";
-import { FlexDiv, BackIcon, Card } from "../utils/Utilities";
-import { Typography } from "@mui/material";
+import { ScreenTitle, Card } from "../utils/Utilities";
 import { Theme } from "../utils/Theme";
 import data from "../data/timeline.json";
 
@@ -9,10 +8,7 @@ const Timeline = () => {
         <>
             <Theme>
                 <div className="flex flex-col gap-10 py-10">
-                    <FlexDiv className="!justify-start ml-6 gap-6">
-                        <BackIcon to="/"/>
-                        <Typography variant="modal_title">Timeline</Typography>
-                    </FlexDiv>
+                    <ScreenTitle title="Timeline" />
                     <div className="flex flex-col gap-5 justify-center items-center">
                         {data.map((item, index) => (
                             <Card
