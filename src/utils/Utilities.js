@@ -2,15 +2,18 @@ import { memo } from "react";
 import { Theme } from "./Theme";
 import { Grid, Button, Typography, ButtonBase } from "@mui/material";
 
-const Container = ({ className, style, children, minHeight }) => {
+const Container = ({ className, style, children, minHeight, gap }) => {
     return (
         <Theme>
             <div
                 className={className}
                 style={{
+                    gap: gap || "1.5rem",
+                    paddingTop: "2.5rem",
+                    paddingBottom: "2.5rem",
                     minHeight: minHeight || "100vh",
                     overflowX: "hidden",
-                    overflowY: "auto",
+                    overflowY: minHeight ? "hidden" : "auto",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",

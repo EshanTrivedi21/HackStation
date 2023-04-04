@@ -6,7 +6,7 @@ import { auth } from "../utils/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import Loader from "../components/Loader";
 
-const Code = ({value}) => {
+const Code = ({ value }) => {
     return (
         <>
             <QRCode
@@ -19,7 +19,7 @@ const Code = ({value}) => {
                 eyeRadius={5}
             />
         </>
-    )
+    );
 };
 
 const QR = memo(() => {
@@ -40,21 +40,17 @@ const QR = memo(() => {
     }, []);
     return (
         <>
-        <Loader open={loading} />
-            <Container className="gap-20 py-10 overflow-hidden" minHeight="auto">
-                    <ScreenTitle title="QR Code" />
-                    <CenteredDiv>
-                        {user && ( <Code value={user} /> )}
-                    </CenteredDiv>
-                    <CenteredDiv>
-                        <Typography variant="modal_title">
-                            Identity Card
-                        </Typography>
-                        <Typography variant="modal_subtitle">
-                            Get the QR scanned to continue
-                        </Typography>
-                    </CenteredDiv>
-                </Container>
+            <Loader open={loading} />
+            <Container minHeight="auto" gap="7rem">
+                <ScreenTitle title="QR Code" />
+                <CenteredDiv>{user && <Code value={user} />}</CenteredDiv>
+                <CenteredDiv>
+                    <Typography variant="modal_title">Identity Card</Typography>
+                    <Typography variant="modal_subtitle">
+                        Get the QR scanned to continue
+                    </Typography>
+                </CenteredDiv>
+            </Container>
         </>
     );
 });

@@ -39,7 +39,7 @@ const Home = () => {
         <>
             <Loader open={loading} />
             {data && (
-                <Container className="gap-6 py-10">
+                <Container>
                     <Greetings />
                     <Countdown start={false} />
                     <Identity name={user} team={team} />
