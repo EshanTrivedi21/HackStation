@@ -7,6 +7,13 @@
         "adminName": "check-in"
     },
     {
+        "icon": "/icons/ps.png",
+        "title": "Problem Statements",
+        "subtitle": "Everything about the problem statements!",
+        "link": "/ps",
+        "adminName": "ps"
+    },
+    {
         "icon": "/icons/timeline.png",
         "title": "Timeline",
         "subtitle": "Know how you will spend your day!",
