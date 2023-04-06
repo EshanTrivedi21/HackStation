@@ -92,15 +92,14 @@ const PrimaryButton = ({ onClick, children }) => {
     );
 };
 
-const FlexRow = ({ className, children }) => {
+const FlexRow = ({ className, children, style }) => {
     const classes = "flex justify-center items-center w-screen " + className;
-    return <div className={classes}>{children}</div>;
+    return <div className={classes} style={style}>{children}</div>;
 };
 
-const FlexCol = ({ className, children }) => {
-    const classes =
-        "flex flex-col justify-center items-center w-screen " + className;
-    return <div className={classes}>{children}</div>;
+const FlexCol = ({ className, children, style }) => {
+    const classes = "flex flex-col justify-center items-center w-screen " + className;
+    return <div className={classes} style={style}>{children}</div>;
 };
 
 const Box = ({

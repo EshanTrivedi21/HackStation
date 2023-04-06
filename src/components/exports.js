@@ -3,5 +3,6 @@ import Countdown from "./Countdown";
 import Identity from "./Identity";
 import Cards from "./Cards";
 import Loader from "./Loader";
+import Modal from './Modal';
 
-export { Greetings, Countdown, Identity, Cards, Loader };
+export { Greetings, Countdown, Identity, Cards, Loader, Modal };
