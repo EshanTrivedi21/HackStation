@@ -7,7 +7,7 @@ const Food = () => {
     const navigate = useNavigate();
     return (
         <>
-            <Container>
+            <Container className="!justify-start">
                 <ScreenTitle title="Food" />
                 <FlexCol className="gap-5">
                     {data.map((item, index) => (

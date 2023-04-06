@@ -1,34 +1,34 @@
 [
     {
-        "icon": "/icons/check-in.png",
+        "icon": "/icons/qr.svg",
         "title": "Check In",
         "subtitle": "Register to start exploring this new world!",
         "link": "/check-in",
         "adminName": "check-in"
     },
     {
-        "icon": "/icons/ps.png",
+        "icon": "/icons/aiml.svg",
         "title": "Problem Statements",
         "subtitle": "Everything about the problem statements!",
         "link": "/ps",
         "adminName": "ps"
     },
     {
-        "icon": "/icons/timeline.png",
+        "icon": "/icons/timeline.svg",
         "title": "Timeline",
         "subtitle": "Know how you will spend your day!",
         "link": "/timeline",
         "adminName": "timeline"
     },
     {
-        "icon": "/icons/food.png",
+        "icon": "/icons/food.svg",
         "title": "Food",
         "subtitle": "Refuel your brainy engines!",
         "link": "/food",
         "adminName": "food"
     },
     {
-        "icon": "/icons/get-help.png",
+        "icon": "/icons/get-help.svg",
         "title": "Get Help",
         "subtitle": "Feeling Stuck? Call the agents!",
         "contact": "tel:+91 8356876018",

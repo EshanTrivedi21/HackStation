@@ -19,7 +19,7 @@ const Icon = memo(({ src, alt, width, height }) => {
 const BackIcon = memo(({ to }) => {
     return (
         <img
-            src={"/icons/back.png"}
+            src={"/icons/back.svg"}
             alt={"back"}
             loading="lazy"
             style={{

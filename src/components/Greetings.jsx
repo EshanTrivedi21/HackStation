@@ -7,7 +7,7 @@ const Greetings = () => {
         <>
             <FlexRow className="!items-start !gap-3">
                 <Icon
-                    src="/icons/hacktronaut.png"
+                    src="/icons/hacktronaut.svg"
                     alt="hacktronaut"
                     width="36"
                     height="42"

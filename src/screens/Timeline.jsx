@@ -5,7 +5,7 @@ import data from "../data/timeline.json";
 const Timeline = () => {
     return (
         <>
-            <Container>
+            <Container className="!justify-start">
                 <ScreenTitle title="Timeline" />
                 <FlexCol className="gap-5">
                     {data.map((item, index) => (
