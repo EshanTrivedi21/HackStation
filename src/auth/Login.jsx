@@ -17,15 +17,22 @@ const Login = () => {
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                window.location.href = "/";
+                if (user.uid === process.env.REACT_APP_ADMIN_UID) {
+                    window.location.href = "/admin";
+                } else {
+                    window.location.href = "/";
+                }
             }
         });
     }, []);
     const submit = async () => {
         setLoading(true);
         signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
+            .then((user) => {
                 setLoading(false);
+                if (user.uid === process.env.REACT_APP_ADMIN_UID) {
+                    navigate("/admin");
+                }
                 navigate("/");
             })
             .catch((error) => {
@@ -78,7 +85,11 @@ const Login = () => {
             </FlexCol>
             <FlexCol>
                 <PrimaryButton variant="contained" onClick={submit}>
-                    {!loading ? "Login" : <CircularProgress color="secondary"/>}
+                    {!loading ? (
+                        "Login"
+                    ) : (
+                        <CircularProgress color="secondary" />
+                    )}
                 </PrimaryButton>
             </FlexCol>
         </Container>

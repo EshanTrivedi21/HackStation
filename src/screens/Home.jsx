@@ -31,7 +31,6 @@ const Home = () => {
                 let name = user.displayName.split("@");
                 setUser(name[0].replace("_", " "));
                 setTeam(name[1].replace("_", " "));
-                console.log(stateAC.adminData);
                 if (!stateAC.adminData) {
                     let d = await getDocs(collection(db, "admin-controls"));
                     setData(d.docs[0].data());

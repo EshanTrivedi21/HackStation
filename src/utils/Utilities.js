@@ -130,8 +130,9 @@ const Box = ({
                         ? "linear-gradient(166.2deg, #FF7A00 -6.36%, #AC2900 124.84%)"
                         : "",
                     ...(done && {
-                        background: "linear-gradient(180.34deg, #03D06E 2.28%, rgba(71, 254, 89, 0.9) 99.71%)",
-                    })
+                        background:
+                            "linear-gradient(180.34deg, #03D06E 2.28%, rgba(71, 254, 89, 0.9) 99.71%)",
+                    }),
                 }}
             >
                 <div
@@ -148,7 +149,6 @@ const Box = ({
         </Container>
     );
 };
-
 
 const ContainerID = ({ children }) => {
     return (
@@ -186,7 +186,6 @@ const Card = ({
     onClick,
     disabled = false,
 }) => {
-    console.log(disabled);
     return (
         <>
             <Box
