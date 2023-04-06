@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Typography, TextField } from "@mui/material";
-import { Container, CenteredDiv, PrimaryButton } from "../utils/Utilities";
+import { Container, FlexCol, PrimaryButton } from "../utils/Utilities";
 import { auth } from "../utils/firebase";
 import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
@@ -43,7 +43,7 @@ const Login = () => {
     };
     return (
         <Container gap="5rem" minHeight="auto" padding="10rem">
-            <CenteredDiv className="gap-2">
+            <FlexCol className="gap-2">
                 <Typography variant="login_title" color="primary.contrastText">
                     Welcome
                 </Typography>
@@ -53,8 +53,8 @@ const Login = () => {
                 >
                     Log into your account
                 </Typography>
-            </CenteredDiv>
-            <CenteredDiv className="gap-10">
+            </FlexCol>
+            <FlexCol className="gap-10">
                 <TextField
                     label="Email"
                     variant="outlined"
@@ -75,12 +75,12 @@ const Login = () => {
                     type="password"
                     error={passwordError}
                 />
-            </CenteredDiv>
-            <CenteredDiv>
+            </FlexCol>
+            <FlexCol>
                 <PrimaryButton variant="contained" onClick={submit}>
                     Login
                 </PrimaryButton>
-            </CenteredDiv>
+            </FlexCol>
         </Container>
     );
 };

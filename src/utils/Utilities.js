@@ -71,11 +71,6 @@ const Container = ({
     );
 };
 
-const FlexDiv = ({ className, children }) => {
-    const classes = "flex justify-center items-center w-screen " + className;
-    return <div className={classes}>{children}</div>;
-};
-
 const ScreenTitle = ({ title }) => {
     return (
         <div className="flex justify-start items-center w-screen gap-6 ml-14">
@@ -83,12 +78,6 @@ const ScreenTitle = ({ title }) => {
             <Typography variant="modal_title">{title}</Typography>
         </div>
     );
-};
-
-const CenteredDiv = ({ className, children }) => {
-    const classes =
-        "flex flex-col justify-center items-center w-screen " + className;
-    return <div className={classes}>{children}</div>;
 };
 
 const PrimaryButton = ({ onClick, children }) => {
@@ -101,21 +90,15 @@ const PrimaryButton = ({ onClick, children }) => {
     );
 };
 
-const Modal = ({ title, subtitle }) => {
-    return (
-        <Container>
-            <div
-                className="flex flex-col rounded-lg p-10 gap-2"
-                style={{
-                    background:
-                        "radial-gradient(132.5% 132.5% at 48.94% 50%, #303030 0%, #202020 99.25%)",
-                }}
-            >
-                <Typography variant="modal_title">{title}</Typography>
-                <Typography variant="modal_subtitle">{subtitle}</Typography>
-            </div>
-        </Container>
-    );
+const FlexRow = ({ className, children }) => {
+    const classes = "flex justify-center items-center w-screen " + className;
+    return <div className={classes}>{children}</div>;
+};
+
+const FlexCol = ({ className, children }) => {
+    const classes =
+        "flex flex-col justify-center items-center w-screen " + className;
+    return <div className={classes}>{children}</div>;
 };
 
 const Box = ({
@@ -126,7 +109,9 @@ const Box = ({
     component,
     padding,
 }) => {
-    const classes = "flex rounded-lg w-[84.7vw] flex justify-center items-center " + className;
+    const classes =
+        "flex rounded-lg w-[84.7vw] flex justify-center items-center " +
+        className;
     return (
         <Container
             onClick={onClick}
@@ -138,7 +123,9 @@ const Box = ({
                 className="rounded-lg w-[85vw] p-[0.5px]"
                 style={{
                     height: importance ? "81.5px" : "",
-                    background: importance? "linear-gradient(166.2deg, #FF7A00 -6.36%, #AC2900 124.84%)" : "",
+                    background: importance
+                        ? "linear-gradient(166.2deg, #FF7A00 -6.36%, #AC2900 124.84%)"
+                        : "",
                 }}
             >
                 <div
@@ -162,8 +149,7 @@ const ContainerID = ({ children }) => {
             <div
                 className="rounded-lg w-[84vw] h-[124.5px] p-[0.5px]"
                 style={{
-                    background:
-                        "linear-gradient(166.2deg, #FF7A00 -6.36%, #AC2900 124.84%)",
+                    background:"linear-gradient(166.2deg, #FF7A00 -6.36%, #AC2900 124.84%)",
                 }}
             >
                 <div
@@ -197,7 +183,7 @@ const Card = ({
                 onClick={onClick}
                 importance={importance}
             >
-                <FlexDiv className="!justify-start gap-5">
+                <FlexRow className="!justify-start gap-5">
                     <Icon src={icon} width={width} height={height} />
                     <div className="flex flex-col justify-center items-start">
                         <Typography variant="card_title">{title}</Typography>
@@ -205,22 +191,21 @@ const Card = ({
                             {subtitle}
                         </Typography>
                     </div>
-                </FlexDiv>
+                </FlexRow>
             </Box>
         </>
     );
 };
 
 export {
-    Container,
-    FlexDiv,
-    ScreenTitle,
-    CenteredDiv,
-    PrimaryButton,
-    Modal,
     Icon,
-    Box,
-    ContainerID,
-    Card,
     BackIcon,
+    FlexRow,
+    FlexCol,
+    PrimaryButton,
+    ScreenTitle,
+    Box,
+    Card,
+    Container,
+    ContainerID,
 };

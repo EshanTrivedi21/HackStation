@@ -1,10 +1,28 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home, Timeline, Food, QR } from "./screens/exports";
 import { Login } from "./auth/exports";
-import { Modal } from "./utils/Utilities";
 import { Loader } from "./components/exports";
+import { Container } from "./utils/Utilities";
+import { Typography } from "@mui/material";
+import { Home, Timeline, Food, QR } from "./screens/exports";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const Modal = ({ title, subtitle }) => {
+    return (
+        <Container>
+            <div
+                className="flex flex-col rounded-lg p-10 gap-2"
+                style={{
+                    background:
+                        "radial-gradient(132.5% 132.5% at 48.94% 50%, #303030 0%, #202020 99.25%)",
+                }}
+            >
+                <Typography variant="modal_title">{title}</Typography>
+                <Typography variant="modal_subtitle">{subtitle}</Typography>
+            </div>
+        </Container>
+    );
+};
 
 function App() {
     const [isMobile, setIsMobile] = useState(null);
