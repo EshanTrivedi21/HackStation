@@ -1,37 +1,37 @@
 [
     {
-        "title" : "Lunch - Day 1",
-        "subtitle" : "Pav Bhaji and Ice Cream",
-        "icon" : "/icons/lunch.png"
+        "title": "Lunch - Day 1",
+        "subtitle": "Pav Bhaji and Ice Cream",
+        "icon": "/icons/lunch.png"
     },
     {
-        "title" : "Snacks - Day 1",
-        "subtitle" : "Samsosa Pav/ veg Fankie, Tea/Coffee",
-        "icon" : "/icons/snacks.png"
+        "title": "Snacks - Day 1",
+        "subtitle": "Samsosa Pav/ veg Fankie, Tea/Coffee",
+        "icon": "/icons/snacks.png"
     },
     {
-        "title" : "Dinner",
-        "subtitle" : "Roti, Steam Rice, Dal Fy, Veg Kurma",
-        "icon" : "/icons/dinner.png"
+        "title": "Dinner",
+        "subtitle": "Roti, Steam Rice, Dal Fy, Veg Kurma",
+        "icon": "/icons/dinner.png"
     },
     {
-        "title" : "Midnight Snacks",
-        "subtitle" : "Coffe, Chips, Biscuits, ButterCo",
-        "icon" : "/icons/midnights.png"
+        "title": "Midnight Snacks",
+        "subtitle": "Coffe, Chips, Biscuits, ButterCo",
+        "icon": "/icons/midnights.png"
     },
     {
-        "title" : "Breakfast",
-        "subtitle" : "Idli, Medu Vada, Tea/Coffee",
-        "icon" : "/icons/breakfast.png"
+        "title": "Breakfast",
+        "subtitle": "Idli, Medu Vada, Tea/Coffee",
+        "icon": "/icons/breakfast.png"
     },
     {
-        "title" : "Lunch - Day 2",
-        "subtitle" : "Veg Biryani and Raita",
-        "icon" : "/icons/lunch.png"
+        "title": "Lunch - Day 2",
+        "subtitle": "Veg Biryani and Raita",
+        "icon": "/icons/lunch.png"
     },
     {
-        "title" : "Snacks - Day 2",
-        "subtitle" : "Vada Pav/ veg Fankie, Tea/Coffee",
-        "icon" : "/icons/snacks.png"
+        "title": "Snacks - Day 2",
+        "subtitle": "Vada Pav/ veg Fankie, Tea/Coffee",
+        "icon": "/icons/snacks.png"
     }
 ]
