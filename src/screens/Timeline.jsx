@@ -7,7 +7,7 @@ const Timeline = () => {
         <>
             <Container>
                 <ScreenTitle title="Timeline" />
-                <div className="flex flex-col gap-5 justify-center items-center">
+                <FlexCol className="gap-5">
                     {data.map((item, index) => (
                         <Card
                             key={index}
@@ -20,7 +20,7 @@ const Timeline = () => {
                             button={false}
                         />
                     ))}
-                </div>
+                </FlexCol>
             </Container>
         </>
     );

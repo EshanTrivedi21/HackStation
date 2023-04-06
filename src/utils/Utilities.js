@@ -16,7 +16,6 @@ const Icon = memo(({ src, alt, width, height }) => {
     );
 });
 
-
 const BackIcon = memo(({ to }) => {
     return (
         <img
@@ -149,13 +148,15 @@ const ContainerID = ({ children }) => {
             <div
                 className="rounded-lg w-[84vw] h-[124.5px] p-[0.5px]"
                 style={{
-                    background:"linear-gradient(166.2deg, #FF7A00 -6.36%, #AC2900 124.84%)",
+                    background:
+                        "linear-gradient(166.2deg, #FF7A00 -6.36%, #AC2900 124.84%)",
                 }}
             >
                 <div
                     className="flex rounded-lg w-full h-full"
                     style={{
-                        background:"radial-gradient(104.64% 443.14% at 0% 3.59%, #303030 0%, #171717 26.18%)",
+                        background:
+                            "radial-gradient(104.64% 443.14% at 0% 3.59%, #303030 0%, #171717 26.18%)",
                     }}
                 >
                     {children}

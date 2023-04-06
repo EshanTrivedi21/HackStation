@@ -43,7 +43,7 @@ const Home = () => {
                     <Greetings />
                     <Countdown start={false} />
                     <Identity name={user} team={team} />
-                    <Cards user={user} admindata={data}/>
+                    <Cards user={user} admindata={data} />
                 </Container>
             )}
         </>
