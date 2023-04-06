@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, ScreenTitle, Card } from "../utils/Utilities";
+import { Container, ScreenTitle, Card, FlexCol } from "../utils/Utilities";
 import data from "../data/timeline.json";
 
 const Timeline = () => {
