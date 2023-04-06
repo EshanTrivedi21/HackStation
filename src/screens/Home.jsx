@@ -28,7 +28,7 @@ const Home = () => {
         <>
             {stateAC.adminData && (
                 <Container>
-                    <Greetings />
+                    <Greetings title="Hacktonaut"/>
                     <Countdown start={false} />
                     <Identity name={user} team={team} />
                     <Cards user={user} admindata={stateAC.adminData} />

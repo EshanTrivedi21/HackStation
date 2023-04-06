@@ -11,8 +11,12 @@ import {
     QR,
     PS,
     Others,
-    AdminHome,
 } from "./screens/exports";
+import {
+    AdminHome,
+    Scan,
+    Controls,
+} from "./admin/exports";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AdminControlContext } from "./contexts/adminControlContext";
 import AuthCheck from "./utils/AuthCheck";
@@ -61,15 +65,15 @@ function App() {
             ),
         },
         {
-            path: "/login",
+            path: "login",
             element: <Login />,
         },
         {
-            path: "/timeline",
+            path: "timeline",
             element: <Timeline />,
         },
         {
-            path: "/food",
+            path: "food",
             element: (
                 <AuthCheck>
                     <Food />
@@ -77,7 +81,7 @@ function App() {
             ),
         },
         {
-            path: "/check-in",
+            path: "check-in",
             element: <QR />,
         },
         {
@@ -95,6 +99,14 @@ function App() {
         {
             path: "admin",
             element: <AdminHome />,
+        },
+        {
+            path: "scan",
+            element: <Scan />,
+        },
+        {
+            path: "controls",
+            element: <Controls />,
         },
     ]);
     let [data, setData] = useState();

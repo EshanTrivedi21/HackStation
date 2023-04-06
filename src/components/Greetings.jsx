@@ -2,7 +2,7 @@ import React from "react";
 import { FlexRow, FlexCol, Icon } from "../utils/Utilities";
 import { Typography } from "@mui/material";
 
-const Greetings = () => {
+const Greetings = ({title}) => {
     return (
         <>
             <FlexRow className="!items-start !gap-3">
@@ -17,7 +17,7 @@ const Greetings = () => {
                         Greetings ,
                     </Typography>
                     <Typography variant="greetings_title">
-                        Hacktronaut
+                        {title}
                     </Typography>
                 </FlexCol>
             </FlexRow>
