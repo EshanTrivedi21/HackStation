@@ -106,6 +106,7 @@ const FlexCol = ({ className, children }) => {
 const Box = ({
     children,
     importance,
+    done,
     onClick,
     className,
     component,
@@ -128,6 +129,9 @@ const Box = ({
                     background: importance
                         ? "linear-gradient(166.2deg, #FF7A00 -6.36%, #AC2900 124.84%)"
                         : "",
+                    ...(done && {
+                        background: "linear-gradient(180.34deg, #03D06E 2.28%, rgba(71, 254, 89, 0.9) 99.71%)",
+                    })
                 }}
             >
                 <div
@@ -144,6 +148,7 @@ const Box = ({
         </Container>
     );
 };
+
 
 const ContainerID = ({ children }) => {
     return (
@@ -176,6 +181,7 @@ const Card = ({
     title,
     subtitle,
     importance,
+    done,
     button,
     onClick,
     disabled = false,
@@ -191,6 +197,7 @@ const Card = ({
                 component={button ? ButtonBase : "div"}
                 onClick={!disabled && onClick}
                 importance={importance}
+                done={done}
             >
                 <FlexRow className="!justify-start gap-5">
                     <Icon
