@@ -9,6 +9,7 @@
   "author": "aryan",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "fast-csv": "^4.3.6",
     "firebase-admin": "^11.5.0"
   }

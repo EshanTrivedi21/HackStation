@@ -1,7 +1,7 @@
 const fs = require("fs");
 const csv = require("fast-csv");
 var admin = require("firebase-admin");
-
+require("dotenv").config();
 var serviceAccount = require("./admin.json");
 
 admin.initializeApp({
@@ -39,11 +39,11 @@ function createNormalUser() {
         });
 }
 
-function createAdmin(){
+function createAdmin() {
     auth.createUser({
-        email: "csi-kjsce@somaiya.edu",
+        email: process.env.ADMIN_EMAIL,
         emailVerified: true,
-        password: "csi@2023",
+        password: process.env.ADMIN_PASSWORD,
         displayName: "csi_admin@csi-kjsce",
         disabled: false,
     }).then((userRecord) => {
