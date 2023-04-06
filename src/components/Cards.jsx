@@ -1,17 +1,18 @@
 import React from "react";
-import { Card } from "../utils/Utilities";
 import data from "../data/cards.json";
+import { Card, FlexCol } from "../utils/Utilities";
 import { useNavigate } from "react-router-dom";
 
-const Cards = ({admindata}) => {
+const Cards = ({ admindata }) => {
     const navigate = useNavigate();
     return (
         <>
-            <div className="flex flex-col gap-6">
+            <FlexCol className="gap-6">
                 {data.map((item, index) => (
                     <Card
                         key={index}
-                        width="30" height="30"
+                        width="30"
+                        height="30"
                         icon={item.icon}
                         title={item.title}
                         subtitle={item.subtitle}
@@ -24,7 +25,7 @@ const Cards = ({admindata}) => {
                         admindata={admindata}
                     />
                 ))}
-            </div>
+            </FlexCol>
         </>
     );
 };

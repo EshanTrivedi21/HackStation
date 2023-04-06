@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { Theme } from "./Theme";
-import { Grid, Button, Typography, ButtonBase } from "@mui/material";
+import { Button, Typography, ButtonBase } from "@mui/material";
 
 const Icon = memo(({ src, alt, width, height }) => {
     return (

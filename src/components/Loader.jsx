@@ -8,8 +8,7 @@ export default function Loader({ open }) {
             <Backdrop
                 sx={{
                     zIndex: (theme) => theme.zIndex.drawer + 1,
-                    backgroundImage:
-                        "linear-gradient(180deg, #202020 0%, #101010 100%)",
+                    backgroundImage: "linear-gradient(180deg, #202020 0%, #101010 100%)",
                 }}
                 open={open}
             >
