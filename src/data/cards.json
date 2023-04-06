@@ -28,10 +28,10 @@
         "adminName": "food"
     },
     {
-        "icon": "/icons/get-help.svg",
-        "title": "Get Help",
-        "subtitle": "Feeling Stuck? Call the agents!",
-        "contact": "tel:+91 8356876018",
-        "adminName": "get-help"
+        "icon": "/icons/others.svg",
+        "title": "Others",
+        "subtitle": "Everything else you need to know :)",
+        "link": "/others",
+        "adminName": "others"
     }
 ]

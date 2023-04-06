@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Web/App",
+        "subtitle": "Tap here to Download Problem Statement",
+        "icon": "/icons/webapp.svg"
+    },
+    {
+        "title": "AI/ML",
+        "subtitle": "Tap here to Download Problem Statement",
+        "icon": "/icons/aiml.svg"
+    },
+    {
+        "title": "Blockchain",
+        "subtitle": "Tap here to Download Problem Statement",
+        "icon": "/icons/blockchain.svg"
+    }
+]

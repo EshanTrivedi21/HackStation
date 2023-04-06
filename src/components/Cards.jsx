@@ -19,8 +19,7 @@ const Cards = ({ admindata }) => {
                         button={true}
                         adminName={item.adminName}
                         onClick={() => {
-                            if (item.link) navigate(item.link);
-                            else window.open(item.contact);
+                            navigate(item.link);
                         }}
                         admindata={admindata}
                     />

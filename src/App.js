@@ -4,7 +4,7 @@ import { Login } from "./auth/exports";
 import { Loader } from "./components/exports";
 import { Container } from "./utils/Utilities";
 import { Typography } from "@mui/material";
-import { Home, Timeline, Food, QR, PS } from "./screens/exports";
+import { Home, Timeline, Food, QR, PS, Others } from "./screens/exports";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const Modal = ({ title, subtitle }) => {
@@ -71,6 +71,10 @@ function App() {
             path: "ps",
             element: <PS />,
         },
+        {
+            path: "others",
+            element: <Others />,
+        }
     ]);
 
     if (isMobile === null) {
