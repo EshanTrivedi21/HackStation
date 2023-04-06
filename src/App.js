@@ -1,12 +1,12 @@
 import "./index.css";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Login } from "./auth/exports";
 import { Loader } from "./components/exports";
 import { Container } from "./utils/Utilities";
 import { Typography } from "@mui/material";
 import { Home, Timeline, Food, QR, PS, Others } from "./screens/exports";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
+import { AdminControlContext } from "./contexts/adminControlContext";
 const Modal = ({ title, subtitle }) => {
     return (
         <Container>
@@ -76,7 +76,10 @@ function App() {
             element: <Others />,
         }
     ]);
-
+    let [data, setData] = useState();
+    let state = useContext(AdminControlContext);
+    state.adminData = data;
+    state.setAdminData = setData;
     if (isMobile === null) {
         <Loader />;
     } else if (!isMobile) {

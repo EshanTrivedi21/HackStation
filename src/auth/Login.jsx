@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Typography, TextField } from "@mui/material";
+import { Typography, TextField, CircularProgress } from "@mui/material";
 import { Container, FlexCol, PrimaryButton } from "../utils/Utilities";
 import { auth } from "../utils/firebase";
 import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
@@ -78,7 +78,7 @@ const Login = () => {
             </FlexCol>
             <FlexCol>
                 <PrimaryButton variant="contained" onClick={submit}>
-                    Login
+                    {!loading ? "Login" : <CircularProgress color="secondary"/>}
                 </PrimaryButton>
             </FlexCol>
         </Container>

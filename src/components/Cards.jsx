@@ -17,11 +17,10 @@ const Cards = ({ admindata }) => {
                         title={item.title}
                         subtitle={item.subtitle}
                         button={true}
-                        adminName={item.adminName}
                         onClick={() => {
                             navigate(item.link);
                         }}
-                        admindata={admindata}
+                        disabled={!admindata[item.adminName]}
                     />
                 ))}
             </FlexCol>

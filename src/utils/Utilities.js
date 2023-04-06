@@ -2,7 +2,7 @@ import { memo } from "react";
 import { Theme } from "./Theme";
 import { Button, Typography, ButtonBase } from "@mui/material";
 
-const Icon = memo(({ src, alt, width, height }) => {
+const Icon = memo(({ src, alt, width, height, className }) => {
     return (
         <img
             src={src}
@@ -12,6 +12,7 @@ const Icon = memo(({ src, alt, width, height }) => {
                 width: width + "px",
                 height: height + "px",
             }}
+            className={className}
         />
     );
 });
@@ -71,7 +72,8 @@ const Container = ({
 };
 
 const ScreenTitle = ({ title, className }) => {
-    const classes = "flex justify-start items-center w-screen gap-6 ml-14 " + className;
+    const classes =
+        "flex justify-start items-center w-screen gap-6 ml-14 " + className;
     return (
         <div className={classes}>
             <BackIcon to="" />
@@ -176,18 +178,32 @@ const Card = ({
     importance,
     button,
     onClick,
+    disabled = false,
 }) => {
+    console.log(disabled);
     return (
         <>
             <Box
-                className="rounded-lg h-20 !pl-6"
+                className={`rounded-lg h-20 !pl-6 ${
+                    disabled &&
+                    "!bg-[radial-gradient(132.5%_132.5%_at_48.94%_50%,rgba(48,48,48,0.43)_0%,rgba(32,32,32,0.46)_99.25%)]"
+                }`}
                 component={button ? ButtonBase : "div"}
-                onClick={onClick}
+                onClick={!disabled && onClick}
                 importance={importance}
             >
                 <FlexRow className="!justify-start gap-5">
-                    <Icon src={icon} width={width} height={height} />
-                    <div className="flex flex-col justify-center items-start">
+                    <Icon
+                        src={icon}
+                        width={width}
+                        height={height}
+                        className={`${disabled && "opacity-20"}`}
+                    />
+                    <div
+                        className={`flex flex-col justify-center items-start ${
+                            disabled && "opacity-20"
+                        }`}
+                    >
                         <Typography variant="card_title">{title}</Typography>
                         <Typography variant="card_subtitle">
                             {subtitle}
