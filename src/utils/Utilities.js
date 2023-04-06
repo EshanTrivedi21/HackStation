@@ -70,9 +70,10 @@ const Container = ({
     );
 };
 
-const ScreenTitle = ({ title }) => {
+const ScreenTitle = ({ title, className }) => {
+    const classes = "flex justify-start items-center w-screen gap-6 ml-14 " + className;
     return (
-        <div className="flex justify-start items-center w-screen gap-6 ml-14">
+        <div className={classes}>
             <BackIcon to="" />
             <Typography variant="modal_title">{title}</Typography>
         </div>
