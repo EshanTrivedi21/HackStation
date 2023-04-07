@@ -1,0 +1,12 @@
+[
+    {
+        "name":"Check In",
+        "value":"check-in",
+        "state": "false"
+    },
+    {
+        "name":"Preference Form",
+        "value":"ps-form",
+        "state": "false"
+    }
+]

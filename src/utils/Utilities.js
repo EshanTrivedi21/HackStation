@@ -34,6 +34,38 @@ const BackIcon = memo(({ to }) => {
     );
 });
 
+const Select = ({ data, className, onChange, value }) => {
+    const selectStyle = {
+        border: "none",
+        borderRadius: "10px",
+        padding: "0.75rem",
+        color: "#cfcfcf",
+        fontFamily: "Poppins",
+        fontWeight: "normal",
+        fontSize: "1rem",
+        width: "60vw",
+        outline: "none", 
+        background:"radial-gradient(132.5% 132.5% at 48.94% 50%, #303030 0%, #202020 99.25%)",
+    };
+  
+    return (
+      <select
+        className={className}
+        onChange={onChange}
+        value={value}
+        style={selectStyle}
+      >
+        <option value="0">Select Entity:</option>
+        {data.map((item, index) => (
+          <option key={index} value={item.value}>
+            {item.name}
+          </option>
+        ))}
+      </select>
+    );
+  };
+  
+
 const Container = ({
     className,
     style,
@@ -94,12 +126,21 @@ const PrimaryButton = ({ onClick, children }) => {
 
 const FlexRow = ({ className, children, style }) => {
     const classes = "flex justify-center items-center w-screen " + className;
-    return <div className={classes} style={style}>{children}</div>;
+    return (
+        <div className={classes} style={style}>
+            {children}
+        </div>
+    );
 };
 
 const FlexCol = ({ className, children, style }) => {
-    const classes = "flex flex-col justify-center items-center w-screen " + className;
-    return <div className={classes} style={style}>{children}</div>;
+    const classes =
+        "flex flex-col justify-center items-center w-screen " + className;
+    return (
+        <div className={classes} style={style}>
+            {children}
+        </div>
+    );
 };
 
 const Box = ({
@@ -231,4 +272,5 @@ export {
     Card,
     Container,
     ContainerID,
+    Select,
 };
