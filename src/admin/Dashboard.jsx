@@ -4,10 +4,10 @@ import { auth } from "../utils/firebase";
 import Loader from "../components/Loader";
 import { Container, Card } from "../utils/Utilities";
 import { Greetings, Countdown } from "../components/exports";
-import data from "../data/admincards.json";
+import data from "../data/admin.json";
 import { useNavigate } from "react-router-dom";
 
-export default function AdminHome() {
+export default function Dashboard() {
     let [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     useEffect(() => {

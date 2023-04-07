@@ -1,6 +1,6 @@
-import AdminHome from "./AdminHome";
+import Dashboard from "./Dashboard";
 import Scan from "./Scan";
 import Controls from "./Controls";
-import AdminOthers from "./AdminOthers";
+import Other from "./Other";
 
-export { AdminHome, Scan, Controls, AdminOthers };
+export { Dashboard, Scan, Controls, Other };

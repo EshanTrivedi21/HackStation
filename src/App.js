@@ -13,10 +13,10 @@ import {
     Others,
 } from "./screens/exports";
 import {
-    AdminHome,
+    Dashboard,
     Scan,
     Controls,
-    AdminOthers,
+    Other,
 } from "./admin/exports";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AdminControlContext } from "./contexts/adminControlContext";
@@ -99,7 +99,7 @@ function App() {
         },
         {
             path: "admin",
-            element: <AdminHome />,
+            element: <Dashboard />,
         },
         {
             path: "scan",
@@ -111,7 +111,7 @@ function App() {
         },
         {
             path: "admin-others",
-            element: <AdminOthers />,
+            element: <Other />,
         },
     ]);
     let [data, setData] = useState();

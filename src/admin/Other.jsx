@@ -1,17 +1,11 @@
 import React from "react";
-import {
-    Container,
-    ScreenTitle,
-    Card,
-    FlexCol,
-    PrimaryButton,
-} from "../utils/Utilities";
-import data from "../data/adminothers.json";
+import { Container, ScreenTitle, Card, FlexCol } from "../utils/Utilities";
+import data from "../data/other.json";
 import { auth } from "../utils/firebase";
 import { signOut } from "firebase/auth";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 
-const AdminOthers = () => {
+const Other = () => {
     const navigate = useNavigate();
 
     const nullFunc = () => {
@@ -20,7 +14,7 @@ const AdminOthers = () => {
 
     const logoutUser = () => {
         return signOut(auth).then(() => {
-            navigate("/login"); 
+            navigate("/login");
         });
     };
 
@@ -39,7 +33,9 @@ const AdminOthers = () => {
                                 icon={items.icon}
                                 button={true}
                                 onClick={() => {
-                                    items.link ? window.open(items.link) : nullFunc();
+                                    items.link
+                                        ? window.open(items.link)
+                                        : nullFunc();
                                     items.logout ? logoutUser() : nullFunc();
                                 }}
                             />
@@ -51,4 +47,4 @@ const AdminOthers = () => {
     );
 };
 
-export default AdminOthers;
+export default Other;
