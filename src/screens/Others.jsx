@@ -4,27 +4,32 @@ import {
     ScreenTitle,
     Card,
     FlexCol,
-    PrimaryButton,
 } from "../utils/Utilities";
 import data from "../data/others.json";
-import { Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
 import { signOut } from "firebase/auth";
 
 const Others = () => {
+    const navigate = useNavigate();
+
+    const nullFunc = () => {
+        return null;
+    };
+
     const logoutUser = () => {
-        return signOut(auth);
-      };
+        return signOut(auth).then(() => {
+            navigate("/login"); 
+        });
+    };
+
     return (
         <>
-            <Container className="!justify-start" gap="2.5rem">
-                <ScreenTitle title="Others" className="pb-4" />
+            <Container className="!justify-start" gap="2rem">
+                <ScreenTitle title="Others" className="pb-5" />
                 {data.map((items, index) => {
                     return (
-                        <FlexCol className="gap-2 !items-start" key={index}>
-                            <Typography variant="card_title" className="!ml-10">
-                                {items.heading}
-                            </Typography>
+                        <FlexCol className="!items-start" key={index}>
                             <Card
                                 width="30"
                                 height="30"
@@ -32,15 +37,14 @@ const Others = () => {
                                 subtitle={items.subtitle}
                                 icon={items.icon}
                                 button={true}
+                                onClick={() => {
+                                    items.link ? window.open(items.link) : nullFunc();
+                                    items.logout ? logoutUser() : nullFunc();
+                                }}
                             />
                         </FlexCol>
                     );
                 })}
-                <FlexCol className="pt-[2rem]">
-                    <PrimaryButton onClick={logoutUser}>
-                        Log Out
-                    </PrimaryButton>
-                </FlexCol>
             </Container>
         </>
     );

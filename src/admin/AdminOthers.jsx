@@ -6,35 +6,46 @@ import {
     FlexCol,
     PrimaryButton,
 } from "../utils/Utilities";
-import data from "../data/others.json";
-import { Typography } from "@mui/material";
+import data from "../data/adminothers.json";
 import { auth } from "../utils/firebase";
 import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom"; 
 
 const AdminOthers = () => {
-    const logoutUser = () => {
-        return signOut(auth);
+    const navigate = useNavigate();
+
+    const nullFunc = () => {
+        return null;
     };
+
+    const logoutUser = () => {
+        return signOut(auth).then(() => {
+            navigate("/login"); 
+        });
+    };
+
     return (
         <>
-            <Container className="!justify-start" gap="2.5rem">
-                <ScreenTitle title="Others" className="pb-4" />
-                <FlexCol className="gap-2 !items-start">
-                    <Typography variant="card_title" className="!ml-10">
-                        {data[2].heading}
-                    </Typography>
-                    <Card
-                        width="30"
-                        height="30"
-                        title={data[2].title}
-                        subtitle={data[2].subtitle}
-                        icon={data[2].icon}
-                        button={true}
-                    />
-                </FlexCol>
-                <FlexCol className="pt-[2rem]">
-                    <PrimaryButton onClick={logoutUser}>Log Out</PrimaryButton>
-                </FlexCol>
+            <Container className="!justify-start" gap="2rem">
+                <ScreenTitle title="Others" className="pb-5" />
+                {data.map((items, index) => {
+                    return (
+                        <FlexCol className="!items-start" key={index}>
+                            <Card
+                                width="30"
+                                height="30"
+                                title={items.title}
+                                subtitle={items.subtitle}
+                                icon={items.icon}
+                                button={true}
+                                onClick={() => {
+                                    items.link ? window.open(items.link) : nullFunc();
+                                    items.logout ? logoutUser() : nullFunc();
+                                }}
+                            />
+                        </FlexCol>
+                    );
+                })}
             </Container>
         </>
     );

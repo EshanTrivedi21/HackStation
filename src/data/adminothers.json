@@ -1,14 +1,4 @@
 [
-    {
-        "title": "Feedback Form",
-        "subtitle": "Tap here to give your feedback",
-        "icon": "/icons/psform.svg"
-    },
-    {
-        "title": "E-Certificates",
-        "subtitle": "Tap here to Download your certificates",
-        "icon": "/icons/certificates.svg"
-    },
     { 
         "title": "Get Help",
         "subtitle": "Tap here to call for help",
