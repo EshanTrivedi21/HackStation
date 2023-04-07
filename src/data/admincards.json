@@ -6,7 +6,7 @@
         "link": "/scan"
     },
     {
-        "icon": "/icons/others.svg",
+        "icon": "/icons/aiml.svg",
         "title": "Controls",
         "subtitle": "Control Panel for the User Interface",
         "link": "/controls"
@@ -16,5 +16,11 @@
         "title": "Timeline",
         "subtitle": "Know how you will spend your day!",
         "link": "/timeline"
+    },
+    {
+        "icon": "/icons/others.svg",
+        "title": "Others",
+        "subtitle": "Everything else you need to know",
+        "link": "/admin-others"
     }
 ]

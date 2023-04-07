@@ -16,6 +16,7 @@ import {
     AdminHome,
     Scan,
     Controls,
+    AdminOthers,
 } from "./admin/exports";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AdminControlContext } from "./contexts/adminControlContext";
@@ -107,6 +108,10 @@ function App() {
         {
             path: "controls",
             element: <Controls />,
+        },
+        {
+            path: "admin-others",
+            element: <AdminOthers />,
         },
     ]);
     let [data, setData] = useState();

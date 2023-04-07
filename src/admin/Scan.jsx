@@ -28,12 +28,6 @@ const Scan = () => {
                 <Code value={545545545454544} />
             </FlexCol>
             <FlexCol>
-                <Typography variant="modal_title">Scan QR</Typography>
-                <Typography variant="modal_subtitle">
-                    Scan user QR to continue
-                </Typography>
-            </FlexCol>
-            <FlexCol>
                 <Select data={data} />
             </FlexCol>
         </Container>
