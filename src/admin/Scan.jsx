@@ -1,8 +1,7 @@
 import React from "react";
 import { Container, ScreenTitle, FlexCol, Select } from "../utils/Utilities";
-import { Typography } from "@mui/material";
 import { QRCode } from "react-qrcode-logo";
-import data from "../data/controls.json";
+import data from "../data/scan.json";
 
 const Code = ({ value }) => {
     return (

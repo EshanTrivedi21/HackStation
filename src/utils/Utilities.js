@@ -1,6 +1,6 @@
-import { memo } from "react";
+import { memo, useState } from "react";
 import { Theme } from "./Theme";
-import { Button, Typography, ButtonBase } from "@mui/material";
+import { Button, Typography, ButtonBase, Switch } from "@mui/material";
 
 const Icon = memo(({ src, alt, width, height, className }) => {
     return (
@@ -232,19 +232,35 @@ const Card = ({
                         height={height}
                         className={`${disabled && "opacity-20"}`}
                     />
-                    <div
-                        className={`flex flex-col justify-center items-start ${
-                            disabled && "opacity-20"
-                        }`}
-                    >
+                    <FlexCol className="!w-auto !items-start">
                         <Typography variant="card_title">{title}</Typography>
                         <Typography variant="card_subtitle">
                             {subtitle}
                         </Typography>
-                    </div>
+                    </FlexCol>
                 </FlexRow>
             </Box>
         </>
+    );
+};
+
+const State = ({ title }) => {
+    const [checked, setChecked] = useState(false);
+    const handleChange = (event) => {
+        setChecked(event.target.checked);
+    };
+    return (
+        <Box className="rounded-lg h-20 !px-6">
+            <FlexRow className="!justify-between">
+                <Typography variant="card_title">{title}</Typography>
+                <Switch
+                    size="medium"
+                    color="warning"
+                    checked={checked}
+                    onChange={handleChange}
+                />
+            </FlexRow>
+        </Box>
     );
 };
 
@@ -260,4 +276,5 @@ export {
     Container,
     ContainerID,
     Select,
+    State,
 };

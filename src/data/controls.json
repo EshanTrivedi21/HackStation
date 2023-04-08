@@ -1,12 +1,67 @@
 [
     {
-        "name":"Check In",
+        "title":"Check In",
         "value":"check-in",
         "state": "false"
     },
     {
-        "name":"Preference Form",
+        "title":"Problem Statements",
+        "value":"ps",
+        "state": "false"
+    },
+    {
+        "title":"Preference Form",
         "value":"ps-form",
+        "state": "false"
+    },
+    {
+        "title":"Countdown",
+        "value":"countdown",
+        "state": "false"
+    },
+    {
+        "title":"Lunch Day 1",
+        "value":"lunch-day-1",
+        "state": "false"
+    },
+    {
+        "title":"Snacks Day 1",
+        "value":"snacks-day-1",
+        "state": "false"
+    },
+    {
+        "title":"Dinner",
+        "value":"dinner",
+        "state": "false"
+    },
+    {
+        "title":"Midnight Snacks",
+        "value":"midnight-snacks",
+        "state": "false"
+    },
+    {
+        "title":"Breakfast",
+        "value":"breakfast",
+        "state": "false"
+    },
+    {
+        "title":"Lunch Day 2",
+        "value":"lunch-day-2",
+        "state": "false"
+    },
+    {
+        "title":"Snack Day 2",
+        "value":"snacks-day-2",
+        "state": "false"
+    },
+    {
+        "title":"Feedback Form",
+        "value":"feedback-form",
+        "state": "false"
+    },
+    {
+        "title":"Certificates",
+        "value":"certificates",
         "state": "false"
     }
 ]
