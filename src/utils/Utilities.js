@@ -192,7 +192,7 @@ const ContainerID = ({ children }) => {
                 style={{
                     background:
                         "radial-gradient(104.64% 443.14% at 0% 3.59%, #303030 0%, #171717 26.18%)",
-                    border: "1px solid #AC2900",
+                    border: "1px solid #FF7A00",
                 }}
             >
                 {children}
