@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Check In",
+        "value": "check-in"
+    },
+    {
+        "name": "Lunch Day 1",
+        "value": "lunch-day-1"
+    },
+    {
+        "name": "Snacks Day 1",
+        "value": "snacks-day-1"
+    },
+    {
+        "name": "Dinner",
+        "value": "dinner"
+    },
+    {
+        "name": "Midnight Snacks",
+        "value": "midnight-snacks"
+    },
+    {
+        "name": "Breakfast",
+        "value": "breakfast"
+    },
+    {
+        "name": "Lunch Day 2",
+        "value": "lunch-day-2"
+    },
+    {
+        "name": "Snack Day 2",
+        "value": "snacks-day-2"
+    }
+]

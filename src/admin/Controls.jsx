@@ -1,5 +1,4 @@
-import {useContext} from "react";
-import { Container, ScreenTitle, Card, FlexCol } from "../utils/Utilities";
+import { Container, ScreenTitle, State, FlexCol } from "../utils/Utilities";
 import data from "../data/controls.json";
 
 const Controls = () => {
@@ -9,7 +8,7 @@ const Controls = () => {
                 <ScreenTitle title="Controls" />
                 <FlexCol className="gap-5">
                     {data.map((item, index) => (
-                        <Card
+                        <State
                             key={index}
                             width="30"
                             height="30"

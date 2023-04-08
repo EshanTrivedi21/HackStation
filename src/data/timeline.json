@@ -13,7 +13,7 @@
     },
     {
         "title": "9:30 Am - 9:45 Am",
-        "subtitle": "Domain Selection Form Submission",
+        "subtitle": "Domain Preference Form Submission",
         "icon": "/icons/15th.svg",
         "importance": true
     },
@@ -25,7 +25,7 @@
     },
     {
         "title": "11:15 Am - 11:30 Am",
-        "subtitle": "FCFS Form Result Declaration",
+        "subtitle": "Domain Preference Result Declaration",
         "icon": "/icons/15th.svg",
         "importance": false
     },
@@ -37,7 +37,7 @@
     },
     {
         "title": "1:00 PM - 2:00 PM",
-        "subtitle": "Lunch time",
+        "subtitle": "Lunch Time!",
         "icon": "/icons/15th.svg",
         "importance": false
     },
@@ -49,7 +49,7 @@
     },
     {
         "title": "6:00 PM - 7:00 PM",
-        "subtitle": "Memberships Round",
+        "subtitle": "Mentoring Round",
         "icon": "/icons/15th.svg",
         "importance": true
     },
@@ -61,7 +61,7 @@
     },
     {
         "title": "1:00 AM - 2:00 AM",
-        "subtitle": "Midnight Snacks!",
+        "subtitle": "Midnight Snacks Time!",
         "icon": "/icons/16th.svg",
         "importance": false
     },

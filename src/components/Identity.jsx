@@ -10,7 +10,7 @@ const Identity = memo(({ name, team }) => {
                     src="/assets/id_asset.png"
                     alt="asset"
                     style={{
-                        transform: "translateY(-5px) translateX(-5px)",
+                        transform: "translateY(-6px) translateX(-5px)",
                     }}
                 />
                 <FlexCol className="!w-auto !items-start gap-4">

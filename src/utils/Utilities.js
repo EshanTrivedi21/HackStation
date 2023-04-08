@@ -1,6 +1,6 @@
-import { memo } from "react";
+import { memo, useState } from "react";
 import { Theme } from "./Theme";
-import { Button, Typography, ButtonBase } from "@mui/material";
+import { Button, Typography, ButtonBase, Switch } from "@mui/material";
 
 const Icon = memo(({ src, alt, width, height, className }) => {
     return (
@@ -44,27 +44,27 @@ const Select = ({ data, className, onChange, value }) => {
         fontWeight: "normal",
         fontSize: "1rem",
         width: "60vw",
-        outline: "none", 
-        background:"radial-gradient(132.5% 132.5% at 48.94% 50%, #303030 0%, #202020 99.25%)",
+        outline: "none",
+        background:
+            "radial-gradient(132.5% 132.5% at 48.94% 50%, #303030 0%, #202020 99.25%)",
     };
-  
+
     return (
-      <select
-        className={className}
-        onChange={onChange}
-        value={value}
-        style={selectStyle}
-      >
-        <option value="0">Select Entity:</option>
-        {data.map((item, index) => (
-          <option key={index} value={item.value}>
-            {item.name}
-          </option>
-        ))}
-      </select>
+        <select
+            className={className}
+            onChange={onChange}
+            value={value}
+            style={selectStyle}
+        >
+            <option value="0">Select Entity:</option>
+            {data.map((item, index) => (
+                <option key={index} value={item.value}>
+                    {item.name}
+                </option>
+            ))}
+        </select>
     );
-  };
-  
+};
 
 const Container = ({
     className,
@@ -82,7 +82,7 @@ const Container = ({
                 className={className}
                 onClick={onClick ? onClick : () => {}}
                 style={{
-                    gap: gap || "1.5rem",
+                    gap: gap || "1.25rem",
                     paddingTop: padding || "3rem",
                     paddingBottom: padding || "2.5rem",
                     minHeight: minHeight || "100vh",
@@ -153,7 +153,7 @@ const Box = ({
     padding,
 }) => {
     const classes =
-        "flex rounded-lg w-[84.7vw] flex justify-center items-center " +
+        "flex rounded-lg w-[85vw] flex justify-center items-center " +
         className;
     return (
         <Container
@@ -163,28 +163,18 @@ const Box = ({
             padding="0"
         >
             <div
-                className="rounded-lg w-[85vw] p-[0.5px]"
+                className={classes}
                 style={{
-                    height: importance ? "81.5px" : "",
-                    background: importance
-                        ? "linear-gradient(166.2deg, #FF7A00 -6.36%, #AC2900 124.84%)"
-                        : "",
+                    padding: padding || "0",
+                    background:
+                        "radial-gradient(132.5% 132.5% at 48.94% 50%, #303030 0%, #202020 99.25%)",
+                    border: importance ? "1px solid #FF7A00" : "",
                     ...(done && {
-                        background:
-                            "linear-gradient(180.34deg, #03D06E 2.28%, rgba(71, 254, 89, 0.9) 99.71%)",
+                        border: "1px solid #03D06E",
                     }),
                 }}
             >
-                <div
-                    className={classes}
-                    style={{
-                        padding: padding || "0",
-                        background:
-                            "radial-gradient(132.5% 132.5% at 48.94% 50%, #303030 0%, #202020 99.25%)",
-                    }}
-                >
-                    {children}
-                </div>
+                {children}
             </div>
         </Container>
     );
@@ -192,23 +182,20 @@ const Box = ({
 
 const ContainerID = ({ children }) => {
     return (
-        <Container className="relative" minHeight="auto" padding="10px">
+        <Container
+            minHeight="auto"
+            padding="10px"
+            className="relative rounded-lg"
+        >
             <div
-                className="rounded-lg w-[84vw] h-[124.5px] p-[0.5px]"
+                className="flex rounded-lg w-[85vw] h-[122.5px]"
                 style={{
                     background:
-                        "linear-gradient(166.2deg, #FF7A00 -6.36%, #AC2900 124.84%)",
+                        "radial-gradient(104.64% 443.14% at 0% 3.59%, #303030 0%, #171717 26.18%)",
+                    border: "1px solid #FF7A00",
                 }}
             >
-                <div
-                    className="flex rounded-lg w-full h-full"
-                    style={{
-                        background:
-                            "radial-gradient(104.64% 443.14% at 0% 3.59%, #303030 0%, #171717 26.18%)",
-                    }}
-                >
-                    {children}
-                </div>
+                {children}
             </div>
         </Container>
     );
@@ -245,19 +232,35 @@ const Card = ({
                         height={height}
                         className={`${disabled && "opacity-20"}`}
                     />
-                    <div
-                        className={`flex flex-col justify-center items-start ${
-                            disabled && "opacity-20"
-                        }`}
-                    >
+                    <FlexCol className="!w-auto !items-start">
                         <Typography variant="card_title">{title}</Typography>
                         <Typography variant="card_subtitle">
                             {subtitle}
                         </Typography>
-                    </div>
+                    </FlexCol>
                 </FlexRow>
             </Box>
         </>
+    );
+};
+
+const State = ({ title }) => {
+    const [checked, setChecked] = useState(false);
+    const handleChange = (event) => {
+        setChecked(event.target.checked);
+    };
+    return (
+        <Box className="rounded-lg h-20 !px-6">
+            <FlexRow className="!justify-between">
+                <Typography variant="card_title">{title}</Typography>
+                <Switch
+                    size="medium"
+                    color="warning"
+                    checked={checked}
+                    onChange={handleChange}
+                />
+            </FlexRow>
+        </Box>
     );
 };
 
@@ -273,4 +276,5 @@ export {
     Container,
     ContainerID,
     Select,
+    State,
 };
