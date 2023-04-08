@@ -11,12 +11,12 @@ const Code = ({ value }) => {
         <>
             <QRCode
                 value={value}
-                size={200}
-                ecLevel="L"
-                fgColor="#DDDDDD"
-                bgColor="transparent"
-                removeQrCodeBehindLogo={true}
-                eyeRadius={5}
+                size={210}
+                // ecLevel="L"
+                // fgColor="#DDDDDD"
+                // bgColor="transparent"
+                // removeQrCodeBehindLogo={true}
+                // eyeRadius={10}
             />
         </>
     );
@@ -33,7 +33,7 @@ const QR = memo(() => {
                 window.location.href = "/login";
             }
             if (user) {
-                setUser(user.uid);
+                setUser("hacker#"+user.uid);
             }
             setLoading(false);
         });
