@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Container, ScreenTitle, FlexCol, Select } from "../utils/Utilities";
-import { QRCode } from "react-qrcode-logo";
 import data from "../data/controls.json";
 import { Html5Qrcode } from "html5-qrcode";
 
 const Scan = () => {
-    let [id, setId] = React.useState(null);
+    let [id, setId] = useState(null);
     function onScanSuccess(decodedText) {
         setId(decodedText);
     }
