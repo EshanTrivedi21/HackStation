@@ -1,0 +1,26 @@
+[
+    {
+        "icon": "/icons/qr.svg",
+        "title": "Scan",
+        "subtitle": "Scan the respective User QR Code",
+        "link": "/scan"
+    },
+    {
+        "icon": "/icons/aiml.svg",
+        "title": "Controls",
+        "subtitle": "Control Panel for the User Interface",
+        "link": "/controls"
+    },
+    {
+        "icon": "/icons/timeline.svg",
+        "title": "Timeline",
+        "subtitle": "Know how you will spend your day!",
+        "link": "/timeline"
+    },
+    {
+        "icon": "/icons/others.svg",
+        "title": "Others",
+        "subtitle": "Everything else you need to know",
+        "link": "/admin-others"
+    }
+]
