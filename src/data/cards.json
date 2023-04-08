@@ -2,28 +2,28 @@
     {
         "icon": "/icons/qr.svg",
         "title": "Check In",
-        "subtitle": "Register to start exploring this new world!",
+        "subtitle": "Start exploring this new world",
         "link": "/check-in",
         "adminName": "check-in"
     },
     {
         "icon": "/icons/aiml.svg",
         "title": "Problem Statements",
-        "subtitle": "Everything about the problem statements!",
+        "subtitle": "Everything about the problem statements",
         "link": "/ps",
         "adminName": "problem-statement"
     },
     {
         "icon": "/icons/timeline.svg",
         "title": "Timeline",
-        "subtitle": "Know how you will spend your day!",
+        "subtitle": "Know how you will spend your day",
         "link": "/timeline",
         "adminName": "timeline"
     },
     {
         "icon": "/icons/food.svg",
         "title": "Food",
-        "subtitle": "Refuel your brainy engines!",
+        "subtitle": "Refuel your brainy engines & power up",
         "link": "/food",
         "adminName": "food"
     },

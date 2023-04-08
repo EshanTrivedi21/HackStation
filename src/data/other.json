@@ -1,13 +1,13 @@
 [
     { 
         "title": "Get Help",
-        "subtitle": "Tap here to call for help",
+        "subtitle": "We are one tap away from you",
         "icon": "/icons/get-help.svg",
         "link": "tel:1234567890"
     },
     { 
         "title": "Logout",
-        "subtitle": "Tap here to logout",
+        "subtitle": "Tap here to logout from the app",
         "icon": "/icons/logout.svg",
         "logout": "true"
     }

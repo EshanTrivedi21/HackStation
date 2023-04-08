@@ -2,25 +2,25 @@
     {
         "icon": "/icons/qr.svg",
         "title": "Scan",
-        "subtitle": "Scan the respective User QR Code",
+        "subtitle": "QR UID Scanner for Management",
         "link": "/scan"
     },
     {
         "icon": "/icons/aiml.svg",
         "title": "Controls",
-        "subtitle": "Control Panel for the User Interface",
+        "subtitle": "Admin Control Panel for Management",
         "link": "/controls"
     },
     {
         "icon": "/icons/timeline.svg",
         "title": "Timeline",
-        "subtitle": "Know how you will spend your day!",
+        "subtitle": "Know how you will spend your day",
         "link": "/timeline"
     },
     {
         "icon": "/icons/others.svg",
         "title": "Others",
-        "subtitle": "Everything else you need to know",
+        "subtitle": "Everything else you need to know :)",
         "link": "/admin-others"
     }
 ]
