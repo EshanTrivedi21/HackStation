@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Container, ScreenTitle, Card, FlexCol } from "../utils/Utilities";
 import data from "../data/ps.json";
-import { useNavigate } from "react-router-dom";
 import { Typography } from "@mui/material";
 import { AdminControlContext } from "../contexts/adminControlContext";
 
