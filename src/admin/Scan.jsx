@@ -1,27 +1,29 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Container, ScreenTitle, FlexCol, Select } from "../utils/Utilities";
-import data from "../data/controls.json";
+import data from "../data/scan.json";
 import { Html5Qrcode } from "html5-qrcode";
+import { AdminControlContext } from "../contexts/adminControlContext";
 
 const Scan = () => {
     let [id, setId] = useState(null);
     function onScanSuccess(decodedText) {
         setId(decodedText);
     }
-
-    function onScanFailure(error) {
-        console.warn(`Code scan error = ${error}`);
-    }
     useEffect(() => {
-        const html5QrCode = new Html5Qrcode("reader", true);
+        const html5QrCode = new Html5Qrcode("reader");
         const config = { qrbox: { width: 200, height: 300 } };
-        html5QrCode.start(
-            { facingMode: "environment" },
-            config,
-            onScanSuccess,
-            onScanFailure
-        );
+        html5QrCode.start({ facingMode: "environment" }, config, onScanSuccess);
+        window.onbeforeunload = async function () {
+            await html5QrCode.stop();
+        };
     }, []);
+    useEffect(() => {
+        if (id) {
+            setId(null);
+        }
+    }, [id]);
+
+    let stateAC = useContext(AdminControlContext);
     return (
         <Container minHeight="auto" gap="4rem">
             <ScreenTitle title="Scan QR" />
@@ -37,7 +39,15 @@ const Scan = () => {
                 <p className="text-white">{id}</p>
             </FlexCol>
             <FlexCol>
-                <Select data={data} />
+                {stateAC.adminData && (
+                    <Select
+                        data={data.filter((e) => {
+                            if (stateAC.adminData[e.adminName]) {
+                                return e;
+                            }
+                        })}
+                    />
+                )}
             </FlexCol>
         </Container>
     );

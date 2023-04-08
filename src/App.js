@@ -4,23 +4,12 @@ import { Login } from "./auth/exports";
 import { Loader } from "./components/exports";
 import { Container } from "./utils/Utilities";
 import { Typography } from "@mui/material";
-import {
-    Home,
-    Timeline,
-    Food,
-    QR,
-    PS,
-    Others,
-} from "./screens/exports";
-import {
-    Dashboard,
-    Scan,
-    Controls,
-    Other,
-} from "./admin/exports";
+import { Home, Timeline, Food, QR, PS, Others } from "./screens/exports";
+import { Dashboard, Scan, Controls, Other } from "./admin/exports";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AdminControlContext } from "./contexts/adminControlContext";
 import AuthCheck from "./utils/AuthCheck";
+import AdminCheck from "./utils/AdminCheck";
 const Modal = ({ title, subtitle }) => {
     return (
         <Container>
@@ -83,35 +72,59 @@ function App() {
         },
         {
             path: "check-in",
-            element: <QR />,
+            element: <QR id="Check In" />,
         },
         {
             path: "qr",
-            element: <QR />,
+            element: <QR id="Food" />,
         },
         {
             path: "ps",
-            element: <PS />,
+            element: (
+                <AuthCheck>
+                    <PS />
+                </AuthCheck>
+            ),
         },
         {
             path: "others",
-            element: <Others />,
+            element: (
+                <AuthCheck>
+                    <Others />
+                </AuthCheck>
+            ),
         },
         {
             path: "admin",
-            element: <Dashboard />,
+            element: (
+                <AdminCheck>
+                    <Dashboard />
+                </AdminCheck>
+            ),
         },
         {
             path: "scan",
-            element: <Scan />,
+            element: (
+                <AdminCheck>
+                    <Scan />
+                </AdminCheck>
+            ),
         },
         {
             path: "controls",
-            element: <Controls />,
+            element: (
+                <AdminCheck>
+                    <Controls />
+                </AdminCheck>
+            ),
         },
         {
             path: "admin-others",
-            element: <Other />,
+            element: (
+                <AdminCheck>
+                    <Other />
+                </AdminCheck>
+            ),
         },
     ]);
     let [data, setData] = useState();

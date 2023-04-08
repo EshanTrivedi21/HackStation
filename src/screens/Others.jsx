@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
     Container,
     ScreenTitle,
@@ -9,10 +9,11 @@ import data from "../data/others.json";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
 import { signOut } from "firebase/auth";
+import { AdminControlContext } from "../contexts/adminControlContext";
 
 const Others = () => {
     const navigate = useNavigate();
-
+    let stateAC = useContext(AdminControlContext)
     const nullFunc = () => {
         return null;
     };
@@ -27,7 +28,7 @@ const Others = () => {
         <>
             <Container className="!justify-start" gap="2rem">
                 <ScreenTitle title="Others" className="pb-5" />
-                {data.map((items, index) => {
+                {stateAC.adminData && data.map((items, index) => {
                     return (
                         <FlexCol className="!items-start" key={index}>
                             <Card
@@ -41,6 +42,7 @@ const Others = () => {
                                     items.link ? window.open(items.link) : nullFunc();
                                     items.logout ? logoutUser() : nullFunc();
                                 }}
+                                disabled={items.logout || stateAC.adminData[items.adminName] ? false : true}
                             />
                         </FlexCol>
                     );

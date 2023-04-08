@@ -12,20 +12,21 @@ const Code = ({ value }) => {
             <QRCode
                 value={value}
                 size={210}
-                // ecLevel="L"
-                // fgColor="#DDDDDD"
-                // bgColor="transparent"
-                // removeQrCodeBehindLogo={true}
-                // eyeRadius={10}
+                fgColor="#DDDDDD"
+                bgColor="transparent"
+                eyeRadius={10}
             />
         </>
     );
 };
 
-const QR = memo(() => {
+const QR = memo(({ id }) => {
     let [user, setUser] = useState();
     let [loading, setLoading] = useState(true);
     useEffect(() => {
+        if (!id) {
+            window.location.href = "/";
+        }
         setLoading(true);
         onAuthStateChanged(auth, (user) => {
             if (!user) {
@@ -33,7 +34,7 @@ const QR = memo(() => {
                 window.location.href = "/login";
             }
             if (user) {
-                setUser("hacker#"+user.uid);
+                setUser("hacker#" + user.uid);
             }
             setLoading(false);
         });
@@ -42,7 +43,7 @@ const QR = memo(() => {
         <>
             <Loader open={loading} />
             <Container minHeight="auto" gap="7rem">
-                <ScreenTitle title="QR Code" />
+                <ScreenTitle title={id} />
                 <FlexCol>{user && <Code value={user} />}</FlexCol>
                 <FlexCol>
                     <Typography variant="modal_title">Identity Card</Typography>

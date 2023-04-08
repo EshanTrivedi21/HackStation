@@ -1,67 +1,66 @@
 [
     {
         "title":"Check In",
-        "value":"check-in",
-        "state": "false"
+        "value":"check-in"
     },
     {
         "title":"Problem Statements",
-        "value":"ps",
-        "state": "false"
+        "value":"problem-statement"
+    },
+    {
+        "title":"Timeline",
+        "value":"timeline"
+    },
+    {
+        "title": "Food",
+        "value": "food"
     },
     {
         "title":"Preference Form",
-        "value":"ps-form",
-        "state": "false"
-    },
-    {
-        "title":"Countdown",
-        "value":"countdown",
-        "state": "false"
+        "value":"ps-form"
     },
     {
         "title":"Lunch Day 1",
-        "value":"lunch-day-1",
-        "state": "false"
+        "value":"lunch1"
     },
     {
         "title":"Snacks Day 1",
-        "value":"snacks-day-1",
-        "state": "false"
+        "value":"snacks1"
     },
     {
         "title":"Dinner",
-        "value":"dinner",
-        "state": "false"
+        "value":"dinner"
     },
     {
         "title":"Midnight Snacks",
-        "value":"midnight-snacks",
-        "state": "false"
+        "value":"midnight-snacks"
     },
     {
         "title":"Breakfast",
-        "value":"breakfast",
-        "state": "false"
+        "value":"breakfast"
     },
     {
         "title":"Lunch Day 2",
-        "value":"lunch-day-2",
-        "state": "false"
+        "value":"lunch2"
     },
     {
         "title":"Snack Day 2",
-        "value":"snacks-day-2",
-        "state": "false"
+        "value":"snacks2"
     },
     {
         "title":"Feedback Form",
-        "value":"feedback-form",
-        "state": "false"
+        "value":"feedback-form"
     },
     {
         "title":"Certificates",
-        "value":"certificates",
-        "state": "false"
+        "value":"certificates"
+    },
+    {
+        "title": "get help",
+        "value": "get-help"
+    },
+    {
+        "title": "others",
+        "value": "others"
     }
 ]

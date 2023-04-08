@@ -1,6 +1,8 @@
 import { memo, useState } from "react";
 import { Theme } from "./Theme";
 import { Button, Typography, ButtonBase, Switch } from "@mui/material";
+import { db } from "./firebase";
+import { doc, runTransaction } from "firebase/firestore";
 
 const Icon = memo(({ src, alt, width, height, className }) => {
     return (
@@ -230,9 +232,13 @@ const Card = ({
                         src={icon}
                         width={width}
                         height={height}
-                        className={`${disabled && "opacity-20"}`}
+                        className={`${disabled && "opacity-25"}`}
                     />
-                    <FlexCol className="!w-auto !items-start">
+                    <FlexCol
+                        className={`!w-auto !items-start ${
+                            disabled && "opacity-25"
+                        }`}
+                    >
                         <Typography variant="card_title">{title}</Typography>
                         <Typography variant="card_subtitle">
                             {subtitle}
@@ -244,11 +250,22 @@ const Card = ({
     );
 };
 
-const State = ({ title }) => {
-    const [checked, setChecked] = useState(false);
-    const handleChange = (event) => {
+const State = ({ title, check = false, value }) => {
+    const [checked, setChecked] = useState(check);
+    const adminRef = doc(db, "admin-controls", "6d8cBhBOJndArykfCBxG");
+    const handleChange = async (event) => {
         setChecked(event.target.checked);
+        console.log(value, checked);
+        await runTransaction(db, async (transaction) => {
+            const adminDoc = await transaction.get(adminRef);
+            if (!adminDoc.exists()) {
+                throw "Document does not exist!";
+            } else {
+                transaction.update(adminRef, { [value]: event.target.checked });
+            }
+        });
     };
+
     return (
         <Box className="rounded-lg h-20 !px-6">
             <FlexRow className="!justify-between">

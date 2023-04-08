@@ -2,23 +2,26 @@
     {
         "title": "Feedback Form",
         "subtitle": "Give your feedback here",
-        "icon": "/icons/psform.svg"
+        "icon": "/icons/psform.svg",
+        "adminName": "feedback-form"
     },
     {
         "title": "E-Certificates",
         "subtitle": "Tap here to Download your certificates",
-        "icon": "/icons/certificates.svg"
+        "icon": "/icons/certificates.svg",
+        "adminName": "certificates"
     },
     { 
         "title": "Get Help",
         "subtitle": "We are one tap away from you",
         "icon": "/icons/get-help.svg",
-        "link": "tel:1234567890"
+        "link": "tel:1234567890",
+        "adminName": "get-help"
     },
     { 
         "title": "Logout",
         "subtitle": "Tap here to logout from the app",
         "icon": "/icons/logout.svg",
-        "logout": "true"
+        "logout": true
     }
 ]

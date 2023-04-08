@@ -1,34 +1,42 @@
 [
     {
         "name": "Check In",
-        "value": "check-in"
+        "value": "check-in",
+        "adminName": "check-in"
     },
     {
         "name": "Lunch Day 1",
-        "value": "lunch-day-1"
+        "value": "lunch-day-1",
+        "adminName": "lunch1"
     },
     {
         "name": "Snacks Day 1",
-        "value": "snacks-day-1"
+        "value": "snacks-day-1",
+        "adminName": "snacks1"
     },
     {
         "name": "Dinner",
-        "value": "dinner"
+        "value": "dinner",
+        "adminName": "dinner"
     },
     {
         "name": "Midnight Snacks",
-        "value": "midnight-snacks"
+        "value": "midnight-snacks",
+        "adminName": "midnight-snacks"
     },
     {
         "name": "Breakfast",
-        "value": "breakfast"
+        "value": "breakfast",
+        "adminName": "breakfast"
     },
     {
         "name": "Lunch Day 2",
-        "value": "lunch-day-2"
+        "value": "lunch-day-2",
+        "adminName": "lunch2"
     },
     {
         "name": "Snack Day 2",
-        "value": "snacks-day-2"
+        "value": "snacks-day-2",
+        "adminName": "snacks2"
     }
 ]

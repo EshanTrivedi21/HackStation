@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Container, ScreenTitle, Card, FlexCol } from "../utils/Utilities";
 import data from "../data/ps.json";
 import { useNavigate } from "react-router-dom";
 import { Typography } from "@mui/material";
+import { AdminControlContext } from "../contexts/adminControlContext";
 
 const PS = () => {
-    const navigate = useNavigate();
+    let stateAC = useContext(AdminControlContext)
     return (
         <>
             <Container className="!justify-start" gap="3rem">
@@ -14,14 +15,15 @@ const PS = () => {
                     <Typography variant="card_title" className="!ml-10">
                         Form
                     </Typography>
-                    <Card
+                    {stateAC.adminData && <Card
                         width="30"
                         height="30"
                         title="Preference Form"
                         subtitle="Fill the form to get your preferences"
                         icon="/icons/psform.svg"
                         button={true}
-                    />
+                        disabled={!stateAC.adminData["ps-form"]}
+                    />}
                 </FlexCol>
                 <FlexCol className="gap-5 !items-start">
                     <Typography variant="card_title" className="!ml-10">
