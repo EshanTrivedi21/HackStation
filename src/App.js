@@ -39,10 +39,8 @@ function App() {
                 setIsMobile(true);
             }
         };
-
         handleResize();
         window.addEventListener("resize", handleResize);
-
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
@@ -129,13 +127,17 @@ function App() {
         },
         {
             path: "scanned",
-            element: <Scanned entity="Dinner" user="Eshan Trivedi" team="inspectElements" />,
+            element: (
+                <AdminCheck>
+                    <Scanned />
+                </AdminCheck>
+            ),
         },
     ]);
     let [data, setData] = useState();
     let [data2, setData2] = useState();
     let state = useContext(AdminControlContext);
-    let stateUD = useContext(UserDataContext)
+    let stateUD = useContext(UserDataContext);
     state.adminData = data;
     state.setAdminData = setData;
     stateUD.userData = data2;

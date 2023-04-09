@@ -36,7 +36,7 @@ const BackIcon = memo(({ to }) => {
     );
 });
 
-const Select = ({ data, className, onChange, value }) => {
+const Select = ({ data, className, onChange, value, defaultValue }) => {
     const selectStyle = {
         border: "none",
         borderRadius: "10px",
@@ -57,8 +57,9 @@ const Select = ({ data, className, onChange, value }) => {
             onChange={onChange}
             value={value}
             style={selectStyle}
+            defaultValue={defaultValue}
         >
-            <option value="0">Select Entity:</option>
+            <option value={0}>Select Entity:</option>
             {data.map((item, index) => (
                 <option key={index} value={item.value}>
                     {item.name}
@@ -117,7 +118,9 @@ const ScreenTitle = ({ title, className }) => {
 };
 
 const PrimaryButton = ({ onClick, children, className }) => {
-    const classes = "rounded-[10px] p-[1px] bg-[linear-gradient(166.2deg,#FF7A00_-6.36%,#AC2900_124.84%)] w-[75%] h-14 " + className;
+    const classes =
+        "rounded-[10px] p-[1px] bg-[linear-gradient(166.2deg,#FF7A00_-6.36%,#AC2900_124.84%)] w-[75%] h-14 " +
+        className;
     return (
         <div className={classes}>
             <Button variant="contained" onClick={onClick}>
@@ -260,7 +263,7 @@ const State = ({ title, check = false, value }) => {
         await runTransaction(db, async (transaction) => {
             const adminDoc = await transaction.get(adminRef);
             if (!adminDoc.exists()) {
-                throw "Document does not exist!";
+                console.error("Document does not exist!");
             } else {
                 transaction.update(adminRef, { [value]: event.target.checked });
             }

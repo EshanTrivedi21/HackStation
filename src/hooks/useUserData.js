@@ -9,7 +9,6 @@ export const useUserData = () => {
         getDoc(doc(db, "users", id))
             .then((doc) => {
                 if (doc.exists()) {
-                    console.log("Document data:", doc.data());
                     stateAC.setUserData(doc.data());
                 } else {
                     console.log("No such document!");
