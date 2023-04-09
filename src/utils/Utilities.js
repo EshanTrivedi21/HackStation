@@ -116,9 +116,10 @@ const ScreenTitle = ({ title, className }) => {
     );
 };
 
-const PrimaryButton = ({ onClick, children }) => {
+const PrimaryButton = ({ onClick, children, className }) => {
+    const classes = "rounded-[10px] p-[1px] bg-[linear-gradient(166.2deg,#FF7A00_-6.36%,#AC2900_124.84%)] w-[75%] h-14 " + className;
     return (
-        <div className="rounded-[10px] p-[1px] bg-[linear-gradient(166.2deg,#FF7A00_-6.36%,#AC2900_124.84%)] w-[75%] h-14">
+        <div className={classes}>
             <Button variant="contained" onClick={onClick}>
                 {children}
             </Button>

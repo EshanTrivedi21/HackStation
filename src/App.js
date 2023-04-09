@@ -5,7 +5,7 @@ import { Loader } from "./components/exports";
 import { Container } from "./utils/Utilities";
 import { Typography } from "@mui/material";
 import { Home, Timeline, Food, QR, PS, Others } from "./screens/exports";
-import { Dashboard, Scan, Controls, Other } from "./admin/exports";
+import { Dashboard, Scan, Controls, Other, Scanned } from "./admin/exports";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AdminControlContext } from "./contexts/adminControlContext";
 import AuthCheck from "./utils/AuthCheck";
@@ -32,7 +32,7 @@ function App() {
 
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth >= 600) {
+            if (window.innerWidth > 500) {
                 setIsMobile(false);
             } else {
                 setIsMobile(true);
@@ -125,6 +125,10 @@ function App() {
                     <Other />
                 </AdminCheck>
             ),
+        },
+        {
+            path: "scanned",
+            element: <Scanned />,
         },
     ]);
     let [data, setData] = useState();
