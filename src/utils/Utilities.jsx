@@ -45,7 +45,7 @@ const Select = ({ data, className, onChange, value }) => {
         fontFamily: "Poppins",
         fontWeight: "normal",
         fontSize: "1rem",
-        width: "60vw",
+        width: "300px",
         outline: "none",
         background:
             "radial-gradient(132.5% 132.5% at 48.94% 50%, #303030 0%, #202020 99.25%)",
