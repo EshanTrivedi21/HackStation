@@ -19,6 +19,9 @@ const Scan = () => {
     }, []);
     useEffect(() => {
         if (id) {
+            let n = id.split("#");
+            let n1 = n[0].split("@");
+            alert(`Name: ${n1[0].replace("_", " ")}\nTeam: ${n1[1]}\nID: ${n[1]}`);
             setId(null);
         }
     }, [id]);

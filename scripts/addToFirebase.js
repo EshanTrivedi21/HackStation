@@ -10,7 +10,7 @@ admin.initializeApp({
 });
 
 const auth = admin.auth();
-
+const db  = admin.firestore();
 function createNormalUser() {
     const data = [];
     fs.createReadStream("./data.csv")
@@ -34,6 +34,22 @@ function createNormalUser() {
                     password: password,
                     displayName: displayName,
                     disabled: false,
+                }).then((userRecord) => {
+                    console.log("Successfully created new user:", userRecord.uid);
+                    db.collection("users").doc(userRecord.uid).set({
+                        "check-in": false,
+                        "lunch1": false,
+                        "lunch2": false,
+                        "snacks1": false,
+                        "snacks2": false,
+                        "dinner": false,
+                        "midnight-snacks": false,
+                        "breakfast": false,
+                    }).then(() => {
+                        console.log("Document successfully written!");
+                    }).catch((error) => {
+                        console.error("Error writing document: ", error);
+                    });
                 });
             }
         });
@@ -50,4 +66,4 @@ function createAdmin() {
         console.log("Successfully created new user:", userRecord.uid);
     });
 }
-createAdmin();
+createNormalUser();

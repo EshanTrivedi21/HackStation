@@ -34,7 +34,7 @@ const QR = memo(({ id }) => {
                 window.location.href = "/login";
             }
             if (user) {
-                setUser("hacker#" + user.uid);
+                setUser(user.displayName + "#" + user.uid);
             }
             setLoading(false);
         });
