@@ -7,19 +7,19 @@
     },
     {
         "title": "Snacks - Day 1",
-        "subtitle": "Samsosa Pav / Veg Fankie, Tea/Coffee",
+        "subtitle": "Samosa Pav / Veg Fankie, Tea/Coffee",
         "icon": "/icons/snacks.svg",
         "adminName": "snacks1"
     },
     {
         "title": "Dinner",
-        "subtitle": "Roti, Steam Rice, Dal Fy, Veg Kurma",
+        "subtitle": "Roti, Steam Rice, Dal Fry, Veg Kurma",
         "icon": "/icons/dinner.svg",
         "adminName": "dinner"
     },
     {
         "title": "Midnight Snacks",
-        "subtitle": "Coffe, Chips, Biscuits, ButterCo",
+        "subtitle": "Coffee, Chips, Biscuits, ButterCo",
         "icon": "/icons/midnights.svg",
         "adminName": "midnight-snacks"
     },
