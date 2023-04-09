@@ -66,4 +66,15 @@ function createAdmin() {
         console.log("Successfully created new user:", userRecord.uid);
     });
 }
+function updateAdminPassword() {
+    auth.getUserByEmail(process.env.ADMIN_EMAIL).then((userRecord) => {
+        auth.updateUser(userRecord.uid, {
+            password: process.env.ADMIN_PASSWORD,
+        }).then(() => {
+            console.log("Successfully updated user");
+        }).catch((error) => {
+            console.log("Error updating user:", error);
+        });
+    });
+}
 createNormalUser();
