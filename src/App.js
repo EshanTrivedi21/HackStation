@@ -129,7 +129,7 @@ function App() {
         },
         {
             path: "scanned",
-            element: <Scanned />,
+            element: <Scanned entity="Dinner" user="Eshan Trivedi" team="inspectElements" />,
         },
     ]);
     let [data, setData] = useState();
