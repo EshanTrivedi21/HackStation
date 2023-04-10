@@ -6,12 +6,12 @@
     },
     {
         "name": "Lunch Day 1",
-        "value": "lunch-day-1",
+        "value": "lunch1",
         "adminName": "lunch1"
     },
     {
         "name": "Snacks Day 1",
-        "value": "snacks-day-1",
+        "value": "snacks1",
         "adminName": "snacks1"
     },
     {
@@ -31,12 +31,12 @@
     },
     {
         "name": "Lunch Day 2",
-        "value": "lunch-day-2",
+        "value": "lunch2",
         "adminName": "lunch2"
     },
     {
         "name": "Snack Day 2",
-        "value": "snacks-day-2",
+        "value": "snacks2",
         "adminName": "snacks2"
     }
 ]

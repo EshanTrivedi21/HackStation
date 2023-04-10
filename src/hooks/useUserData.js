@@ -1,15 +1,22 @@
 import { useContext } from "react";
 import { db } from "../utils/firebase";
-import { collection, getDocs } from "firebase/firestore";
-import { AdminControlContext } from "../contexts/adminControlContext";
+import { getDoc, doc } from "firebase/firestore";
+import { UserDataContext } from "../contexts/userDataContext";
 
-export const useUserData = (id) => {
-    let stateAC = useContext(AdminControlContext);
-    const fetch = async () => {
-        console.log("fetching user data");
-        // getDocs(collection(db, "admin-controls")).then((d) => {
-        //     stateAC.setAdminData(d.docs[0].data());
-        // });
+export const useUserData = () => {
+    let stateAC = useContext(UserDataContext);
+    const fetch = async (id) => {
+        getDoc(doc(db, "users", id))
+            .then((doc) => {
+                if (doc.exists()) {
+                    stateAC.setUserData(doc.data());
+                } else {
+                    console.log("No such document!");
+                }
+            })
+            .catch((error) => {
+                console.log("Error getting document:", error);
+            });
     };
     return { fetch };
 };

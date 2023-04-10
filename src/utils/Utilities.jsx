@@ -36,7 +36,7 @@ const BackIcon = memo(({ to }) => {
     );
 });
 
-const Select = ({ data, className, onChange, value }) => {
+const Select = ({ data, className, onChange, value, defaultValue }) => {
     const selectStyle = {
         border: "none",
         borderRadius: "10px",
@@ -58,8 +58,9 @@ const Select = ({ data, className, onChange, value }) => {
             onChange={onChange}
             value={value}
             style={selectStyle}
+            defaultValue={defaultValue}
         >
-            <option value="0">Select Entity:</option>
+            <option value={0}>Select Entity:</option>
             {data.map((item, index) => (
                 <option key={index} value={item.value}>
                     {item.name}
@@ -264,7 +265,7 @@ const State = ({ title, check = false, value }) => {
         await runTransaction(db, async (transaction) => {
             const adminDoc = await transaction.get(adminRef);
             if (!adminDoc.exists()) {
-                throw "Document does not exist!";
+                console.error("Document does not exist!");
             } else {
                 transaction.update(adminRef, { [value]: event.target.checked });
             }

@@ -10,6 +10,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AdminControlContext } from "./contexts/adminControlContext";
 import AuthCheck from "./utils/AuthCheck";
 import AdminCheck from "./utils/AdminCheck";
+import { UserDataContext } from "./contexts/userDataContext";
 const Modal = ({ title, subtitle }) => {
     return (
         <Container>
@@ -38,10 +39,8 @@ function App() {
                 setIsMobile(true);
             }
         };
-
         handleResize();
         window.addEventListener("resize", handleResize);
-
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
@@ -128,7 +127,11 @@ function App() {
         },
         {
             path: "scanned",
-            element: <Scanned entity="Dinner" user="Eshan Trivedi" team="inspectElements" />,
+            element: (
+                <AdminCheck>
+                    <Scanned />
+                </AdminCheck>
+            ),
         },
         {
             path: "users",
@@ -140,9 +143,13 @@ function App() {
         },
     ]);
     let [data, setData] = useState();
+    let [data2, setData2] = useState();
     let state = useContext(AdminControlContext);
+    let stateUD = useContext(UserDataContext);
     state.adminData = data;
     state.setAdminData = setData;
+    stateUD.userData = data2;
+    stateUD.setUserData = setData2;
     if (isMobile === null) {
         <Loader />;
     } else if (!isMobile) {
