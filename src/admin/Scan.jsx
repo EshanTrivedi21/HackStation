@@ -1,10 +1,18 @@
 import { useContext, useEffect, useState } from "react";
-import { Container, ScreenTitle, FlexCol, Select } from "../utils/Utilities";
+import {
+    Container,
+    ScreenTitle,
+    FlexCol,
+    Select,
+    User,
+} from "../utils/Utilities";
 import data from "../data/scan.json";
 import { Html5Qrcode } from "html5-qrcode";
 import { AdminControlContext } from "../contexts/adminControlContext";
+import { useNavigate } from "react-router-dom";
 
 const Scan = () => {
+    const navigate = useNavigate();
     let [id, setId] = useState(null);
     function onScanSuccess(decodedText) {
         setId(decodedText);
@@ -38,7 +46,7 @@ const Scan = () => {
                 ></div>
                 <p className="text-white">{id}</p>
             </FlexCol>
-            <FlexCol>
+            <FlexCol className="!gap-5">
                 {stateAC.adminData && (
                     <Select
                         data={data.filter((e) => {
@@ -48,6 +56,14 @@ const Scan = () => {
                         })}
                     />
                 )}
+                <User
+                    name="All Users"
+                    className="!w-[300px]"
+                    button={true}
+                    onClick={() => {
+                        navigate("/users");
+                    }}
+                />
             </FlexCol>
         </Container>
     );

@@ -5,7 +5,7 @@ import { Loader } from "./components/exports";
 import { Container } from "./utils/Utilities";
 import { Typography } from "@mui/material";
 import { Home, Timeline, Food, QR, PS, Others } from "./screens/exports";
-import { Dashboard, Scan, Controls, Other, Scanned } from "./admin/exports";
+import { Dashboard, Scan, Controls, Other, Scanned, Users, Manual } from "./admin/exports";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AdminControlContext } from "./contexts/adminControlContext";
 import AuthCheck from "./utils/AuthCheck";
@@ -129,6 +129,14 @@ function App() {
         {
             path: "scanned",
             element: <Scanned entity="Dinner" user="Eshan Trivedi" team="inspectElements" />,
+        },
+        {
+            path: "users",
+            element: <Users />,
+        },
+        {
+            path: "manual",
+            element: <Manual />,
         },
     ]);
     let [data, setData] = useState();

@@ -46,6 +46,7 @@ const Select = ({ data, className, onChange, value }) => {
         fontWeight: "normal",
         fontSize: "1rem",
         width: "300px",
+        height: "55px",
         outline: "none",
         background:
             "radial-gradient(132.5% 132.5% at 48.94% 50%, #303030 0%, #202020 99.25%)",
@@ -117,7 +118,9 @@ const ScreenTitle = ({ title, className }) => {
 };
 
 const PrimaryButton = ({ onClick, children, className }) => {
-    const classes = "rounded-[10px] p-[1px] bg-[linear-gradient(166.2deg,#FF7A00_-6.36%,#AC2900_124.84%)] w-[75%] h-14 " + className;
+    const classes =
+        "rounded-[10px] p-[1px] bg-[linear-gradient(166.2deg,#FF7A00_-6.36%,#AC2900_124.84%)] w-[75%] h-14 " +
+        className;
     return (
         <div className={classes}>
             <Button variant="contained" onClick={onClick}>
@@ -215,11 +218,12 @@ const Card = ({
     button,
     onClick,
     disabled = false,
+    className,
 }) => {
     return (
         <>
             <Box
-                className={`rounded-lg h-20 !pl-6 ${
+                className={`rounded-lg h-20 !pl-6 ${className} ${
                     disabled &&
                     "!bg-[radial-gradient(132.5%_132.5%_at_48.94%_50%,rgba(48,48,48,0.43)_0%,rgba(32,32,32,0.46)_99.25%)]"
                 }`}
@@ -282,6 +286,43 @@ const State = ({ title, check = false, value }) => {
     );
 };
 
+const User = ({ name, onClick, button, className }) => {
+    return (
+        <Box className={`rounded-lg h-14 !px-6 ${className}`} onClick={onClick} component={button ? ButtonBase : "div"}>
+            <FlexRow className="!justify-between">
+                <Typography variant="card_title">{name}</Typography>
+                <Icon
+                    src="icons/back.svg"
+                    width="25"
+                    height="25"
+                    className="rotate-180"
+                />
+            </FlexRow>
+        </Box>
+    );
+};
+
+const Control = ({ title, check = false }) => {
+    const [checked, setChecked] = useState(check);
+    const handleChange = async (event) => {
+        setChecked(event.target.checked);
+    };
+
+    return (
+        <Box className="rounded-lg h-20 !px-6">
+            <FlexRow className="!justify-between">
+                <Typography variant="card_title">{title}</Typography>
+                <Switch
+                    size="medium"
+                    color="warning"
+                    checked={checked}
+                    onChange={handleChange}
+                />
+            </FlexRow>
+        </Box>
+    );
+};
+
 export {
     Icon,
     BackIcon,
@@ -295,4 +336,6 @@ export {
     ContainerID,
     Select,
     State,
+    User,
+    Control,
 };

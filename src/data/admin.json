@@ -12,10 +12,10 @@
         "link": "/controls"
     },
     {
-        "icon": "/icons/timeline.svg",
-        "title": "Timeline",
-        "subtitle": "Know how you will spend your day",
-        "link": "/timeline"
+        "icon": "/icons/hacktronaut.svg",
+        "title": "Users",
+        "subtitle": "Manual Control Panel for Users",
+        "link": "/users"
     },
     {
         "icon": "/icons/others.svg",
