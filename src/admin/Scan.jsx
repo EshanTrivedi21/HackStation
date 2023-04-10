@@ -15,7 +15,6 @@ import { useNavigate } from "react-router-dom";
 const Scan = () => {
     let navigate = useNavigate();
     let location = useLocation();
-    const navigate = useNavigate();
     let [id, setId] = useState(null);
     let [selected, setSelected] = useState(location?.state?.entity||0);
     function onScanSuccess(decodedText) {
