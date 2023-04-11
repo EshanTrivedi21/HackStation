@@ -94,6 +94,24 @@ const theme = createTheme({
             fontFamily: "Poppins, sans-serif",
             color: "#cfcfcf",
         },
+        ticket_title: {
+            fontSize: "24px",
+            fontWeight: "500",
+            fontFamily: "Poppins, sans-serif",
+            color: "#efefef",
+        },
+        ticket_subtitle: {
+            fontSize: "12px",
+            fontWeight: "300",
+            fontFamily: "Poppins, sans-serif",
+            color: "#cfcfcf",
+        },
+        ticket_details: {
+            fontSize: "20px",
+            fontWeight: "500",
+            fontFamily: "Poppins, sans-serif",
+            color: "#cfcfcf",
+        },
     },
 
     components: {
