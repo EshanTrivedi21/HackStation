@@ -3,7 +3,7 @@ import Countdown from "./Countdown";
 import Identity from "./Identity";
 import Cards from "./Cards";
 import Loader from "./Loader";
-import Modal from "./Modal";
+import Dialog from "./Dialog";
 import SearchBar from "./SearchBar";
 import Animation from "./Animation";
 
@@ -13,7 +13,7 @@ export {
     Identity,
     Cards,
     Loader,
-    Modal,
+    Dialog,
     SearchBar,
     Animation,
 };

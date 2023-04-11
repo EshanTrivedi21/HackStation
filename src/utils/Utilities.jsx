@@ -133,6 +133,16 @@ const PrimaryButton = ({ onClick, children, className }) => {
         </div>
     );
 };
+const SecondaryButton = ({ onClick, children, className }) => {
+    const classes="rounded-[10px] p-[1px] !bg-transparent w-[75%] h-14 " + className;
+    return (
+        <div className={classes}>
+            <Button variant="contained" onClick={onClick}>
+                {children}
+            </Button>
+        </div>
+    );
+};
 
 const FlexRow = ({ className, children, style }) => {
     const classes = "flex justify-center items-center w-screen " + className;
@@ -161,6 +171,7 @@ const Box = ({
     className,
     component,
     padding,
+    style,
 }) => {
     const classes =
         "flex rounded-lg w-[85vw] flex justify-center items-center " +
@@ -182,6 +193,7 @@ const Box = ({
                     ...(done && {
                         border: "1px solid #03D06E",
                     }),
+                    ...style,
                 }}
             >
                 {children}
@@ -355,6 +367,7 @@ export {
     FlexRow,
     FlexCol,
     PrimaryButton,
+    SecondaryButton,
     ScreenTitle,
     Box,
     Card,
