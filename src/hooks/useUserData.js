@@ -18,5 +18,5 @@ export const useUserData = () => {
                 console.log("Error getting document:", error);
             });
     };
-    return { fetch };
+    return { fetch, stateAC };
 };

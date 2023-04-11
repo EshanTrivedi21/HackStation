@@ -5,12 +5,14 @@ import { auth } from "../utils/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { AdminControlContext } from "../contexts/adminControlContext";
 import { useNavigate } from "react-router-dom";
+import { useUserData } from "../hooks/useUserData";
 
 const Home = () => {
     let [user, setUser] = useState();
     let [team, setTeam] = useState();
     let stateAC = useContext(AdminControlContext);
     let navigate = useNavigate();
+    let { stateAC : state } = useUserData();
     useEffect(() => {
         onAuthStateChanged(auth, async (user) => {
             if (user) {
@@ -24,6 +26,7 @@ const Home = () => {
             }
         });
     }, []);
+    const checkin = state.userData['check-in'];
     return (
         <>
             {stateAC.adminData && (
@@ -31,7 +34,7 @@ const Home = () => {
                     <Greetings title="Hacktonaut" />
                     <Countdown start={stateAC.adminData.countdown} />
                     <Identity name={user} team={team} />
-                    <Cards user={user} admindata={stateAC.adminData} />
+                    <Cards user={user} checkin={checkin} admindata={stateAC.adminData} />
                 </Container>
             )}
         </>
