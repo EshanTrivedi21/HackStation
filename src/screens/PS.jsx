@@ -8,7 +8,7 @@ const PS = () => {
     let stateAC = useContext(AdminControlContext)
     return (
         <>
-            <Container className="!justify-start" gap="3rem">
+            <Container className="!justify-start" gap="3rem" overflow="hidden">
                 <ScreenTitle title="Problems" />
                 <FlexCol className="gap-5 !items-start">
                     <Typography variant="card_title" className="!ml-10">

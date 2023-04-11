@@ -21,7 +21,7 @@ const Others = () => {
 
     return (
         <>
-            <Container className="!justify-start" gap="2rem">
+            <Container className="!justify-start" gap="2rem" overflow="hidden">
                 <ScreenTitle title="Others" className="pb-5" />
                 {stateAC.adminData &&
                     data.map((items, index) => (

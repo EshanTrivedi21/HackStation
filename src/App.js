@@ -5,7 +5,7 @@ import { Loader } from "./components/exports";
 import { Container } from "./utils/Utilities";
 import { Typography } from "@mui/material";
 import { Home, Timeline, Food, QR, PS, Others } from "./screens/exports";
-import { Dashboard, Scan, Controls, Other, Scanned, Users, Manual } from "./admin/exports";
+import { Dashboard, Scan, Controls, Other, Users, Manual } from "./admin/exports";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AdminControlContext } from "./contexts/adminControlContext";
 import AuthCheck from "./utils/AuthCheck";
@@ -122,14 +122,6 @@ function App() {
             element: (
                 <AdminCheck>
                     <Other />
-                </AdminCheck>
-            ),
-        },
-        {
-            path: "scanned",
-            element: (
-                <AdminCheck>
-                    <Scanned />
                 </AdminCheck>
             ),
         },

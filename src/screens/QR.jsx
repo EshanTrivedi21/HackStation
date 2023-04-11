@@ -42,7 +42,7 @@ const QR = memo(({ id }) => {
     return (
         <>
             <Loader open={loading} />
-            <Container minHeight="auto" gap="7rem">
+            <Container minHeight="auto" gap="7rem" overflow="hidden"> 
                 <ScreenTitle title={id} />
                 <FlexCol>{user && <Code value={user} />}</FlexCol>
                 <FlexCol>
