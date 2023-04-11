@@ -89,7 +89,7 @@ const Scan = () => {
                     }}
                 />
             </FlexCol>
-            <Dialog open="true" user="Eshan Trivedi" entity="Dinner"/>
+            <Dialog open={false} user="Eshan Trivedi" entity="Dinner"/>
         </Container>
     );
 };
