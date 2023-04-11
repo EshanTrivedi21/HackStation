@@ -5,10 +5,19 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
 import { signOut } from "firebase/auth";
 import { AdminControlContext } from "../contexts/adminControlContext";
+import { useUserData } from "../hooks/useUserData";
 
 const Others = () => {
     const navigate = useNavigate();
+
     let stateAC = useContext(AdminControlContext);
+
+    let { stateAC: state } = useUserData();
+    const checkin = state.userData['check-in'];
+    const filteredData = data.filter(
+        (item) => checkin || item.title !== "Feedback Form" && item.title !== "E-Certificates"
+      );
+
     const nullFunc = () => {
         return null;
     };
@@ -24,7 +33,7 @@ const Others = () => {
             <Container className="!justify-start" gap="2rem" overflow="hidden">
                 <ScreenTitle title="Others" className="pb-5" />
                 {stateAC.adminData &&
-                    data.map((items, index) => (
+                    filteredData.map((items, index) => (
                         <FlexCol className="!items-start" key={index}>
                             <Card
                                 width="30"
