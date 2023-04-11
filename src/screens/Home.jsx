@@ -24,13 +24,12 @@ const Home = () => {
             }
         });
     }, []);
-
     return (
         <>
             {stateAC.adminData && (
                 <Container>
                     <Greetings title="Hacktonaut" />
-                    <Countdown start={false} />
+                    <Countdown start={stateAC.adminData.countdown} />
                     <Identity name={user} team={team} />
                     <Cards user={user} admindata={stateAC.adminData} />
                 </Container>
