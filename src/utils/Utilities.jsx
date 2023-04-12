@@ -40,8 +40,6 @@ const Select = ({ data, className, onChange, value, defaultValue }) => {
     const selectStyle = {
         border: "none",
         borderRadius: "10px",
-        color: "#cfcfcf",
-        fontFamily: "Poppins",
         fontSize: "20px",
         fontWeight: "500",
         fontFamily: "Poppins, sans-serif",
@@ -134,7 +132,8 @@ const PrimaryButton = ({ onClick, children, className }) => {
     );
 };
 const SecondaryButton = ({ onClick, children, className }) => {
-    const classes="rounded-[10px] p-[1px] !bg-transparent w-[75%] h-14 " + className;
+    const classes =
+        "rounded-[10px] p-[1px] !bg-transparent w-[75%] h-14 " + className;
     return (
         <div className={classes}>
             <Button variant="contained" onClick={onClick}>

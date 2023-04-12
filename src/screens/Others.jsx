@@ -13,10 +13,12 @@ const Others = () => {
     let stateAC = useContext(AdminControlContext);
 
     let { stateAC: state } = useUserData();
-    const checkin = state.userData['check-in'];
+    const checkin = state.userData["check-in"];
     const filteredData = data.filter(
-        (item) => checkin || item.title !== "Feedback Form" && item.title !== "E-Certificates"
-      );
+        (item) =>
+            checkin ||
+            (item.title !== "Feedback Form" && item.title !== "E-Certificates")
+    );
 
     const nullFunc = () => {
         return null;
