@@ -289,7 +289,11 @@ const State = ({ title, check = false, value }) => {
 
 const User = ({ name, onClick, button, className }) => {
     return (
-        <Box className={`rounded-lg h-14 !px-6 ${className}`} onClick={onClick} component={button ? ButtonBase : "div"}>
+        <Box
+            className={`rounded-lg h-20 !px-6 ${className}`}
+            onClick={onClick}
+            component={button ? ButtonBase : "div"}
+        >
             <FlexRow className="!justify-between">
                 <Typography variant="card_title">{name}</Typography>
                 <Icon
@@ -303,10 +307,26 @@ const User = ({ name, onClick, button, className }) => {
     );
 };
 
-const Control = ({ title, check = false }) => {
+const Control = ({ title, check = false, id, value, users }) => {
     const [checked, setChecked] = useState(check);
+    const userRef = doc(db, "users", id);
     const handleChange = async (event) => {
         setChecked(event.target.checked);
+        console.log(value, checked);
+        await runTransaction(db, async (transaction) => {
+            const userDoc = await transaction.get(userRef);
+            if (!userDoc.exists()) {
+                console.error("Document does not exist!");
+            } else {
+                transaction.update(userRef, { [value]: event.target.checked });
+                users.forEach((user) => {
+                    if (user.id === id) {
+                        user[value] = event.target.checked;
+                    }
+                    console.log("Updated");
+                });
+            }
+        });
     };
 
     return (

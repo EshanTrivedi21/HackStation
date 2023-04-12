@@ -37,6 +37,7 @@ function createNormalUser() {
                 }).then((userRecord) => {
                     console.log("Successfully created new user:", userRecord.uid);
                     db.collection("users").doc(userRecord.uid).set({
+                        "display": displayName,
                         "check-in": false,
                         "lunch1": false,
                         "lunch2": false,

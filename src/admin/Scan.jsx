@@ -10,7 +10,6 @@ import data from "../data/scan.json";
 import { Html5Qrcode } from "html5-qrcode";
 import { AdminControlContext } from "../contexts/adminControlContext";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 const Scan = () => {
     let navigate = useNavigate();
@@ -82,7 +81,7 @@ const Scan = () => {
                 )}
                 <User
                     name="All Users"
-                    className="!w-[300px]"
+                    className="!w-[300px] !h-14"
                     button={true}
                     onClick={() => {
                         navigate("/users");

@@ -87,6 +87,7 @@ const theme = createTheme({
             fontWeight: "500",
             fontFamily: "Poppins, sans-serif",
             color: "#efefef",
+            textTransform: "capitalize",
         },
         card_subtitle: {
             fontSize: "11px",
