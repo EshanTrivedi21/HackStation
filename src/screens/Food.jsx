@@ -3,10 +3,12 @@ import { Container, ScreenTitle, Card, FlexCol } from "../utils/Utilities";
 import data from "../data/food.json";
 import { useNavigate } from "react-router-dom";
 import { AdminControlContext } from "../contexts/adminControlContext";
+import { UserDataContext } from "../contexts/userDataContext";
 
 const Food = () => {
     const navigate = useNavigate();
     let stateAC = useContext(AdminControlContext);
+    let stateUD = useContext(UserDataContext)
     return (
         <>
             <Container className="!justify-start">
@@ -23,7 +25,11 @@ const Food = () => {
                             button={true}
                             disabled={!stateAC.adminData[item.adminName]}
                             onClick={() => {
-                                navigate("/qr");
+                                if(stateUD.userData[item.adminName]) {
+                                    navigate("/ticket",{state: {entity: item.adminName}})
+                                }else{
+                                    navigate("/qr");
+                                }
                             }}
                         />
                     ))}

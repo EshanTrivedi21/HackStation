@@ -365,10 +365,10 @@ const Tkt = ({ user, team, time, entity }) => {
         <Box className="rounded-lg !w-[75vw] !p-6">
             <FlexCol className="!gap-8">
                 <FlexCol>
-                    <Typography variant="ticket_title">{user}</Typography>
+                    <Typography variant="ticket_title" className="capitalize">{user}</Typography>
                     <Typography variant="ticket_subtitle">{team}</Typography>
                 </FlexCol>
-                <hr class="border-t-2 border-gray-400 border-dashed w-56" />
+                <hr className="border-t-2 border-gray-400 border-dashed w-56" />
                 <FlexRow className="!w-48 !justify-between">
                     <Typography variant="ticket_details">{time}</Typography>
                     <Typography variant="ticket_details">{entity}</Typography>

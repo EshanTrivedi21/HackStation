@@ -4,8 +4,23 @@ import { Login } from "./auth/exports";
 import { Loader } from "./components/exports";
 import { Container } from "./utils/Utilities";
 import { Typography } from "@mui/material";
-import { Home, Timeline, Food, QR, PS, Others, Ticket } from "./screens/exports";
-import { Dashboard, Scan, Controls, Other, Users, Manual } from "./admin/exports";
+import {
+    Home,
+    Timeline,
+    Food,
+    QR,
+    PS,
+    Others,
+    Ticket,
+} from "./screens/exports";
+import {
+    Dashboard,
+    Scan,
+    Controls,
+    Other,
+    Users,
+    Manual,
+} from "./admin/exports";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AdminControlContext } from "./contexts/adminControlContext";
 import AuthCheck from "./utils/AuthCheck";
@@ -59,7 +74,11 @@ function App() {
         },
         {
             path: "timeline",
-            element: <Timeline />,
+            element: (
+                <AuthCheck>
+                    <Timeline />
+                </AuthCheck>
+            ),
         },
         {
             path: "food",
@@ -71,11 +90,19 @@ function App() {
         },
         {
             path: "check-in",
-            element: <QR id="Check In" />,
+            element: (
+                <AuthCheck>
+                    <QR id="Check In" />,
+                </AuthCheck>
+            ),
         },
         {
             path: "qr",
-            element: <QR id="Food" />,
+            element: (
+                <AuthCheck>
+                    <QR id="Food" />,
+                </AuthCheck>
+            ),
         },
         {
             path: "ps",
@@ -127,15 +154,27 @@ function App() {
         },
         {
             path: "users",
-            element: <Users />,
+            element: (
+                <AdminCheck>
+                    <Users />,
+                </AdminCheck>
+            ),
         },
         {
             path: "manual",
-            element: <Manual />,
+            element: (
+                <AdminCheck>
+                    <Manual />,
+                </AdminCheck>
+            ),
         },
         {
             path: "ticket",
-            element: <Ticket />,
+            element: (
+                <AuthCheck>
+                    <Ticket />,
+                </AuthCheck>
+            ),
         },
     ]);
     let [data, setData] = useState();
