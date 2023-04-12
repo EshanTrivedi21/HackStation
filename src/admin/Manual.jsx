@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Container, ScreenTitle, Control } from "../utils/Utilities";
 import data from "../data/scan.json";
 import { useNavigate, useLocation } from "react-router-dom";
+import { collection, doc, getDoc } from "firebase/firestore";
+import { db } from "../utils/firebase";
 
 const Manual = () => {
     const navigate = useNavigate();
@@ -10,9 +12,16 @@ const Manual = () => {
     useEffect(() => {
         if (!location.state.ind) {
             navigate("/users");
-        } else { 
-            let a = JSON.parse(localStorage.getItem("users"));
-            setUser(a.filter((u) => u.id === location.state.ind)[0]);
+        } else {
+            getDoc(doc(db, "users", location.state.ind)).then((doc) => {
+                if (doc.exists()) {
+                    let a = doc.data();
+                    a["id"] = doc.id;
+                    setUser(a);
+                } else {
+                    console.log("No such document!");
+                }
+            });
         }
     }, [navigate]);
     return (

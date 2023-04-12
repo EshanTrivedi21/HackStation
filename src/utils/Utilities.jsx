@@ -321,7 +321,7 @@ const User = ({ name, onClick, button, className }) => {
     );
 };
 
-const Control = ({ title, check = false, id, value, users, setUser }) => {
+const Control = ({ title, check = false, id, value }) => {
     const [checked, setChecked] = useState(check);
     const userRef = doc(db, "users", id);
     const handleChange = async (event) => {
@@ -332,15 +332,6 @@ const Control = ({ title, check = false, id, value, users, setUser }) => {
                 console.error("Document does not exist!");
             } else {
                 transaction.update(userRef, { [value]: event.target.checked });
-                for (let i = 0; i < users.length; i++) {
-                    if (users[i].id === id) {
-                        users[i][value] = event.target.checked;
-                        setUser(users[i]);
-                    }
-                    check = event.target.checked;
-                }
-                localStorage.removeItem("users");
-                localStorage.setItem("users", JSON.stringify(users));
             }
         });
     };
