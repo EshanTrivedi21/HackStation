@@ -321,24 +321,26 @@ const User = ({ name, onClick, button, className }) => {
     );
 };
 
-const Control = ({ title, check = false, id, value, users }) => {
+const Control = ({ title, check = false, id, value, users, setUser }) => {
     const [checked, setChecked] = useState(check);
     const userRef = doc(db, "users", id);
     const handleChange = async (event) => {
         setChecked(event.target.checked);
-        console.log(value, checked);
         await runTransaction(db, async (transaction) => {
             const userDoc = await transaction.get(userRef);
             if (!userDoc.exists()) {
                 console.error("Document does not exist!");
             } else {
                 transaction.update(userRef, { [value]: event.target.checked });
-                users.forEach((user) => {
-                    if (user.id === id) {
-                        user[value] = event.target.checked;
+                for (let i = 0; i < users.length; i++) {
+                    if (users[i].id === id) {
+                        users[i][value] = event.target.checked;
+                        setUser(users[i]);
                     }
-                    console.log("Updated");
-                });
+                    check = event.target.checked;
+                }
+                localStorage.removeItem("users");
+                localStorage.setItem("users", JSON.stringify(users));
             }
         });
     };
