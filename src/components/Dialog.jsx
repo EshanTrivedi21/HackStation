@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Typography } from "@mui/material";
 import { Box, FlexCol, User } from "../utils/Utilities";
 import { Animation } from "../components/exports";

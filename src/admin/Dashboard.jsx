@@ -7,7 +7,7 @@ export default function Dashboard() {
     const navigate = useNavigate();
     return (
         <>
-            <Container className="!justify-start" gap="2rem" padding="4rem" overflow="hidden">
+            <Container minHeight="auto" gap="2rem" padding="4rem" overflow="hidden">
                 <Greetings title="Administrator" />
                 <Countdown start={false} />
                 {data.map((item, index) => {

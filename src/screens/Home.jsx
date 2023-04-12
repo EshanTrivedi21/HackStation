@@ -29,8 +29,8 @@ const Home = () => {
     return (
         <>
             {stateAC.adminData && stateUD.userData && (
-                <Container>
-                    <Greetings title="Hacktonaut" />
+                <Container minHeight="auto">
+                    <Greetings title="Hacktronaut" />
                     <Countdown start={stateAC.adminData.countdown} />
                     <Identity name={user} team={team} />
                     <Cards

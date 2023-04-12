@@ -49,7 +49,7 @@ const Login = () => {
             });
     };
     return (
-        <Container gap="5rem" minHeight="auto" padding="10rem" overflow="hidden">
+        <Container gap="5rem" minHeight="auto" padding="7.5rem" overflow="hidden">
             <FlexCol className="gap-2">
                 <Typography variant="login_title" color="primary.contrastText">
                     Welcome
