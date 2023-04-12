@@ -7,7 +7,7 @@ const Controls = () => {
     let stateAC = useContext(AdminControlContext)
     return (
         <>
-            <Container className="!justify-start">
+            <Container className="!justify-start" gap="2.5rem">
                 <ScreenTitle title="Controls" />
                 <FlexCol className="gap-5">
                     {stateAC.adminData && data.map((item, index) => (
