@@ -1,5 +1,5 @@
 import { memo, useState, useEffect } from "react";
-import { Container, ScreenTitle, FlexCol } from "../utils/Utilities";
+import { Container, ScreenTitle, FlexCol, User } from "../utils/Utilities";
 import { Typography } from "@mui/material";
 import { QRCode } from "react-qrcode-logo";
 import { auth } from "../utils/firebase";
@@ -42,15 +42,26 @@ const QR = memo(({ id }) => {
     return (
         <>
             <Loader open={loading} />
-            <Container minHeight="auto" gap="7rem" overflow="hidden"> 
+            <Container minHeight="auto" gap="7rem" overflow="hidden">
                 <ScreenTitle title={id} />
                 <FlexCol>{user && <Code value={user} />}</FlexCol>
-                <FlexCol>
-                    <Typography variant="modal_title">Identity Card</Typography>
-                    <Typography variant="modal_subtitle">
-                        Get the QR scanned to continue
-                    </Typography>
-                </FlexCol>
+                {id === "Check In" ? (
+                    <FlexCol>
+                        <User
+                            name="Continue"
+                            className="!w-[60vw] !h-12 !border-[#afafaf] !border"
+                        />
+                    </FlexCol>
+                ) : (
+                    <FlexCol>
+                        <Typography variant="modal_title">
+                            Identity Card
+                        </Typography>
+                        <Typography variant="modal_subtitle">
+                            Get the QR scanned to continue
+                        </Typography>
+                    </FlexCol>
+                )}
             </Container>
         </>
     );

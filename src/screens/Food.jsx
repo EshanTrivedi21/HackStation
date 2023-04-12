@@ -9,7 +9,7 @@ const Food = () => {
     let stateAC = useContext(AdminControlContext);
     return (
         <>
-            <Container className="!justify-start">
+            <Container className="!justify-start" gap="2.5rem">
                 <ScreenTitle title="Food" />
                 <FlexCol className="gap-5">
                     {data.map((item, index) => (

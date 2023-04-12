@@ -6,7 +6,9 @@ import { useNavigate } from "react-router-dom";
 const Cards = ({ admindata, checkin }) => {
   const navigate = useNavigate();
   const filteredData = data.filter(
-    (item) => checkin || item.title !== "Problem Statements" && item.title !== "Food"
+    (item) =>
+      (checkin && item.title !== "Check In") || 
+      (!checkin && item.title !== "Problem Statements" && item.title !== "Food") 
   );
   return (
     <>
