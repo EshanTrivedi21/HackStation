@@ -39,10 +39,7 @@ const Dialog = ({ open, user, team, ids, entity, handleClose }) => {
                             {user}
                         </Typography>
                         <Typography variant="ticket_subtitle">
-                            {team}
-                        </Typography>
-                        <Typography variant="entity_subtitle">
-                            {entity}
+                            {team}, {entity}
                         </Typography>
                     </FlexCol>
                     <Animation size={200} />

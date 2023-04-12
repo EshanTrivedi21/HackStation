@@ -44,23 +44,12 @@ const QR = memo(({ id }) => {
             <Container minHeight="auto" gap="7rem" overflow="hidden">
                 <ScreenTitle title={id} />
                 <FlexCol>{user && <Code value={user} />}</FlexCol>
-                {id === "Check In" ? (
-                    <FlexCol>
-                        <User
-                            name="Continue"
-                            className="!w-[60vw] !h-12 !border-[#afafaf] !border"
-                        />
-                    </FlexCol>
-                ) : (
-                    <FlexCol>
-                        <Typography variant="modal_title">
-                            Identity Card
-                        </Typography>
-                        <Typography variant="modal_subtitle">
-                            Get the QR scanned to continue
-                        </Typography>
-                    </FlexCol>
-                )}
+                <FlexCol>
+                    <User
+                        name="Continue"
+                        className="!w-[60vw] !h-12 !border-[#afafaf] !border"
+                    />
+                </FlexCol>
             </Container>
         </>
     );

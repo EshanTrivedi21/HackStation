@@ -321,7 +321,7 @@ const User = ({ name, onClick, button, className }) => {
     );
 };
 
-const Control = ({ title, check = false, id, value, users, setUser }) => {
+const Control = ({ title, check = false, id, value }) => {
     const [checked, setChecked] = useState(check);
     const userRef = doc(db, "users", id);
     const handleChange = async (event) => {
@@ -332,15 +332,6 @@ const Control = ({ title, check = false, id, value, users, setUser }) => {
                 console.error("Document does not exist!");
             } else {
                 transaction.update(userRef, { [value]: event.target.checked });
-                for (let i = 0; i < users.length; i++) {
-                    if (users[i].id === id) {
-                        users[i][value] = event.target.checked;
-                        setUser(users[i]);
-                    }
-                    check = event.target.checked;
-                }
-                localStorage.removeItem("users");
-                localStorage.setItem("users", JSON.stringify(users));
             }
         });
     };
@@ -360,19 +351,31 @@ const Control = ({ title, check = false, id, value, users, setUser }) => {
     );
 };
 
-const Tkt = ({ user, team, time, entity }) => {
+const Tkt = ({ user, team, entity }) => {
+    const Entity = () => {
+        switch (entity) {
+            case "check-in": return "Check In";
+            case "lunch1": return "Lunch Day 1";
+            case "snacks1": return "Snacks Day 1";
+            case "lunch2": return "Lunch Day 2";
+            case "snacks2": return "Snacks Day 2";
+            case "breakfast": return "Breakfast";
+            case "dinner": return "Dinner";
+            case "midnight-snacks": return "Midnight Snacks";
+        }
+    };
+
     return (
         <Box className="rounded-lg !w-[75vw] !p-6">
             <FlexCol className="!gap-8">
                 <FlexCol>
-                    <Typography variant="ticket_title">{user}</Typography>
+                    <Typography variant="ticket_title" className="capitalize">
+                        {user}
+                    </Typography>
                     <Typography variant="ticket_subtitle">{team}</Typography>
                 </FlexCol>
-                <hr class="border-t-2 border-gray-400 border-dashed w-56" />
-                <FlexRow className="!w-48 !justify-between">
-                    <Typography variant="ticket_details">{time}</Typography>
-                    <Typography variant="ticket_details">{entity}</Typography>
-                </FlexRow>
+                <hr className="border-t-2 border-gray-400 border-dashed w-56" />
+                <Typography variant="ticket_details">{Entity(entity)}</Typography>
             </FlexCol>
         </Box>
     );
