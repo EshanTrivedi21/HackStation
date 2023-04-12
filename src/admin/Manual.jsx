@@ -8,12 +8,13 @@ const Manual = () => {
     let location = useLocation();
     let [user, setUser] = useState(null);
     useEffect(() => {
-        if (!location.state.user) {
+        if (!location.state.ind) {
             navigate("/users");
-        } else {
-            setUser(location.state.user);
+        } else { 
+            let a = JSON.parse(localStorage.getItem("users"));
+            setUser(a.filter((u) => u.id === location.state.ind)[0]);
         }
-    }, [location.user, navigate]);
+    }, [navigate]);
     return (
         <>
             <Container className="!justify-start !gap-10">
@@ -33,6 +34,7 @@ const Manual = () => {
                             id={user.id}
                             users={location.state.users}
                             key={u.value}
+                            setUser={setUser}
                         />
                     ))}
             </Container>

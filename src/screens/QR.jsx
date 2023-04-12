@@ -14,7 +14,6 @@ const Code = ({ value }) => {
                 size={210}
                 fgColor="#DDDDDD"
                 bgColor="transparent"
-                eyeRadius={10}
             />
         </>
     );
