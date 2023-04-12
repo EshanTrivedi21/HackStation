@@ -17,7 +17,7 @@ export default function SearchBar() {
         label="Search"
         value={searchTerm}
         onChange={handleChange}
-        sx={{ width: "85vw" }}
+        sx={{ width: "85vw", maxWidth: "500px", height: "50px" }}
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">

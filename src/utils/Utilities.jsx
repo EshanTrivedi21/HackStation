@@ -40,27 +40,29 @@ const Select = ({ data, className, onChange, value, defaultValue }) => {
     const selectStyle = {
         border: "none",
         borderRadius: "10px",
-        padding: "0.75rem",
         color: "#cfcfcf",
         fontFamily: "Poppins",
-        fontWeight: "normal",
-        fontSize: "1rem",
+        fontSize: "20px",
+        fontWeight: "500",
+        fontFamily: "Poppins, sans-serif",
+        color: "#efefef",
         width: "300px",
-        height: "55px",
+        height: "56.5px",
         outline: "none",
         background:
             "radial-gradient(132.5% 132.5% at 48.94% 50%, #303030 0%, #202020 99.25%)",
+        appearance: "none",
     };
-
+    const classes = "px-6 " + className;
     return (
         <select
-            className={className}
+            className={classes}
             onChange={onChange}
             value={value}
             style={selectStyle}
             defaultValue={defaultValue}
         >
-            <option value={0}>Select Entity:</option>
+            <option value={0}>Select Entity</option>
             {data.map((item, index) => (
                 <option key={index} value={item.value}>
                     {item.name}
@@ -79,6 +81,7 @@ const Container = ({
     component,
     padding,
     onClick,
+    overflow,
 }) => {
     return (
         <Theme>
@@ -91,7 +94,7 @@ const Container = ({
                     paddingBottom: padding || "2.5rem",
                     minHeight: minHeight || "100vh",
                     overflowX: "hidden",
-                    overflowY: minHeight ? "hidden" : "auto",
+                    overflowY: overflow || "auto",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
@@ -130,6 +133,16 @@ const PrimaryButton = ({ onClick, children, className }) => {
         </div>
     );
 };
+const SecondaryButton = ({ onClick, children, className }) => {
+    const classes="rounded-[10px] p-[1px] !bg-transparent w-[75%] h-14 " + className;
+    return (
+        <div className={classes}>
+            <Button variant="contained" onClick={onClick}>
+                {children}
+            </Button>
+        </div>
+    );
+};
 
 const FlexRow = ({ className, children, style }) => {
     const classes = "flex justify-center items-center w-screen " + className;
@@ -158,6 +171,7 @@ const Box = ({
     className,
     component,
     padding,
+    style,
 }) => {
     const classes =
         "flex rounded-lg w-[85vw] flex justify-center items-center " +
@@ -179,6 +193,7 @@ const Box = ({
                     ...(done && {
                         border: "1px solid #03D06E",
                     }),
+                    ...style,
                 }}
             >
                 {children}
@@ -290,7 +305,7 @@ const State = ({ title, check = false, value }) => {
 const User = ({ name, onClick, button, className }) => {
     return (
         <Box
-            className={`rounded-lg h-20 !px-6 ${className}`}
+            className={`rounded-lg h-16 !px-5 ${className}`}
             onClick={onClick}
             component={button ? ButtonBase : "div"}
         >
@@ -298,8 +313,8 @@ const User = ({ name, onClick, button, className }) => {
                 <Typography variant="card_title">{name}</Typography>
                 <Icon
                     src="icons/back.svg"
-                    width="25"
-                    height="25"
+                    width="20"
+                    height="20"
                     className="rotate-180"
                 />
             </FlexRow>
@@ -344,12 +359,31 @@ const Control = ({ title, check = false, id, value, users }) => {
     );
 };
 
+const Tkt = ({ user, team, time, entity }) => {
+    return (
+        <Box className="rounded-lg !w-[75vw] !p-6">
+            <FlexCol className="!gap-8">
+                <FlexCol>
+                    <Typography variant="ticket_title">{user}</Typography>
+                    <Typography variant="ticket_subtitle">{team}</Typography>
+                </FlexCol>
+                <hr class="border-t-2 border-gray-400 border-dashed w-56" />
+                <FlexRow className="!w-48 !justify-between">
+                    <Typography variant="ticket_details">{time}</Typography>
+                    <Typography variant="ticket_details">{entity}</Typography>
+                </FlexRow>
+            </FlexCol>
+        </Box>
+    );
+};
+
 export {
     Icon,
     BackIcon,
     FlexRow,
     FlexCol,
     PrimaryButton,
+    SecondaryButton,
     ScreenTitle,
     Box,
     Card,
@@ -359,4 +393,5 @@ export {
     State,
     User,
     Control,
+    Tkt,
 };

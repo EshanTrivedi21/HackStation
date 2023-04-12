@@ -4,8 +4,8 @@ import { Login } from "./auth/exports";
 import { Loader } from "./components/exports";
 import { Container } from "./utils/Utilities";
 import { Typography } from "@mui/material";
-import { Home, Timeline, Food, QR, PS, Others } from "./screens/exports";
-import { Dashboard, Scan, Controls, Other, Scanned, Users, Manual } from "./admin/exports";
+import { Home, Timeline, Food, QR, PS, Others, Ticket } from "./screens/exports";
+import { Dashboard, Scan, Controls, Other, Users, Manual } from "./admin/exports";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AdminControlContext } from "./contexts/adminControlContext";
 import AuthCheck from "./utils/AuthCheck";
@@ -126,20 +126,16 @@ function App() {
             ),
         },
         {
-            path: "scanned",
-            element: (
-                <AdminCheck>
-                    <Scanned />
-                </AdminCheck>
-            ),
-        },
-        {
             path: "users",
             element: <Users />,
         },
         {
             path: "manual",
             element: <Manual />,
+        },
+        {
+            path: "ticket",
+            element: <Ticket />,
         },
     ]);
     let [data, setData] = useState();

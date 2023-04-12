@@ -30,85 +30,85 @@
         "importance": false
     },
     {
-        "title": "11:15 AM",
+        "title": "11:15 Am",
         "subtitle": "Hacking Period Begins",
         "icon": "/icons/15th.svg",
         "importance": true
     },
     {
-        "title": "1:00 PM - 2:00 PM",
+        "title": "1:00 Pm - 2:00 Pm",
         "subtitle": "Lunch Time!",
         "icon": "/icons/15th.svg",
         "importance": false
     },
     {
-        "title": "5:00 PM - 6:00 PM",
+        "title": "5:00 Pm - 6:00 Pm",
         "subtitle": "Snack Time!",
         "icon": "/icons/15th.svg",
         "importance": false
     },
     {
-        "title": "6:00 PM - 7:00 PM",
+        "title": "6:00 Pm - 7:00 Pm",
         "subtitle": "Mentoring Round",
         "icon": "/icons/15th.svg",
         "importance": true
     },
     {
-        "title": "9:00 PM - 10:00 PM",
+        "title": "9:00 Pm - 10:00 Pm",
         "subtitle": "Dinner Time!",
         "icon": "/icons/15th.svg",
         "importance": false
     },
     {
-        "title": "1:00 AM - 2:00 AM",
+        "title": "1:00 Am - 2:00 Am",
         "subtitle": "Midnight Snacks Time!",
         "icon": "/icons/16th.svg",
         "importance": false
     },
     {
-        "title": "7:30 AM - 8:30 AM",
+        "title": "7:30 Am - 8:30 Am",
         "subtitle": "Breakfast Time!",
         "icon": "/icons/16th.svg",
         "importance": false
     },
     {
-        "title": "9:00 AM",
+        "title": "9:00 Am",
         "subtitle": "Coding time ends",
         "icon": "/icons/16th.svg",
         "importance": true
     },
     {
-        "title": "9:00 AM - 11:30 AM",
+        "title": "9:00 Am - 11:30 Am",
         "subtitle": "Judging Round 1",
         "icon": "/icons/16th.svg",
         "importance": true
     },
     {
-        "title": "11:30 AM",
+        "title": "11:30 Am",
         "subtitle": "Round 1 - Result Declaration & Elimination",
         "icon": "/icons/16th.svg",
         "importance": true
     },
     {
-        "title": "12:30 PM - 1:30 PM",
+        "title": "12:30 Pm - 1:30 Pm",
         "subtitle": "Lunch Time!",
         "icon": "/icons/16th.svg",
         "importance": false
     },
     {
-        "title": "2:00 PM - 5:00 PM",
+        "title": "2:00 Pm - 5:00 Pm",
         "subtitle": "Judging Round 2",
         "icon": "/icons/16th.svg",
         "importance": true
     },
     {
-        "title": "5:00 PM - 6:00 PM",
+        "title": "5:00 Pm - 6:00 Pm",
         "subtitle": "Snacks Time!",
         "icon": "/icons/16th.svg",
         "importance": false
     },
     {
-        "title": "6:00 PM",
+        "title": "6:00 Pm",
         "subtitle": "WINNER ANNOUNCEMENT!",
         "icon": "/icons/16th.svg",
         "importance": true

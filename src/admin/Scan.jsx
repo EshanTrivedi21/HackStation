@@ -6,6 +6,7 @@ import {
     Select,
     User,
 } from "../utils/Utilities";
+import { Dialog } from "../components/exports";
 import data from "../data/scan.json";
 import { Html5Qrcode } from "html5-qrcode";
 import { AdminControlContext } from "../contexts/adminControlContext";
@@ -15,7 +16,7 @@ const Scan = () => {
     let navigate = useNavigate();
     let location = useLocation();
     let [id, setId] = useState(null);
-    let [selected, setSelected] = useState(location?.state?.entity||0);
+    let [selected, setSelected] = useState(location?.state?.entity || 0);
     function onScanSuccess(decodedText) {
         setId(decodedText);
     }
@@ -50,7 +51,7 @@ const Scan = () => {
 
     let stateAC = useContext(AdminControlContext);
     return (
-        <Container minHeight="auto" gap="4rem">
+        <Container minHeight="auto" gap="4rem" overflow="hidden">
             <ScreenTitle title="Scan QR" />
             <FlexCol>
                 <div
@@ -88,6 +89,7 @@ const Scan = () => {
                     }}
                 />
             </FlexCol>
+            <Dialog open={false} user="Eshan Trivedi" entity="Dinner"/>
         </Container>
     );
 };

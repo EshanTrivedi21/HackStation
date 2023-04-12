@@ -20,7 +20,7 @@ const Other = () => {
 
     return (
         <>
-            <Container className="!justify-start" gap="2rem">
+            <Container className="!justify-start" gap="2rem" overflow="hidden">
                 <ScreenTitle title="Others" className="pb-5" />
                 {data.map((items, index) => {
                     return (
