@@ -16,7 +16,7 @@ const Span = ({ children }) => {
   );
 };
 
-const Countdown = ({ start }) => {
+const Countdown = ({ start, visibility }) => {
   const [remainingTime, setRemainingTime] = useState(null);
 
   const startTimer = () => {
@@ -93,7 +93,7 @@ const Countdown = ({ start }) => {
   };
 
   return (
-    <Box padding="1rem">
+    <Box padding="1rem" visibility={visibility}>
       <FlexCol className="!items-start !w-auto">
         <Typography variant="timer_title">Coding Ends in ..</Typography>
         <div className="flex gap-2">{renderCountdown()}</div>

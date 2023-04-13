@@ -9,7 +9,6 @@ export default function Dashboard() {
         <>
             <Container minHeight="auto" gap="2rem" padding="4rem" overflow="hidden">
                 <Greetings title="Administrator" />
-                <Countdown start={false} />
                 {data.map((item, index) => {
                     return (
                         <Card

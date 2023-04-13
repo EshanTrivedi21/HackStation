@@ -26,12 +26,13 @@ const Home = () => {
             }
         });
     }, []);
+    const visibility = stateUD.userData["check-in"] ? "" : "hidden";
     return (
         <>
             {stateAC.adminData && stateUD.userData && (
                 <Container minHeight="auto">
                     <Greetings title="Hacktronaut" />
-                    <Countdown start={stateAC.adminData.countdown} />
+                    <Countdown start={stateAC.adminData.countdown} visibility={visibility} />
                     <Identity name={user} team={team} />
                     <Cards
                         user={user}
