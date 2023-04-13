@@ -16,12 +16,11 @@ const Span = ({ children }) => {
     );
 };
 
-const Countdown = ({ start }) => {
+const Countdown = ({ start, visibility }) => {
     const [remainingTime, setRemainingTime] = useState(null);
 
     const startTimer = () => {
         const endTime = new Date(1681615800 * 1000);
-        // endTime.setHours(endTime.getHours() + 21);
         localStorage.setItem("endTime", endTime);
         return setInterval(() => {
             const diff = endTime - new Date();
@@ -56,15 +55,15 @@ const Countdown = ({ start }) => {
             return (
                 <>
                     <Typography variant="timer">
-                        00 <Span>H</Span>
+                        00<Span>H</Span>
                     </Typography>
                     <Typography variant="timer"> : </Typography>
                     <Typography variant="timer">
-                        00 <Span>M</Span>
+                        00<Span>M</Span>
                     </Typography>
                     <Typography variant="timer"> : </Typography>
                     <Typography variant="timer">
-                        00 <Span>S</Span>
+                        00<Span>S</Span>
                     </Typography>
                 </>
             );
@@ -91,7 +90,7 @@ const Countdown = ({ start }) => {
     };
 
     return (
-        <Box padding="1rem">
+        <Box visibility={visibility} padding="1rem">
             <FlexCol className="!items-start !w-auto">
                 <Typography variant="timer_title">Coding Ends in ..</Typography>
                 <div className="flex gap-2">{renderCountdown()}</div>

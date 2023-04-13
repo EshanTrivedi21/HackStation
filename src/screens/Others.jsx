@@ -14,6 +14,7 @@ const Others = () => {
 
     let { stateAC: state } = useUserData();
     const checkin = state.userData["check-in"];
+
     const filteredData = data.filter(
         (item) =>
             checkin ||
@@ -22,6 +23,14 @@ const Others = () => {
 
     const nullFunc = () => {
         return null;
+    };
+
+    const handleClick = (link, check) => {
+        if (stateAC.adminData[check]) {
+            window.open(link, "_blank");
+        } else {
+            return;
+        }
     };
 
     const logoutUser = () => {
@@ -49,6 +58,7 @@ const Others = () => {
                                         ? window.open(items.link)
                                         : nullFunc();
                                     items.logout ? logoutUser() : nullFunc();
+                                    items.redirect ? handleClick(items.redirect, items.adminName) : nullFunc();
                                 }}
                                 disabled={
                                     items.logout ||
