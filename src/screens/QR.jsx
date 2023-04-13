@@ -5,6 +5,8 @@ import { QRCode } from "react-qrcode-logo";
 import { auth } from "../utils/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import Loader from "../components/Loader";
+import { useUserData } from "../hooks/useUserData";
+import { useNavigate } from "react-router-dom";
 
 const Code = ({ value }) => {
     return (
@@ -22,6 +24,8 @@ const Code = ({ value }) => {
 const QR = memo(({ id }) => {
     let [user, setUser] = useState();
     let [loading, setLoading] = useState(true);
+    let use = useUserData()
+    let navigate = useNavigate();
     useEffect(() => {
         if (!id) {
             window.location.href = "/";
@@ -48,6 +52,13 @@ const QR = memo(({ id }) => {
                     <User
                         name="Continue"
                         className="!w-[60vw] !h-12 !border-[#afafaf] !border"
+                        onClick={() => {
+                            use.fetch(user.split("#")[1]);
+                            if(id === "Food") {
+                                navigate("/food");
+                            }
+                            navigate("/");
+                        }}
                     />
                 </FlexCol>
             </Container>

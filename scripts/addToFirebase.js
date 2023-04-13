@@ -51,6 +51,8 @@ function createNormalUser() {
                     }).catch((error) => {
                         console.error("Error writing document: ", error);
                     });
+                }).catch((error) => {
+                    console.log("Error creating new user:");
                 });
             }
         });
