@@ -10,7 +10,7 @@ const Users = () => {
     let [users, setUsers] = useState([]);
     function fetchUsers() {
         let users = [];
-        let q = query(collection(db, "users"), limit(10));
+        let q = query(collection(db, "users"), limit(6));
         getDocs(q).then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 let a = doc.data();
@@ -30,7 +30,7 @@ const Users = () => {
             collection(db, "users"),
             where("display", ">=", name),
             where("display", "<", name + "\uf8ff"),
-            limit(10)
+            limit(5)
         );
         getDocs(q).then((querySnapshot) => {
             const results = [];
