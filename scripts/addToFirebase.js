@@ -19,13 +19,13 @@ function createNormalUser() {
         .on("data", (row) => data.push(row))
         .on("end", () => {
             for (let i = 0; i < data.length; i++) {
-                let email = data[i].email.trim();
-                let firstName = data[i].first_name.toLowerCase();
-                let lastName = data[i].last_name.toLowerCase();
-                let password = data[i].team_name
+                let email = data[i]["Email"].trim();
+                let firstName = data[i]["First Name"].toLowerCase().trim();
+                let lastName = data[i]["Last Name"].toLowerCase().trim();
+                let password = data[i]["Team Name"]
                     .replace(/ /g, "_")
                     .toLowerCase();
-                let teamName = data[i].team_name.trim();
+                let teamName = data[i]["Team Name"].trim();
                 let displayName = firstName + "_" + lastName + "@" + teamName;
                 console.log(password, displayName, email);
                 auth.createUser({

@@ -30,7 +30,7 @@ const Users = () => {
             collection(db, "users"),
             where("display", ">=", name),
             where("display", "<", name + "\uf8ff"),
-            limit(2)
+            limit(10)
         );
         getDocs(q).then((querySnapshot) => {
             const results = [];
