@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, ScreenTitle, Control } from "../utils/Utilities";
+import { Container, ScreenTitle, Control, FlexCol } from "../utils/Utilities";
 import data from "../data/scan.json";
 import { useNavigate, useLocation } from "react-router-dom";
 import { collection, doc, getDoc } from "firebase/firestore";
@@ -34,18 +34,20 @@ const Manual = () => {
                         `${user.display.split("@")[0].replace("_", " ")}`
                     }
                 />
-                {user &&
-                    data.map((u) => (
-                        <Control
-                            title={u.name}
-                            value={u.value}
-                            check={user[u.value]}
-                            id={user.id}
-                            users={location.state.users}
-                            key={u.value}
-                            setUser={setUser}
-                        />
-                    ))}
+                <FlexCol className="!gap-5">
+                    {user &&
+                        data.map((u) => (
+                            <Control
+                                title={u.name}
+                                value={u.value}
+                                check={user[u.value]}
+                                id={user.id}
+                                users={location.state.users}
+                                key={u.value}
+                                setUser={setUser}
+                            />
+                        ))}
+                </FlexCol>
             </Container>
         </>
     );
