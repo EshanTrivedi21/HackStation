@@ -1,0 +1,16 @@
+[
+    {
+        "title": "Preference Form",
+        "subtitle": "Fill the form to get your preferences",
+        "icon": "/icons/psform.svg",
+        "link": "https://forms.gle/M2ugv3eJhfc7haNN9",
+        "query": "ps-form"
+    },
+    {
+        "title": "Github Repo Link",
+        "subtitle": "Fill in your Code Repository here",
+        "icon": "/icons/github.svg",
+        "link": "",
+        "query": "repo"
+    }
+]

@@ -20,6 +20,10 @@
         "value":"ps-form"
     },
     {
+        "title":"Github Form",
+        "value":"repo"
+    },
+    {
         "title": "Food",
         "value": "food"
     },
