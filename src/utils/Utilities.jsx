@@ -171,9 +171,10 @@ const Box = ({
     component,
     padding,
     style,
+    visibility,
 }) => {
     const classes =
-        "flex rounded-lg w-[85vw] flex justify-center items-center " +
+        visibility + " flex rounded-lg w-[85vw] flex justify-center items-center " +
         className;
     return (
         <Container

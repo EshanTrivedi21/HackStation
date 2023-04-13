@@ -1,5 +1,11 @@
 [
     {
+        "title": "Rules & Regulations",
+        "subtitle": "Please Follow the rules and regulations",
+        "icon": "/icons/rules.svg",
+        "adminName": "rules"
+    },
+    {
         "title": "Feedback Form",
         "subtitle": "Give your feedback here",
         "icon": "/icons/psform.svg",
