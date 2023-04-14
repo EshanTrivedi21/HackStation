@@ -17,16 +17,17 @@
         "title": "E-Certificates",
         "subtitle": "Tap here to Download your certificates",
         "icon": "/icons/certificates.svg",
-        "adminName": "certificates"
+        "adminName": "certificates",
+        "redirect": "https://drive.google.com/drive/folders/1Gxhxg5lOcHrJciQimeq2_G7Ca5v1oezN?usp=sharing"
     },
-    { 
+    {
         "title": "Get Help",
         "subtitle": "We are one tap away from you",
         "icon": "/icons/get-help.svg",
         "link": "tel:8356876018",
         "adminName": "get-help"
     },
-    { 
+    {
         "title": "Logout",
         "subtitle": "Tap here to logout from the app",
         "icon": "/icons/logout.svg",
