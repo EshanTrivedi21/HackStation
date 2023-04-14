@@ -13,9 +13,9 @@ const firebaseConfig = {
     measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
-const analytics = isSupported().then(yes => yes ? getAnalytics(app) : null);
 
 const app = initializeApp(firebaseConfig);
+const analytics = isSupported().then(yes => yes ? getAnalytics(app) : null);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
