@@ -4,7 +4,14 @@
         "subtitle": "Please Follow the rules and regulations",
         "icon": "/icons/rules.svg",
         "adminName": "rules",
-        "redirect": "https://drive.google.com/file/d/1Em4mIpy9zsw6VBaXgovSYDhxxsYGXgO_/view?usp=sharing"
+        "redirect": "https://drive.google.com/file/d/13JTTMrS2G6M64k5QE-8r6tjwig9qvtPV/view?usp=sharing"
+    },
+    {
+        "title": "App User Manual",
+        "subtitle": "Instructions to use the app",
+        "icon": "/icons/rules.svg",
+        "adminName": "manual",
+        "redirect": "https://drive.google.com/file/d/1_CfuCF4XK0pMq7nH8L94axoHb932Fnn6/view?usp=sharing"
     },
     {
         "title": "Feedback Form",
