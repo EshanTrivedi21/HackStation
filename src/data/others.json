@@ -10,7 +10,8 @@
         "title": "Feedback Form",
         "subtitle": "Give your feedback here",
         "icon": "/icons/psform.svg",
-        "adminName": "feedback-form"
+        "adminName": "feedback-form",
+        "redirect": "https://forms.gle/Mos8MPZ8C5LoEGWJ8"
     },
     {
         "title": "E-Certificates",
