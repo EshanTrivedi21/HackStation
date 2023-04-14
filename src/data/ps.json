@@ -3,18 +3,18 @@
         "title": "Web/App",
         "subtitle": "Tap here to Download Problem Statement",
         "icon": "/icons/webapp.svg",
-        "download": "/ps/webapp.pdf"
+        "download": "https://hackstation.csikjsce.org/ps/webapp.pdf"
     },
     {
         "title": "AI/ML",
         "subtitle": "Tap here to Download Problem Statement",
         "icon": "/icons/aiml.svg",
-        "download": "/ps/aiml.pdf"
+        "download": "https://hackstation.csikjsce.org/ps/aiml.pdf"
     },
     {
         "title": "Blockchain",
         "subtitle": "Tap here to Download Problem Statement",
         "icon": "/icons/blockchain.svg",
-        "download": "/ps/blockchain.pdf"
+        "download": "https://hackstation.csikjsce.org/ps/blockchain.pdf"
     }
 ]

@@ -10,7 +10,7 @@ const Users = () => {
     let [users, setUsers] = useState([]);
     function fetchUsers() {
         let users = [];
-        let q = query(collection(db, "users"), limit(6));
+        let q = query(collection(db, "users"), limit(3));
         getDocs(q).then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 let a = doc.data();
@@ -47,8 +47,11 @@ const Users = () => {
             <Container className="!justify-start !gap-10">
                 <ScreenTitle title="Users" />
                 <SearchBar
-                    onChange={(e) => {
-                        findUser(e.target.value);
+                    onClick={(e) => {
+                        e = e.trim();
+                        if (e !== "" && e !== " "){
+                            findUser(e);
+                        }
                     }}
                 />
                 <FlexCol className="gap-5">
