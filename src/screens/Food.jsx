@@ -24,6 +24,7 @@ const Food = () => {
                             icon={item.icon}
                             button={true}
                             disabled={!stateAC.adminData[item.adminName]}
+                            done={stateUD.userData[item.adminName]}
                             onClick={() => {
                                 if(stateUD.userData[item.adminName]) {
                                     navigate("/ticket",{state: {entity: item.adminName}})

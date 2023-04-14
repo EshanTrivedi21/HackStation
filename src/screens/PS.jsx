@@ -33,6 +33,9 @@ const PS = () => {
                             subtitle={item.subtitle}
                             icon={item.icon}
                             button={true}
+                            onClick={() => {
+                                window.open(item.download, "_blank");
+                            }}
                         />
                     ))}
                 </FlexCol>
